@@ -1,0 +1,14 @@
+writefile("/Users/takatoosetsuo/polytech23.git/101-0417/fig/toolketmath23ans4.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+c1:(a^2)  -  (a^2)$/*##*/
+c2:(2*%pi*r)  -  (2*%pi*r)$/*##*/
+c3:((15)/(4)*a*b)  -  ((15*a*b)/4)$/*##*/
+c4:(6*a^3)  -  (6*a^3)$/*##*/
+disp(c1)$/*##*/
+disp(c2)$/*##*/
+disp(c3)$/*##*/
+disp(c4)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

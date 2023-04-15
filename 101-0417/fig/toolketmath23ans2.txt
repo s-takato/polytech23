@@ -1,0 +1,37 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) c1:(-1)-(-1)
+(%i7) c2:10-10
+(%i8) c3:(-56)-(-56)
+(%i9) c4:(-64)-(-64)
+(%i10) c5:8-8
+(%i11) c6:11-11
+(%i12) c7:9-9
+(%i13) c8:300-300
+(%i14) disp(c1)
+0
+
+(%i15) disp(c2)
+0
+
+(%i16) disp(c3)
+0
+
+(%i17) disp(c4)
+0
+
+(%i18) disp(c5)
+0
+
+(%i19) disp(c6)
+0
+
+(%i20) disp(c7)
+0
+
+(%i21) disp(c8)
+0
+
+(%i22) closefile()

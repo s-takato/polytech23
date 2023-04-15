@@ -1,0 +1,22 @@
+writefile("/Users/takatoosetsuo/polytech23.git/101-0417/fig/toolketmath23ans2.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+c1:(-1)  -  (-1)$/*##*/
+c2:(10)  -  (10)$/*##*/
+c3:(-56)  -  (-56)$/*##*/
+c4:(-64)  -  (-64)$/*##*/
+c5:(8)  -  (8)$/*##*/
+c6:(11)  -  (11)$/*##*/
+c7:(9)  -  (9)$/*##*/
+c8:(300)  -  (300)$/*##*/
+disp(c1)$/*##*/
+disp(c2)$/*##*/
+disp(c3)$/*##*/
+disp(c4)$/*##*/
+disp(c5)$/*##*/
+disp(c6)$/*##*/
+disp(c7)$/*##*/
+disp(c8)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

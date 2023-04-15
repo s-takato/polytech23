@@ -1,0 +1,21 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) c1:a^2-a^2
+(%i7) c2:2*%pi*r-2*%pi*r
+(%i8) c3:(15/4)*a*b-(15*a*b)/4
+(%i9) c4:6*a^3-6*a^3
+(%i10) disp(c1)
+0
+
+(%i11) disp(c2)
+0
+
+(%i12) disp(c3)
+0
+
+(%i13) disp(c4)
+0
+
+(%i14) closefile()
