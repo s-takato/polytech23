@@ -2905,7 +2905,7 @@ Ketcindyjsscale=1;
 aalinestart=1;
 quline="Q08::次のS,Lを表せ．	[1]:: 1辺の長さがa@ cm@である正方形の面積S=	[2]:: 半径がrである円の円周L=（円周率をpiとする）	Q09::次の計算をせよ．	[1]:: -fr(9,2)a(cross)(-fr(5,6)b)	[2]:: fr(2,3)a(cross)(-3a)^(2)";
 shline="Q08---	[1] S=  	[2] L=  	Q09---	[1]=  	[2]=  ";
-sqline="01	2	2	2	2	2	2CR02	2	2	2	2	2	2CR03	2	2	2	2	2	2CR04	2	2	2	2	2	2CR05	2	2	2	2	2	2CR06	2	2	2	2	2	2CR07	2	2	2	2	2	2CR08	2	2	2	2	2	2CR09	2	2	2	2	2	2CR10	2	2	2	2	2	2CR11	2	2	2	2	2	2CR12	2	2	2	2	2	2CR13	2	2	2	2	2	2CR14	2	2	2	2	2	2CR15	2	2	2	2	2	2CR16	2	2	2	2	2	2CR17	2	2	2	2	2	2CR18	2	2	2	2	2	2CR19	2	2	2	2	2	2CR20	2	2	2	2	2	2CR21	2	2	2	2	2	2CR22	2	2	2	2	2	2CR23	2	2	2	2	2	2CR24	2	2	2	2	2	2CR25	2	2	2	2	2	2";
+sqline="01YU	2	2	2	2	2	2CR02HU	2	2	2	2	2	2CR03KU	2	2	2	2	2	2CR04AK	2	2	2	2	2	2CR05AK	2	2	2	2	2	2CR06TK	2	2	2	2	2	2CR07MS	2	2	2	2	2	2CR08TT	2	2	2	2	2	2CR09TN	2	2	2	2	2	2CR10AY	2	2	2	2	2	2CR11HW	2	2	2	2	2	2";
 quLL=Line2list(quline);
 shL=Line2list(shline);
 sqLL=Line2list(sqline);
@@ -4117,6 +4117,9 @@ Ketinit(1.6);
 if(startflg==1,
   Kettaskinit();
   Subsedit(3,"St=");
+  Subsedit(1,"");
+  Subsedit(2,"");
+  Subsedit(9,"");
   pghead="";
   pgpos=[61,1.1];
   startflg=0;
@@ -4163,7 +4166,7 @@ if(stok<=1,
   Strnq=replace(Str,"?","");
   StrL_3=Strnq;
   npos=length(Str);
-  if(stok==1,
+  if((stok==1)&(stoknow!=stok), //230417
     tmp=replace(StrL_3,"St=","");
     if(length(tmp)>0,
       stno=parse(tmp);
@@ -4380,9 +4383,9 @@ if(stoknow==2,
 
 if(stoknow==2,
   Subsedit(2,Str); 
+  Subsedit(1,StrL_1);
 );
 
-Subsedit(1,StrL_1);
 if(stok==1,
   Subsedit(3,StrL_3);
 );
@@ -4523,9 +4526,9 @@ var cdy = CindyJS({
   ],
   ports: [{
     id: "CSCanvas",
-    width: 802,
-    height: 627,
-    transform: [{visibleRect: [3.4220902209120556, 26.55560487125874, 86.03517446723727, -38.0309335607187]}],
+    width: 805,
+    height: 654,
+    transform: [{visibleRect: [4.068848912381354, 28.58495121989432, 86.9909596583811, -38.78282570915392]}],
     grid: 5.0,
     background: "rgb(247,247,247)"
   }],

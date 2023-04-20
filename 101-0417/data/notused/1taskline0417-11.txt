@@ -1,0 +1,3 @@
+quline="Q11::知っている関数を組み合わせてグラフを３つかけ	[]:: 関数のグラフを用いよ．「記録」を押し内容をコピーせよ";
+shline="Q11---	[]  ";
+sqline="01YU	2	2CR02HU	2	2CR03KU	2	2CR04AK	2	2CR05AK	2	2CR06TK	2	2CR07MS	2	2CR08TT	2	2CR09TN	2	2CR10AY	2	2CR11HW	2	2";
