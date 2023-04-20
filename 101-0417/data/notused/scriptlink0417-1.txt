@@ -1,4 +1,0 @@
-LinkL=[
-  ["img src","loaded/0417-01.png","style="+Dqq("width:700px")],
-  ["img src","loaded/0417-02.png","style="+Dqq("width:700px")]
-];
