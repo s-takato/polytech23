@@ -1,0 +1,14 @@
+[[x = -7,x = 7],[x = 1],[x = 3,x = 4],[x = 5,x = -4]]
+
+Script
+q1i1:x^2-49
+q1i2:x^2-2*x+1
+q1i3:x^2-7*x+12
+q1i4:x^2-x-20
+q1o1:solve(q1i1=0,x)
+q1o2:solve(q1i2=0,x)
+q1o3:solve(q1i3=0,x)
+q1o4:solve(q1i4=0,x)
+q1o1::q1o2::q1o3::q1o4
+end
+

@@ -109,13 +109,13 @@ new::関数のグラフ
 itemize
 item::$x$を変えるとき，点$\bigl(x,\ f(x)\bigr)$も変わる．
 item::[]例) 1次関数$y=2x+1$\vspace{1mm}\\
-%[1]::\input{fig/table1aans}
+%[1,-]::\input{fig/table1aans}
 %[2,-]::item::この点の集まりを，その関数の{\color{red}グラフ}という．
 end
 
 %%%%%%%%%%%%
 new::1次関数のグラフ
-%repeat=5
+%repeat=6
 \slidepage
 
 \down
@@ -123,14 +123,14 @@ new::1次関数のグラフ
 例）$y=2x+1$
 
 layer::{120}{0}
-%[1]::putnote::s{60}{6}::graphpaper1,0.5
+%[1,2]::putnote::s{60}{6}::graphpaper1,0.5
 %[2,-]::putnote::se{70}{-3}::table1b,0.6
-%[2]::putnote::s{60}{6}::graphpaper2,0.5
-%[3,-]::putnote::s{60}{6}::graphpaper3,0.5
-%[4]::\putnotese{100}{30}{\color{blue}傾き}
-%[4]::\putnotese{100}{36}{\color{blue}$y$切片}
-%[5,-]::\putnotese{100}{30}{\color{blue}傾き\ \ $2$}
-%[5,-]::\putnotese{100}{36}{\color{blue}$y$切片\ $1$}
+%[3]::putnote::s{60}{6}::graphpaper2,0.5
+%[4,-]::putnote::s{60}{6}::graphpaper3,0.5
+%[5]::\putnotese{100}{30}{\color{blue}傾き}
+%[5]::\putnotese{100}{36}{\color{blue}$y$切片}
+%[6,-]::\putnotese{100}{30}{\color{blue}傾き\ \ $2$}
+%[6,-]::\putnotese{100}{36}{\color{blue}$y$切片\ $1$}
 end
 
 %%%%%%%%%%%%
@@ -141,71 +141,70 @@ new::1次関数のグラフ
 \seteda{90}
 
 itemize
-item::「2.関数のグラフ」を用いて，次の1次関数のグラフをかこう．
-\\
-\eda{$y=3x+3$} \\
-\eda{$y=10-2x$} \\
-\eda{$y=2x+2$} \\
-\eda{$y=\bunsuu{1}{2}x+1$}
-item::[課題]\monban 傾きとy切片を答えよ．
+
+item::[課題]\monban 関数のグラフをかき，傾きと$y$切片を答えよ．\\
+\eda{$y=3x-1$} \\
+\eda{$y=5-x$} \\
+\eda{$y=\frac{1}{2}x+2$} \\
+\eda{$y=\frac{x+2}{2}$}
+item::[注)] 傾きと$y$切片をコンマで区切って答えよ．
 end
 
 
 %%%%%%%%%%%%
 new::2次関数のグラフ(基本形)
-%repeat=9
+%repeat=7
 \slidepage
 
 \down
 
-「2.関数のグラフ」で$y=x^2,\ y=-x^2$をかこう．
+「関数のグラフ」で$y=x^2,\ y=-x^2$をかこう
 
 layer::{120}{0}
 %[2,-]::putnote::se{55}{5}::parabola1,0.7
-%[3,-]::\arrowlineseg{80}{30}{20}{-30}
-%[3,-]::\putnotee{97}{40}{頂点}
-%[3,-]::\arrowlineseg{80}{20}{20}{0}
-%[3,-]::\putnotee{100}{20}{軸}
-%[8,-]::putnote::se{55}{5}::parabola2,0.7
+%[3]::putnote::se{55}{5}::parabola1,0.7
+%[4,-]::putnote::se{55}{5}::parabola1b,0.7
+%[4,-]::\arrowlineseg{80}{20}{20}{0}
+%[4,-]::\putnotee{100}{20}{軸}
+%[5,-]::\arrowlineseg{80}{30}{20}{-30}
+%[5,-]::\putnotee{97}{40}{頂点}
+%%[8,-]::putnote::se{55}{5}::parabola2,0.7
 end
 
-itemize
-item::$y=x^2$
-%[4,-]::item::[]　軸は$x=0$($y$軸)
-%[5,-]::item::[]　頂点は$(0,\ 0)$
-%[6,-]::item::[]　下に凸
-%[7,-]::item::$y=-x^2$
-%[9,-]::item::[]　上に凸
-end
+%[4,-]::itemize
+%[4,-]::item::[] 軸は$x=0$($y$軸)
+%[5,-]::item::[] 頂点は$(0,\ 0)$
+%[6,-]::item::[] 下に凸
+%[7,-]::item::[課題]\monban $y=-x^2$について\\　軸，頂点，どちらに凸か\\を答えよ．
+%[4,-]::end
 
 %%%%%%%%%%%%
 new::2次関数のグラフ2
-%repeat=8
+%repeat=7
 \slidepage
 
 layer::{120}{0}
-%[1]::putnote::se{75}{18}::idou0,0.8
-%[2]::putnote::se{75}{18}::idou1,0.8
-%[3]::putnote::se{75}{18}::idou0,0.8
-%[4]::putnote::se{75}{18}::idou2,0.8
-%[5]::putnote::se{75}{18}::idou0,0.8
-%[6]::putnote::se{75}{18}::idou3,0.8
-%[7]::putnote::se{75}{18}::idou0,0.8
-%[8]::putnote::se{75}{18}::idou4,0.8
+%[1]::putnote::se{85}{18}::idou0,0.8
+%[2]::putnote::se{85}{18}::idou0,0.8
+%[3]::putnote::se{85}{18}::idou2,0.8
+%[4]::putnote::se{85}{18}::idou0,0.8
+%[5]::putnote::se{85}{18}::idou3,0.8
+%[6]::putnote::se{85}{18}::idou0,0.8
+%[7]::putnote::se{85}{18}::idou4,0.8
 end
 
-カッコ内の定数を変えたときのグラフをかこう．
+カッコ内の定数を変えたときのグラフをかこう
 
-enumerate::[(1)]
-item::$y=ax^2$（定数$a$）\vspace{-2mm}
-%[2,-]::item::[]　{\color{blue}開き(増え方)が変わる}\vspace{-2mm}
-%[3,-]::item::$y=ax^2+c$（定数$c$）\vspace{-2mm}
-%[4,-]::item::[]　{\color{blue}縦方向に$c$だけ平行移動}\vspace{-2mm}
-%[5,-]::item::$y=a(x-b)^2$（定数$b$）\vspace{-2mm}
-%[6,-]::item::[]　{\color{blue}横方向に$b$だけ平行移動}\vspace{-2mm}
-%[7,-]::item::$y=a(x-b)^2+c$（定数$b,\ c$）\vspace{-2mm}
-%[8,-]::item::[]　{\color{blue}頂点の座標は　$(b,\ c)$}
-end
+%[2,-]::enumerate::[(1)]
+%[2,-]::item::$y=x^2+c$（定数$c$）\vspace{-2mm}
+%[3,-]::item::[]　{\color{blue}縦方向に$c$だけ平行移動}\vspace{-2mm}
+%[4,-]::item::$y=(x-b)^2$（定数$b$）\vspace{-2mm}
+%[5,-]::item::[]　{\color{blue}横方向に$b$だけ平行移動}\vspace{-2mm}
+%[6,-]::item::$y=(x-b)^2+c$（定数$b,\ c$）\vspace{-2mm}
+%[7,-]::item::[]　{\color{blue}頂点の座標は　$(b,\ c)$}
+%[7,-]::item::[課題]\monban $y=ax^2$は$y=x^2$からどう変わるか
+%[2,-]::end
+
 
 %%%%%%%%%%%%
 new::課題　2次関数のグラフ
@@ -214,13 +213,12 @@ new::課題　2次関数のグラフ
 
 \seteda{90}
 enumerate::[(1)]
-item::[課題]\monban 「2.関数のグラフ」を用いて，次の2次関数のグラフをかけ．
+item::[課題]\monban 「2関数のグラフ」を用いて，次の2次関数のグラフをかけ．
 また，$y=x^2$のグラフをどのように移動(変形)したかを答えよ．\\
-\eda{$y=2x^2$}\\
 \eda{$y=x^2+1$}\\
 \eda{$y=(x-3)^2$}\\
 \eda{$y=(x+1)^2$}\\
-%%\eda{$y=-(x-2)^2$}
+\eda{$y=2x^2$}
 end
 
 %%%%%%%%%%%%
@@ -277,7 +275,7 @@ item::$x^2-a^2=(x+a)(x-a)$\\
 %[3,-]::$=(x+3)(x-3)$
 %[4,-]::item::$x^2+2ax+a^2=(x+a)^2$\\
 %[4,-]::\hspace*{2zw}$x^2+4x+4$
-%[5,-]::$=x^2+2\cdot 2+2^2$
+%[5,-]::$=x^2+2\cdot 2+2^2x$
 %[6,-]::$=(x+2)^2$
 %[7,-]::item::$x^2+(a+b)x+ab=(x+a)(x+b)$\\
 %[8,-]::\hspace*{2zw}$x^2+5x+6$
@@ -387,7 +385,7 @@ end
 
 %%%%%%%%%%%%
 new::解の公式
-%repeat=5
+%repeat=4
 \slidepage
 
 itemize
@@ -396,9 +394,20 @@ item::2次方程式$ax^2+bx+c=0$の解は\vspace{1mm}\\
 %[2,-]::item::[]例）$2x^2-5x+1=0$\\
 %[3,-]::\hspace*{3zw}$x=\bunsuu{5\pm \sqrt{5^2-4\cdot 2\cdot1}}{2\cdot 2}$
 %[4,-]::$=\bunsuu{5\pm \sqrt{17}}{4}$\vspace{-2mm}
-%[5,-]::item::[課題] \monban $ax^2+bx+c=0$より $x^2+\dfrac{b}{a}x+\dfrac{c}{a}=0$\\
-%[5,-]::　これを用いて上の公式を導け
 end
 
+%%%%%%%%%%%%
+new::解の公式の導出
+%%repeat=4
+\slidepage
 
-
+itemize
+item::[課題] \monban $ax^2+bx+c=0\Longleftrightarrow x^2+\bunsuu{b}{a}x+\bunsuu{c}{a}=0$
+item::$x^2+\bunsuu{b}{a}x=\Bigl(x+\bunsuu{b}{2a}\Bigl)^2-\hakoa{[1]}$\vspace{-2mm}
+item::$x^2+\bunsuu{b}{a}x+\bunsuu{c}{a}
+=\Bigl(x+\bunsuu{b}{2a}\Bigl)^2-\hakoa{[1]}+\bunsuu{c}{a}=0$\vspace{-2mm}
+item::$\Bigl(x+\bunsuu{b}{2a}\Bigl)^2=\hakoa{[1]}-\bunsuu{c}{a}
+=\bunsuu{\hakoa{　[2]　}}{4a^2}$\vspace{-2mm}
+item::$x+\bunsuu{b}{2a}=\pm\bunsuu{\hakoa{　[3]　}}{2a}
+$から$x=\bunsuu{-b\pm \hakoa{　[3]　}}{2a}$
+end

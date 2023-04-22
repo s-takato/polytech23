@@ -1,0 +1,17 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) c1:0-0
+(%i7) c2:[0,0]-[0,0]
+(%i8) c3:2-2
+(%i9) disp(c1)
+0
+
+(%i10) disp(c2)
+[0,0]
+
+(%i11) disp(c3)
+0
+
+(%i12) closefile()

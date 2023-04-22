@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  20 APR 2023 17:37
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  22 APR 2023 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,65 +549,68 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 5.77332pt on input line 41.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 4.8111pt on input line 41.
-) [4] [4] (./fig/graphpaper1.tex)
+) [4] (./fig/table1aans.tex) [4]
 (./fig/graphpaper1.tex) (./fig/graphpaper1.tex) (./fig/graphpaper1.tex)
-[5] (./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
-(./fig/table1b.tex) (./fig/graphpaper2.tex) (./fig/graphpaper2.tex)
-(./fig/graphpaper2.tex) (./fig/graphpaper2.tex) [5] (./fig/table1b.tex)
-(./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
-(./fig/graphpaper3.tex) (./fig/graphpaper3.tex) (./fig/graphpaper3.tex)
-(./fig/graphpaper3.tex) [5] (./fig/table1b.tex) (./fig/table1b.tex)
+(./fig/graphpaper1.tex) [5] (./fig/graphpaper1.tex) (./fig/graphpaper1.tex)
+(./fig/graphpaper1.tex) (./fig/graphpaper1.tex) (./fig/table1b.tex)
+(./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex) [5]
+(./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
+(./fig/graphpaper2.tex) (./fig/graphpaper2.tex) (./fig/graphpaper2.tex)
+(./fig/graphpaper2.tex) [5] (./fig/table1b.tex) (./fig/table1b.tex)
 (./fig/table1b.tex) (./fig/table1b.tex) (./fig/graphpaper3.tex)
 (./fig/graphpaper3.tex) (./fig/graphpaper3.tex) (./fig/graphpaper3.tex)
 [5] (./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
 (./fig/table1b.tex) (./fig/graphpaper3.tex) (./fig/graphpaper3.tex)
-(./fig/graphpaper3.tex) (./fig/graphpaper3.tex) [5] [6] [7]
+(./fig/graphpaper3.tex) (./fig/graphpaper3.tex) [5] (./fig/table1b.tex)
+(./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
+(./fig/graphpaper3.tex) (./fig/graphpaper3.tex) (./fig/graphpaper3.tex)
+(./fig/graphpaper3.tex) [5] [6] [7] (./fig/parabola1.tex) (./fig/parabola1.tex)
+(./fig/parabola1.tex) (./fig/parabola1.tex) [7] (./fig/parabola1.tex)
+(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
 (./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
 (./fig/parabola1.tex) [7] (./fig/parabola1.tex) (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola1.tex) [7] (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex) [7]
+(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1b.tex)
+(./fig/parabola1b.tex) (./fig/parabola1b.tex) (./fig/parabola1b.tex) [7]
 (./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
-(./fig/parabola1.tex) [7] (./fig/parabola1.tex) (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola1.tex) [7] (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex) [7]
+(./fig/parabola1.tex) (./fig/parabola1b.tex) (./fig/parabola1b.tex)
+(./fig/parabola1b.tex) (./fig/parabola1b.tex) [7] (./fig/parabola1.tex)
 (./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola2.tex) (./fig/parabola2.tex)
-(./fig/parabola2.tex) (./fig/parabola2.tex) [7] (./fig/parabola1.tex)
-(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
-(./fig/parabola2.tex) (./fig/parabola2.tex) (./fig/parabola2.tex)
-(./fig/parabola2.tex) [7] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
-(./fig/idou0.tex) [8] (./fig/idou1.tex) (./fig/idou1.tex) (./fig/idou1.tex)
-(./fig/idou1.tex) [8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
-(./fig/idou0.tex) [8] (./fig/idou2.tex) (./fig/idou2.tex) (./fig/idou2.tex)
-(./fig/idou2.tex) [8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
-(./fig/idou0.tex) [8] (./fig/idou3.tex) (./fig/idou3.tex) (./fig/idou3.tex)
-(./fig/idou3.tex) [8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
-(./fig/idou0.tex) [8] (./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex)
-(./fig/idou4.tex) [8] [9] [10] [10] [10] [10] [10] [10] [10] [10] [10]
-(./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex)
-[10] [11] [12] [13] [13] [13] [13] [13] [13] [13] [13] [13] [13] [13] [14]
-[14] [14] [14] [14] [15] [15] [15] [15] [15] [16] [16] [16] [16] [16] [16]
-[16] [16] [16] [17] [18]
+(./fig/parabola1b.tex) (./fig/parabola1b.tex) (./fig/parabola1b.tex)
+(./fig/parabola1b.tex) [7] (./fig/parabola1.tex) (./fig/parabola1.tex)
+(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1b.tex)
+(./fig/parabola1b.tex) (./fig/parabola1b.tex) (./fig/parabola1b.tex) [7]
+(./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
+[8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
+[8] (./fig/idou2.tex) (./fig/idou2.tex) (./fig/idou2.tex) (./fig/idou2.tex)
+[8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
+[8] (./fig/idou3.tex) (./fig/idou3.tex) (./fig/idou3.tex) (./fig/idou3.tex)
+[8] (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex) (./fig/idou0.tex)
+[8] (./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex)
+[8] [9] [10] [10] [10] [10] [10] [10] [10] [10] [10] (./fig/idou6.tex)
+(./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex) [10] [11] [12] [13]
+[13] [13] [13] [13] [13] [13] [13] [13] [13] [13] [14] [14] [14] [14] [14]
+[15] [15] [15] [15] [15] [16] [16] [16] [16] [16] [16] [16] [16] [16] [17]
+[18]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1538.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1425.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 1538.
+(Font)              scaled to size 9.6222pt on input line 1425.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1538.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1425.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 1538.
- [18] [18] [18] [18] [18] [18] [18] [18] [19] [19]
-[19] [19] [19] [19] [20] [20] [20] [20] [20] (./presen23102.aux)
+(Font)              scaled to size 9.6222pt on input line 1425.
+ [18] [18] [18] [18] [18] [18] [18] [18] [19] [19] [19] [19] [19] [19]
+[20] [20] [20] [20] [21] (./presen23102.aux)
 Package rerunfilecheck Info: File `presen23102.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11874 strings out of 480222
- 178514 string characters out of 5892594
- 647252 words of memory out of 5000000
- 29759 multiletter control sequences out of 15000+600000
+ 11889 strings out of 480222
+ 178864 string characters out of 5892594
+ 849126 words of memory out of 5000000
+ 29757 multiletter control sequences out of 15000+600000
  483305 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  91i,11n,93p,333b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presen23102.dvi (96 pages, 1780260 bytes).
+Output written on presen23102.dvi (94 pages, 2984860 bytes).
