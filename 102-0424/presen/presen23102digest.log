@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  24 APR 2023 15:54
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  24 APR 2023 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -444,8 +444,7 @@ File: l3backend-dvips.def 2022-02-07 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count317
 \g__pdf_backend_link_int=\count318
 \g__pdf_backend_link_sf_int=\count319
-)
-No file presen23102digest.aux.
+) (./presen23102digest.aux)
 \openout1 = `presen23102digest.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -471,6 +470,7 @@ LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 Package hyperref Info: Link coloring ON on input line 61.
+
 (/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -486,12 +486,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
 LaTeX Info: Redefining \nameref on input line 61.
+ (./presen23102digest.out) (./presen23102digest.out)
 \@outlinefile=\write3
 \openout3 = `presen23102digest.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 (./fig/slide0.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
@@ -530,270 +528,35 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 126.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 8.65997pt on input line 126.
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 126.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 126.
-
-
-LaTeX Warning: Reference `pageend' on page 1 undefined on input line 126.
-
-
-LaTeX Warning: Reference `pageend' on page 1 undefined on input line 126.
-
-
-LaTeX Warning: Reference `pageend' on page 1 undefined on input line 126.
-
-
-LaTeX Warning: Reference `pageend' on page 1 undefined on input line 126.
-
-[1]
-
-LaTeX Warning: Reference `pageend' on page 2 undefined on input line 136.
-
-
-LaTeX Warning: Reference `pageend' on page 2 undefined on input line 136.
-
-
-LaTeX Warning: Reference `pageend' on page 2 undefined on input line 136.
-
-
-LaTeX Warning: Reference `pageend' on page 2 undefined on input line 136.
-
+ [1]
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 9.6222pt on input line 138.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 6.73553pt on input line 138.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 138
 .
-(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 138
 .
-
-(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[2]
-
-LaTeX Warning: Reference `pageend' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Reference `pageend' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Reference `pageend' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Reference `pageend' on page 3 undefined on input line 153.
-
-[3]
-
-LaTeX Warning: Reference `pageend' on page 4 undefined on input line 170.
-
-
-LaTeX Warning: Reference `pageend' on page 4 undefined on input line 170.
-
-
-LaTeX Warning: Reference `pageend' on page 4 undefined on input line 170.
-
-
-LaTeX Warning: Reference `pageend' on page 4 undefined on input line 170.
-
-(./fig/table1aans.tex
+[2] [3] (./fig/table1aans.tex
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 5.77332pt on input line 41.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 4.8111pt on input line 41.
-) [4]
-
-LaTeX Warning: Reference `pageend' on page 5 undefined on input line 187.
-
-
-LaTeX Warning: Reference `pageend' on page 5 undefined on input line 187.
-
-
-LaTeX Warning: Reference `pageend' on page 5 undefined on input line 187.
-
-
-LaTeX Warning: Reference `pageend' on page 5 undefined on input line 187.
-
-(./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex) (./fig/table1b.tex)
+) [4] (./fig/table1b.tex) (./fig/table1b.tex)
+(./fig/table1b.tex) (./fig/table1b.tex) (./fig/graphpaper3.tex)
 (./fig/graphpaper3.tex) (./fig/graphpaper3.tex) (./fig/graphpaper3.tex)
-(./fig/graphpaper3.tex) [5]
-
-LaTeX Warning: Reference `pageend' on page 6 undefined on input line 204.
-
-
-LaTeX Warning: Reference `pageend' on page 6 undefined on input line 204.
-
-
-LaTeX Warning: Reference `pageend' on page 6 undefined on input line 204.
-
-
-LaTeX Warning: Reference `pageend' on page 6 undefined on input line 204.
-
-[6]
-
-LaTeX Warning: Reference `pageend' on page 7 undefined on input line 224.
-
-
-LaTeX Warning: Reference `pageend' on page 7 undefined on input line 224.
-
-
-LaTeX Warning: Reference `pageend' on page 7 undefined on input line 224.
-
-
-LaTeX Warning: Reference `pageend' on page 7 undefined on input line 224.
-
-(./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
+[5] [6] (./fig/parabola1.tex) (./fig/parabola1.tex) (./fig/parabola1.tex)
 (./fig/parabola1.tex) (./fig/parabola1b.tex) (./fig/parabola1b.tex)
-(./fig/parabola1b.tex) (./fig/parabola1b.tex) [7]
-
-LaTeX Warning: Reference `pageend' on page 8 undefined on input line 252.
-
-
-LaTeX Warning: Reference `pageend' on page 8 undefined on input line 252.
-
-
-LaTeX Warning: Reference `pageend' on page 8 undefined on input line 252.
-
-
-LaTeX Warning: Reference `pageend' on page 8 undefined on input line 252.
-
-(./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex)
-[8]
-
-LaTeX Warning: Reference `pageend' on page 9 undefined on input line 281.
-
-
-LaTeX Warning: Reference `pageend' on page 9 undefined on input line 281.
-
-
-LaTeX Warning: Reference `pageend' on page 9 undefined on input line 281.
-
-
-LaTeX Warning: Reference `pageend' on page 9 undefined on input line 281.
-
-[9]
-
-LaTeX Warning: Reference `pageend' on page 10 undefined on input line 300.
-
-
-LaTeX Warning: Reference `pageend' on page 10 undefined on input line 300.
-
-
-LaTeX Warning: Reference `pageend' on page 10 undefined on input line 300.
-
-
-LaTeX Warning: Reference `pageend' on page 10 undefined on input line 300.
-
-(./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex)
-[10]
-
-LaTeX Warning: Reference `pageend' on page 11 undefined on input line 327.
-
-
-LaTeX Warning: Reference `pageend' on page 11 undefined on input line 327.
-
-
-LaTeX Warning: Reference `pageend' on page 11 undefined on input line 327.
-
-
-LaTeX Warning: Reference `pageend' on page 11 undefined on input line 327.
-
-[11]
-
-LaTeX Warning: Reference `pageend' on page 12 undefined on input line 343.
-
-
-LaTeX Warning: Reference `pageend' on page 12 undefined on input line 343.
-
-
-LaTeX Warning: Reference `pageend' on page 12 undefined on input line 343.
-
-
-LaTeX Warning: Reference `pageend' on page 12 undefined on input line 343.
-
-[12]
-
-LaTeX Warning: Reference `pageend' on page 13 undefined on input line 353.
-
-
-LaTeX Warning: Reference `pageend' on page 13 undefined on input line 353.
-
-
-LaTeX Warning: Reference `pageend' on page 13 undefined on input line 353.
-
-
-LaTeX Warning: Reference `pageend' on page 13 undefined on input line 353.
-
-[13]
-
-LaTeX Warning: Reference `pageend' on page 14 undefined on input line 377.
-
-
-LaTeX Warning: Reference `pageend' on page 14 undefined on input line 377.
-
-
-LaTeX Warning: Reference `pageend' on page 14 undefined on input line 377.
-
-
-LaTeX Warning: Reference `pageend' on page 14 undefined on input line 377.
-
-[14]
-
-LaTeX Warning: Reference `pageend' on page 15 undefined on input line 396.
-
-
-LaTeX Warning: Reference `pageend' on page 15 undefined on input line 396.
-
-
-LaTeX Warning: Reference `pageend' on page 15 undefined on input line 396.
-
-
-LaTeX Warning: Reference `pageend' on page 15 undefined on input line 396.
-
-[15]
-
-LaTeX Warning: Reference `pageend' on page 16 undefined on input line 414.
-
-
-LaTeX Warning: Reference `pageend' on page 16 undefined on input line 414.
-
-
-LaTeX Warning: Reference `pageend' on page 16 undefined on input line 414.
-
-
-LaTeX Warning: Reference `pageend' on page 16 undefined on input line 414.
-
-[16]
-
-LaTeX Warning: Reference `pageend' on page 17 undefined on input line 435.
-
-
-LaTeX Warning: Reference `pageend' on page 17 undefined on input line 435.
-
-
-LaTeX Warning: Reference `pageend' on page 17 undefined on input line 435.
-
-
-LaTeX Warning: Reference `pageend' on page 17 undefined on input line 435.
-
-[17]
-
-LaTeX Warning: Reference `pageend' on page 18 undefined on input line 454.
-
-
-LaTeX Warning: Reference `pageend' on page 18 undefined on input line 454.
-
-
-LaTeX Warning: Reference `pageend' on page 18 undefined on input line 454.
-
-
-LaTeX Warning: Reference `pageend' on page 18 undefined on input line 454.
-
+(./fig/parabola1b.tex) (./fig/parabola1b.tex) [7] (./fig/idou4.tex)
+(./fig/idou4.tex) (./fig/idou4.tex) (./fig/idou4.tex) [8] [9] (./fig/idou6.tex)
+(./fig/idou6.tex) (./fig/idou6.tex) (./fig/idou6.tex) [10] [11] [12] [13]
+[14] [15] [16] [17]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT2/gt/m/n' tried instead on input line 456.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
@@ -802,68 +565,17 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 456.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 9.6222pt on input line 456.
-[18]
-
-LaTeX Warning: Reference `pageend' on page 19 undefined on input line 479.
-
-
-LaTeX Warning: Reference `pageend' on page 19 undefined on input line 479.
-
-
-LaTeX Warning: Reference `pageend' on page 19 undefined on input line 479.
-
-
-LaTeX Warning: Reference `pageend' on page 19 undefined on input line 479.
-
-[19]
-
-LaTeX Warning: Reference `pageend' on page 20 undefined on input line 497.
-
-
-LaTeX Warning: Reference `pageend' on page 20 undefined on input line 497.
-
-
-LaTeX Warning: Reference `pageend' on page 20 undefined on input line 497.
-
-
-LaTeX Warning: Reference `pageend' on page 20 undefined on input line 497.
-
-[20]
-
-LaTeX Warning: Reference `pageend' on page 21 undefined on input line 513.
-
-
-LaTeX Warning: Reference `pageend' on page 21 undefined on input line 513.
-
-
-LaTeX Warning: Reference `pageend' on page 21 undefined on input line 513.
-
-
-LaTeX Warning: Reference `pageend' on page 21 undefined on input line 513.
-
-[21] (./presen23102digest.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `presen23102digest.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `presen23102digest.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+ [18] [19] [20] [21] (./presen23102digest.aux)
+Package rerunfilecheck Info: File `presen23102digest.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11678 strings out of 480222
- 175282 string characters out of 5892594
- 846850 words of memory out of 5000000
- 29750 multiletter control sequences out of 15000+600000
- 483891 words of font info for 96 fonts, out of 8000000 for 9000
+ 11680 strings out of 480222
+ 175373 string characters out of 5892594
+ 846935 words of memory out of 5000000
+ 29747 multiletter control sequences out of 15000+600000
+ 483305 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  91i,11n,93p,339b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presen23102digest.dvi (22 pages, 596900 bytes).
+Output written on presen23102digest.dvi (22 pages, 599320 bytes).
