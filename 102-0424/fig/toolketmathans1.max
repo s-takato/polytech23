@@ -2,17 +2,13 @@ writefile("/Users/takatoosetsuo/polytech23.git/102-0424/fig/toolketmathans1.txt"
 powerdisp:false$/*##*/
 display2d:false$/*##*/
 linel:1000$/*##*/
-q1i1:x^2+4*x+2$/*##*/
-q1i2:x^2+2*x-2$/*##*/
-q1i3:x^2-6*x+1$/*##*/
-q1i4:x^2-8*x+2$/*##*/
-q1o1:solve(q1i1=0,x)$/*##*/
-q1o2:solve(q1i2=0,x)$/*##*/
-q1o3:solve(q1i3=0,x)$/*##*/
-q1o4:solve(q1i4=0,x)$/*##*/
-disp(q1o1)$/*##*/
-disp(q1o2)$/*##*/
-disp(q1o3)$/*##*/
-disp(q1o4)$/*##*/
+c1:(-1)  -  (-1)$/*##*/
+c2:(0)  -  (0)$/*##*/
+c3:(3)  -  (3)$/*##*/
+c4:(a^2+2*a)  -  (a^2+2*a)$/*##*/
+disp(c1)$/*##*/
+disp(c2)$/*##*/
+disp(c3)$/*##*/
+disp(c4)$/*##*/
 closefile()$/*##*/
 quit()$/*##*/
