@@ -1,0 +1,7 @@
+quline="Q11::ax^2+bx+c=0の解の公式の導出で[1][2][3]を埋めよ	[1]:: x^2+fr(b,a)x=(x+fr(b,2a))^2-[1]	[2]:: (x+fr(b,2a))^2=[1]-fr(c,a)=fr([2],4a^2)	[3]:: x=fr(-b(pm)[3],2a)";
+shline="Q11---	[1]  	[2]  	[3]  ";
+caline="Q11::	[1]::fr(b^2,4a^2)	[2]::b^2-4ac	[3]::sq(b^2-4ac)";
+mrkline="0	2	2	2";
+mxscline="0	1	1	1";
+sqline="01YU	2	2	2	2CR02HU	2	2	2	2CR03KU	2	2	2	2CR04AK	2	2	2	2CR05AK	2	2	2	2CR06TK	2	2	2	2CR07MS	2	2	2	2CR08TT	2	2	2	2CR09TN	2	2	2	2CR10AY	2	2	2	2CR11HW	2	2	2	2";
+ansline="1	01YU	042416:6:11	Q11---	[1]  fr(b^(2),4a^(2))	[2]  b^(2)-4ac	[3]  sq(b^(2)-4ac)CR2	02HU	未提出CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	042416:18:41	Q11---	[1]  fr(b^(2),4a^(2))	[2]  b^(2)-4ac	[3]  sq((b)^(2)-4ac)CR6	06TK	未提出CR7	07MS	未提出CR8	08TT	未提出CR9	09TN	042415:59:2	Q11---	[1]  fr(b^2,4a)	[2]  b^2-4ac	[3]  sq(b^2-4ac)CR10	10AY	未提出CR11	11HW	未提出";

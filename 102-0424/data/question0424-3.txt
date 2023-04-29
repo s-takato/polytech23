@@ -10,9 +10,9 @@ Sheet
 Ans
 [1] 0
 [2] 0,0
-[3] 2
-//Mxcalc
+[3] 1
+Mxcalc
 [1] 0
 [2] 0,0
-[3] 2
+[3] 1
 return i1::i2::i3

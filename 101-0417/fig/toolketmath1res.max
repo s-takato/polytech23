@@ -1,9 +1,0 @@
-writefile("/Users/takatoosetsuo/polytech23.git/101-0417/fig/toolketmath1res.txt")$/*##*/
-powerdisp:false$/*##*/
-display2d:false$/*##*/
-linel:1000$/*##*/
-dtLL:[[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns],[no,ns,ns,ns,ns,no,ns,ns,ns,ns]]$/*##*/
-res:ratsimp(dtLL)$/*##*/
-disp(res)$/*##*/
-closefile()$/*##*/
-quit()$/*##*/
