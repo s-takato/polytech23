@@ -1,0 +1,14 @@
+Q
+sin(!{\theta})=fr(2,3)とする．cos(!{\theta})を求めよ．
+[1] sin(!{\theta})=fr(2,3)，{\theta}が鋭角のとき
+[2] sin(!{\theta})=fr(2,3)，{\theta}が鈍角のとき
+Sheet
+[1]=  ::2
+[2]=  ::2
+Ans
+[1] fr(sq(5),3)
+[2] -fr(sq(5),3)
+Mxcalc
+[1] sq(1-fr(2,3)^2)
+[2] -sq(1-fr(2,3)^2)
+return i1::i2

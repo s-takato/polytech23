@@ -1,0 +1,7 @@
+LinkL=[
+  ["img src","data/loaded/kainokousiki.png","style="+Dqq("width:700px")]
+];
+
+LinkL=[
+  ["https://s-takato.github.io/ketcindyorg/offline/s0611generalanglejsoffL.html","一般角"]
+ ];

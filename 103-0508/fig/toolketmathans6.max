@@ -1,0 +1,10 @@
+writefile("/Users/takatoosetsuo/polytech23.git/103-0508/fig/toolketmathans6.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:sqrt(1-((2)/(3))^2)$/*##*/
+q1i2:-sqrt(1-((2)/(3))^2)$/*##*/
+disp(q1i1)$/*##*/
+disp(q1i2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

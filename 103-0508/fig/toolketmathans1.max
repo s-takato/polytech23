@@ -1,0 +1,12 @@
+writefile("/Users/takatoosetsuo/polytech23.git/103-0508/fig/toolketmathans1.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:x^2-2*x-3=0$/*##*/
+q1i2:2*x^2+7*x-4=0$/*##*/
+q1o1:solve(q1i1,x)$/*##*/
+q1o2:solve(q1i2,x)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

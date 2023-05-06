@@ -1,0 +1,25 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:2*x^2+2*x-3 = 0
+(%i7) q1i2:3*x^2+5*x+1 = 0
+(%i8) q1i3:2*x^2+x-2 = 0
+(%i9) q1i4:x^2+3*x+1 = 0
+(%i10) q1o1:solve(q1i1,x)
+(%i11) q1o2:solve(q1i2,x)
+(%i12) q1o3:solve(q1i3,x)
+(%i13) q1o4:solve(q1i4,x)
+(%i14) disp(q1o1)
+[x = -(sqrt(7)+1)/2,x = (sqrt(7)-1)/2]
+
+(%i15) disp(q1o2)
+[x = -(sqrt(13)+5)/6,x = (sqrt(13)-5)/6]
+
+(%i16) disp(q1o3)
+[x = -(sqrt(17)+1)/4,x = (sqrt(17)-1)/4]
+
+(%i17) disp(q1o4)
+[x = -(sqrt(5)+3)/2,x = (sqrt(5)-3)/2]
+
+(%i18) closefile()

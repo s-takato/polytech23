@@ -1,0 +1,8 @@
+%%Title: cos0.pdf
+%%Creator: extractbb 20210318
+%%BoundingBox: 0 0 655 503
+%%HiResBoundingBox: 0.000000 0.000000 655.000000 503.000000
+%%PDFVersion: 1.4
+%%Pages: 1
+%%CreationDate: Fri May  5 07:27:49 2023
+

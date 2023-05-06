@@ -1,0 +1,3 @@
+Fhead="0508-3";
+drawimage(T1.xy,Fhead+".png",scale->2);
+drawtext(T4.xy,text(T1.xy),scale->16);

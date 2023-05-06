@@ -1,0 +1,10 @@
+[[x = 3,x = -1],[x = -4,x = 1/2]]
+
+Script
+q1i1:x^2-2*x-3=0
+q1i2:2*x^2+7*x-4=0
+q1o1:solve(q1i1,x)
+q1o2:solve(q1i2,x)
+q1o1::q1o2
+end
+

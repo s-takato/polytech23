@@ -1,0 +1,21 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:(30*%pi)/180
+(%i7) q1i2:(45*%pi)/180
+(%i8) q1i3:(%pi*180)/%pi
+(%i9) q1i4:(((2*%pi)/3)*180)/%pi
+(%i10) disp(q1i1)
+%pi/6
+
+(%i11) disp(q1i2)
+%pi/4
+
+(%i12) disp(q1i3)
+180
+
+(%i13) disp(q1i4)
+120
+
+(%i14) closefile()

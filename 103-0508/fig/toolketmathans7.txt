@@ -1,0 +1,25 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:400
+(%i7) q1i2:600
+(%i8) q1i3:-500
+(%i9) q1i4:-700
+(%i10) q1o1:divide(q1i1+3600,360)
+(%i11) q1o2:divide(q1i2+3600,360)
+(%i12) q1o3:divide(q1i3+3600,360)
+(%i13) q1o4:divide(q1i4+3600,360)
+(%i14) disp(q1o1[2])
+40
+
+(%i15) disp(q1o2[2])
+240
+
+(%i16) disp(q1o3[2])
+220
+
+(%i17) disp(q1o4[2])
+20
+
+(%i18) closefile()

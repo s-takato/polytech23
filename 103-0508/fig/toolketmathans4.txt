@@ -1,0 +1,37 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:90-59
+(%i7) q1i2:sqrt(4^2+3^2)
+(%i8) q1i3:3/4
+(%i9) q1o4:4/q1i2
+(%i10) q1o5:3/q1i2
+(%i11) q1o6:4/3
+(%i12) q1o7:3/q1i2
+(%i13) q1o8:4/q1i2
+(%i14) disp(q1i1)
+31
+
+(%i15) disp(q1i2)
+5
+
+(%i16) disp(q1i3)
+3/4
+
+(%i17) disp(q1o4)
+4/5
+
+(%i18) disp(q1o5)
+3/5
+
+(%i19) disp(q1o6)
+4/3
+
+(%i20) disp(q1o7)
+3/5
+
+(%i21) disp(q1o8)
+4/5
+
+(%i22) closefile()

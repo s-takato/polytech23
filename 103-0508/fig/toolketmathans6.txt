@@ -1,0 +1,13 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:sqrt(1-(2/3)^2)
+(%i7) q1i2:-sqrt(1-(2/3)^2)
+(%i8) disp(q1i1)
+sqrt(5)/3
+
+(%i9) disp(q1i2)
+-sqrt(5)/3
+
+(%i10) closefile()

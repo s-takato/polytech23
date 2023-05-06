@@ -1,0 +1,9 @@
+[sqrt(3)/2,1/sqrt(2),sqrt(3)]
+
+Script
+q1i1:cos(30*%pi/180)
+q1i2:sin(45*%pi/180)
+q1i3:tan(60*%pi/180)
+q1i1::q1i2::q1i3
+end
+

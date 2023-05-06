@@ -1,0 +1,14 @@
+writefile("/Users/takatoosetsuo/polytech23.git/103-0508/fig/toolketmathans9.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:30*%pi/180$/*##*/
+q1i2:45*%pi/180$/*##*/
+q1i3:%pi*180/%pi$/*##*/
+q1i4:((2*%pi)/(3))*180/%pi$/*##*/
+disp(q1i1)$/*##*/
+disp(q1i2)$/*##*/
+disp(q1i3)$/*##*/
+disp(q1i4)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

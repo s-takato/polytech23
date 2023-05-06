@@ -1,0 +1,17 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:cos(((-30)*%pi)/180)
+(%i7) q1i2:sin(((-30)*%pi)/180)
+(%i8) q1i3:tan(((-30)*%pi)/180)
+(%i9) disp(q1i1)
+sqrt(3)/2
+
+(%i10) disp(q1i2)
+-1/2
+
+(%i11) disp(q1i3)
+-1/sqrt(3)
+
+(%i12) closefile()

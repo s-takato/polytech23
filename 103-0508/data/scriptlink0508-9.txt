@@ -1,0 +1,3 @@
+LinkL=[
+  ["https://s-takato.github.io/ketcindyorg/offline/s0611generalanglejsoffL.html","一般角"]
+ ];
