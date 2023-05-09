@@ -1,0 +1,11 @@
+0508-8の結果
+11 11HW 0508 15:16:49
+Q08 sin(!{\theta})=fr(2,3)とする．cos(!{\theta})を求めよ．
+[1]  sin(!{\theta})=fr(2,3)，{\theta}が鋭角のとき
+　正解 fr(sq(5),3)
+　答え cos({\theta}(pm)fr(sq(5),3))
+　得点 0
+[2]  sin(!{\theta})=fr(2,3)，{\theta}が鈍角のとき
+　正解 -fr(sq(5),3)
+　答え cos({\theta}(pm)fr(sq(5),3))
+　得点 0

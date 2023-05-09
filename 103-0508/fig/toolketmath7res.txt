@@ -1,0 +1,10 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) dtLL:[[1,no,sqrt(5)/3-sqrt(5)/3,(-sqrt(5)/3)-(-sqrt(5)/3)],[2,no,sqrt(5)/3-sqrt(5)/3,c*o*s*theta(sqrt(5)/3)-(-sqrt(5)/3)],[3,no,(-sqrt(5)/3)-sqrt(5)/3,sqrt(5)/3-(-sqrt(5)/3)],[4,no,(p*m)*(sqrt(5)/3)-sqrt(5)/3,(p*m)*(sqrt(13)/3)-(-sqrt(5)/3)],[5,no,sqrt(5)/3-sqrt(5)/3,(-sqrt(5)/3)-(-sqrt(5)/3)],[6,no,(-sqrt(5)/3)-sqrt(5)/3,sqrt(5)/3-(-sqrt(5)/3)],[7,no,sqrt(5)/3-sqrt(5)/3,(-sqrt(5))/3-(-sqrt(5)/3)],[8,no,sqrt(5)/3-sqrt(5)/3,(-sqrt(5)/9)-(-sqrt(5)/3)],[9,no,sqrt(5)/3-sqrt(5)/3,(-sqrt(5)/3)-(-sqrt(5)/3)],[10,no,c*o*s*theta(sqrt(5)/3)-sqrt(5)/3,(-sqrt(5)/3)-(-sqrt(5)/3)],[11,no,cos(theta(p*m)*(sqrt(5)/3))-sqrt(5)/3,cos(theta(p*m)*(sqrt(5)/3))-(-sqrt(5)/3)]]
+(%i7) res:ratsimp(dtLL)
+(%i8) disp(res)
+[[1,no,0,0],[2,no,0,(3*theta(sqrt(5)/3)*c*o*s+sqrt(5))/3],[3,no,-(2*sqrt(5))/3,(2*sqrt(5))/3],[4,no,(sqrt(5)*m*p-sqrt(5))/3,(sqrt(13)*m*p+sqrt(5))/3],[5,no,0,0],[6,no,-(2*sqrt(5))/3,(2*sqrt(5))/3],[7,no,0,0],[8,no,0,(2*sqrt(5))/9],[9,no,0,0],[10,no,(3*theta(sqrt(5)/3)*c*o*s-sqrt(5))/3,0],[11,no,(3*cos((sqrt(5)*theta(m*p))/3)-sqrt(5))/3,(3*cos((sqrt(5)*theta(m*p))/3)+sqrt(5))/3]]
+
+(%i9) closefile()
