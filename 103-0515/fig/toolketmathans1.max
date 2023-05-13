@@ -1,0 +1,16 @@
+writefile("/Users/takatoosetsuo/polytech23.git/103-0515/fig/toolketmathans1.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:sin(x-y)$/*##*/
+q1i2:cos(x+y)$/*##*/
+q1o1:trigexpand(q1i1)$/*##*/
+q1o1:ev(q1o1,[x=%pi/3,y=%pi/4])$/*##*/
+q1o1=ratsimp(q1o1)$/*##*/
+q1o2:trigexpand(q1i2)$/*##*/
+q1o2:ev(q1o2,[x=%pi/3,y=%pi/4])$/*##*/
+q1o2=ratsimp(q1o2)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

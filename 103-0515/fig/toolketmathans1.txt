@@ -1,0 +1,19 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:sin(x-y)
+(%i7) q1i2:cos(x+y)
+(%i8) q1o1:trigexpand(q1i1)
+(%i9) q1o1:ev(q1o1,[x = %pi/3,y = %pi/4])
+(%i10) q1o1 = ratsimp(q1o1)
+(%i11) q1o2:trigexpand(q1i2)
+(%i12) q1o2:ev(q1o2,[x = %pi/3,y = %pi/4])
+(%i13) q1o2 = ratsimp(q1o2)
+(%i14) disp(q1o1)
+sqrt(3)/2^(3/2)-1/2^(3/2)
+
+(%i15) disp(q1o2)
+1/2^(3/2)-sqrt(3)/2^(3/2)
+
+(%i16) closefile()

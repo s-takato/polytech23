@@ -1,0 +1,10 @@
+Q
+曲線上の点を動かしてみて答えよ
+[1] sin(-x)をsin(x)またはcos(x)で表せ
+[2] cos(-x)をsin(x)またはcos(x)で表せ
+Sheet
+[1]sin(-x)= ::2
+[2]cos(-x)=  ::2
+Ans
+[1] sin(-x)=-sin(x)
+[2] cos(-x)=cos(x)

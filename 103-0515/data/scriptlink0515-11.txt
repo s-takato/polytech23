@@ -1,0 +1,3 @@
+LinkL=[
+  ["https://s-takato.github.io/ketcindysample/edutools//offline/15sincosgraph","対称性"]
+ ];

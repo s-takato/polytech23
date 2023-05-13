@@ -1,0 +1,36 @@
+if(drawflg==1,
+  fL=Filelist(Dirpng);
+  fL=select(fL,indexof(#,".png")>0);
+  fL=select(fL,indexof(#,"-")>0);
+  out=Sortsel(fL,"");
+  res=Selectfile(out,"black");
+  fhead="";
+  fname="";
+  fscr="";
+  if((res_1>0)&(res_1<=length(out)),
+    fname=res_2;
+    fhead=replace(fname,".png","");
+    Putcell("",1,res_1,"l2",fhead,["Color=red"]);
+    fscr=fhead+"script.txt";
+    if(Scale==0,
+      if(isexists(Dirpng,fscr),
+        tmp=Readlines(Dirpng,fscr);
+        parse(tmp_2);
+        Putpoint("A1",pA1);
+        Putpoint("A2",pA2);
+        Putpoint("S",[Scale*6+6,S.y]);
+      );
+    );
+    Scale=(S.x-6)/6;
+    pA1=A1.xy;
+    pA2=A2.xy;
+    drawimage([pA1_1,pA2_2],fname,scale->Scale);
+  );
+  if(allflg==1,
+    Makescriptfile(fscr);
+    dispL=append(dispL,[fscr,"blue"]);
+    allflg=0;
+    Scale=0;
+    scriptflgi=0;
+  );
+);

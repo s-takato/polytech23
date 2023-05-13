@@ -1,0 +1,2 @@
+LinkL=[
+  ["https://s-takato.github.io/ketcindysample/edutools/offline/drawgraphv5","関数のグラフ

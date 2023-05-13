@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  11 MAY 2023 18:48
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  12 MAY 2023 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -602,13 +602,13 @@ ex) [7]
 ) [7] (./fig/presen10310305.tex) (./fig/presen10310305.tex)
 (./fig/presen10310305.tex) (./fig/presen10310305.tex) [7]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 764.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 765.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 764.
+(Font)              scaled to size 6.73553pt on input line 765.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 764.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 765.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 764.
+(Font)              scaled to size 6.73553pt on input line 765.
  (./fig/radian.tex)
 (./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
 (./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
@@ -639,41 +639,47 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex) [13]
 (./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
 (./fig/graphsin.tex) [13] (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) [13] [14] (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [15]
+(./fig/graphsin.tex) (./fig/graphsin.tex) [13] [14] [15] [15] [15] [15]
+[15] [15] [16] [16] [16] [16] [16] (./fig/graphcos.tex) (./fig/graphcos.tex)
+(./fig/graphcos.tex) (./fig/graphcos.tex) [17] (./fig/graphcos.tex)
+(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [17]
 (./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) [15] (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) [15] (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [15]
+(./fig/graphcos.tex) [17] (./fig/graphcos.tex) (./fig/graphcos.tex)
+(./fig/graphcos.tex) (./fig/graphcos.tex) [17] (./fig/graphcos.tex)
 (./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphsinadd.tex) (./fig/graphsinadd.tex)
-(./fig/graphsinadd.tex) (./fig/graphsinadd.tex) [15] [16] [16] [16] [16]
-[16] [16] [16] [16]
+(./fig/graphsinadd.tex) (./fig/graphsinadd.tex) (./fig/graphsinadd.tex)
+(./fig/graphsinadd.tex) [17]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1903.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1968.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 1903.
+(Font)              scaled to size 11.54663pt on input line 1968.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1903.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1968.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 1903.
+(Font)              scaled to size 11.54663pt on input line 1968.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 1903.
- [17] [18] [18] [19] [19] [19] [19] [19] [19] [19] [19]
-[19] [19] [19] [20] [20] [20] [20] (./fig/graphsin.tex) (./fig/graphsin.tex)
+(Font)              scaled to size 7.69775pt on input line 1968.
+ [18] [19] [19] [20] [20] [20] [20] [20] [20]
+[20] [20] [20] [20] [20] (./fig/graphsin.tex) (./fig/graphsin.tex)
 (./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphcos.tex)
 (./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [21]
+(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
+(./fig/graphsin.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
+(./fig/graphcos.tex) (./fig/graphcos.tex) [21] (./fig/graphsin.tex)
+(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
+(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
+(./fig/graphcos.tex) [21] [22] [22] [22] [22] [22] [22] [22] [22]
 (./presen23104.aux)
 Package rerunfilecheck Info: File `presen23104.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12169 strings out of 480222
- 184261 string characters out of 5892594
- 633721 words of memory out of 5000000
+ 12201 strings out of 480222
+ 184805 string characters out of 5892594
+ 633865 words of memory out of 5000000
  29779 multiletter control sequences out of 15000+600000
  486590 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  91i,12n,93p,333b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presen23104.dvi (102 pages, 2294168 bytes).
+Output written on presen23104.dvi (111 pages, 2479572 bytes).

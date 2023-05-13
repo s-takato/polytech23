@@ -164,7 +164,8 @@ item::[]\Ltab{20mm}{}\Ctab{15mm}{$\cos\theta$}\Ctab{15mm}{$\sin\theta$}\Ctab{15m
 %[5]::item::第3象限
 %[6,-]::item::第3象限\Ctab{15mm}{$-$}\Ctab{15mm}{$-$}\Ctab{15mm}{$+$}
 %[7,-]::item::第4象限
-%[8,-]::item::[課題]\monban
+%[8,-]::item::[課題]\monban 第4象限での符号を答えよ\seteda{40}\\
+%[8,-]::\eda{$\cos\theta$の符号}\eda{$\sin\theta$の符号}\eda{$\tan\theta$の符号}
 end
 
 %%%%%%%%%%%%
@@ -219,7 +220,7 @@ item::[]1つの角について，$x\text{度}=y$(ラジアン)とする
 %[3,-]::　　$x$度は$\bunsuu{\pi}{180}\times x$
 %[4,-]::item::[]$1$は$\bunsuu{180}{\pi}$度
 %[5,-]::　　$y$は$\bunsuu{180}{\pi}\times y$度
-%[6,-]::item::[課題]\monban 次の角を変換せよ(小数でよい)\seteda{30}\\
+%[6,-]::item::[課題]\monban 次の角を変換せよ(整数か$\pi$を含む分数で)\seteda{30}\\
 %[6,-]::\eda{$3.1416$}\eda{$10\degree$}\eda{$1$}\eda{$60\degree$}
 end
 
@@ -238,7 +239,7 @@ item::一般角を$x$とおく．
 %[3,-]::item::これを正弦関数という(三角関数の１つ)．
 %[4,-]::item::$y=\sin x$のグラフを正弦曲線という．
 %[5,-]::item::{\color{red}$x$はラジアンとする．}\vspace{-2mm}
-%[6,-]::item::[]　横軸を度とすると
+%[6,-]::item::[]　横軸を度とすると下図になってしまう
 end
 
 %%%%%%%%%%%%
@@ -302,10 +303,10 @@ end
 \vspace{30mm}
 
 %[2,-]::itemize
-%[2]::item::{\color{red}周期}は
-%[3,-]::item::{\color{red}周期}は$2\pi$（$2\pi$で元に戻る）
-%[4]::item::{\color{red}振幅}は
-%[5,-]::item::{\color{red}振幅}は$1$（値の範囲は$-1$から$1$）
+%[2]::item::{\color{red}振幅}は
+%[3,-]::item::{\color{red}振幅}は$1$（値の範囲は$-1$から$1$）
+%[4]::item::{\color{red}周期}は
+%[5,-]::item::{\color{red}周期}は$2\pi$（$2\pi$で元に戻る）
 %[6,-]::item::原点対称
 %[2,-]::end
 
@@ -315,17 +316,54 @@ new::正弦曲線(課題)
 %repeat=1
 \slidepage
 
+\down
+
+「関数のグラフ」でグラフをかいてみよう．
+
 itemize
-item::[課題]\monban アプリ「関数のグラフ」で次の関数のグラフをかき，周期と振幅を答えよ．\seteda{50}\vspace{2mm}\\
+item::[課題]\monban 次の関数の振幅と周期を答えよ\seteda{50}\vspace{2mm}\\
 \eda{$y=2\sin x$}\eda{$y=\bunsuu{1}{3}\sin x$}\\
 \eda{$y=\sin 2x$}\eda{$y=4\sin\bunsuu{x}{2}$}
+item::[課題]\monban 次の関数の振幅と周期を答えよ\seteda{50}\vspace{2mm}\\
+\eda{$y=A\sin x$}\eda{$y=\sin bx$}
 end
 
+%%%%%%%%%%%%
+new::振幅・周期
+%repeat=6
+\slidepage
+
+itemize
+item::$y=\sin x$の振幅は$1$，周期は$2\pi$
+%[2]::item::$y=A \sin x$の振幅は$\phantom{A}$，周期は$\phantom{2\pi}$
+%[3]::item::$y=A \sin x$の振幅は$A$，周期は$\phantom{2\pi}$
+%[4,-]::item::$y=A \sin x$の振幅は$A$，周期は$2\pi$
+%[5]::item::$y=\sin(bx)$の周期は$\phantom{\bunsuu{2\pi}{b}}$
+%[6,-]::item::$y=\sin(bx)$の振幅は$1$，周期は$\bunsuu{2\pi}{b}$
+end
 
 %%%%%%%%%%%%
+new::位相
+%repeat=5
+\slidepage
+
+itemize
+item::「関数のグラフ」でグラフをかいてみよう．
+item::[課題]\monbannoadd $y=\sin x$のグラフとの関係を答えよ．\seteda{60}\\
+\eda{$y=\sin(x-1)$}\eda{$y=\sin(x-2)$}\\
+\eda{$y=\sin(x+1)$}\eda{$y=\sin(x+\bunsuu{\pi}{2})$}
+%[2,-]::item::$y=\sin(x-c)$は$y=\sin x$を\\
+%[3,-]::\hspace*{3zw}右方向に$c$だけ平行移動 {\color{red}位相が$c$だけ遅れる}
+%[4,-]::item::$y=\sin(x+c)$は$y=\sin x$を\\
+%[5,-]::\hspace*{3zw}左方向に$c$だけ平行移動 {\color{red}位相が$-c$だけ進む}
+end
+
+%%%%%%%%%%%%ｒ
 new::$y=\cos x$のグラフ(余弦曲線)
 %repeat=5
 \slidepage
+
+%[1]::\addban
 
 layer::{120}{0}
 putnote::s{62}{6}::graphcos
@@ -337,26 +375,10 @@ end
 \vspace*{28mm}
 
 itemize
-%thin[2,-]::item::{\color{red}周期}は$2\pi$（$2\pi$で元に戻る）\vspace{-1mm}
-%thin[3,-]::item::{\color{red}振幅}は$1$（値の範囲は$-1$から$1$）\vspace{-1mm}
+%thin[2,-]::item::{\color{red}振幅}は$1$（値の範囲は$-1$から$1$）\vspace{-1mm}
+%thin[3,-]::item::{\color{red}周期}は$2\pi$（$2\pi$で元に戻る）\vspace{-1mm}
 %thin[4,-]::item::$\cos x$は$y$軸対称\vspace{-1mm}
 %thin[5,-]::item::$\cos x$は$\sin x$を左に$\frac{\pi}{2}$平行移動（{\color{red}位相}が$\frac{\pi}{2}$進む）
-end
-
-%%%%%%%%%%%%
-new::振幅・位相・周期
-%repeat=8
-\slidepage
-
-itemize
-item::$y=\sin x$の振幅は$1$，周期は$2\pi$
-%[2]::item::$y=A \sin x$の振幅は$\phantom{A}$，周期は$\phantom{2\pi}$
-%[3]::item::$y=A \sin x$の振幅は$A$，周期は$\phantom{2\pi}$
-%[4,-]::item::$y=A \sin x$の振幅は$A$，周期は$2\pi$
-%[5]::item::$y=\sin(x+c)$の位相は$y=\sin x$から$\phantom{-c}$だけずれている
-%[6,-]::item::$y=\sin(x+c)$の位相は$y=\sin x$から$-c$だけずれている
-%[7]::item::$y=\sin(bx)$の周期は$\phantom{\bunsuu{2\pi}{b}}$
-%[8,-]::item::$y=\sin(bx)$の周期は$\bunsuu{2\pi}{b}$
 end
 
 %%%%%%%%%%%%
@@ -415,32 +437,43 @@ itemize
 %[11,-]::\eda{$\sin 15\degree$}\eda{$\cos 75\degree$}
 end
 
-
 %%%%%%%%%%%%
-new::加法定理による等式証明($-x$)
-%repeat=4
-\slidepage
-
-itemize
-item::{\normalsize\color{blue} $\sin 0=0,\ \cos 0=1,\ \sin\pi=0,\ \cos\pi=-1$}
-item::$\sin(-x)$
-\\
-%[2,-]::$=\sin(0-x)=\sin 0 \cos x-\cos 0\sin x=-\sin x$
-%[3,-]::item::$\cos(-x)$
-%[3,-]::\\
-%[4,-]::$=\cos(0-x)=\cos 0 \cos x+\sin 0\sin x=\cos x$
-end
-
-%%%%%%%%%%%%
-new::グラフでの意味
-%%repeat=2
+new::グラフの対称性
+%repeat=3
 \slidepage
 
 layer::{120}{0}
-putnote::s{60}{5}::graphsin,0.9
-\putnotew{55}{5}{\color{red}$\sin(-x)=-\sin x$}
-\putnotee{65}{5}{（奇関数）}
-putnote::s{60}{45}::graphcos,0.9
-\putnotew{55}{40}{\color{red}$\cos(-x)=\cos x$}
-\putnotee{65}{40}{（偶関数）}
+putnote::s{62}{1}::graphsin,0.9
+putnote::s{62}{28}::graphcos,0.9
+\putnotese{10}{60}{[1] $\sin(-x)$を$\sin x$または$\cos x$で表せ}
+\putnotese{10}{67}{[2] $\cos(-x)$を$\sin x$または$\cos x$で表せ}
+%[2,-]::\putnotese{70}{-2}{{\color{red}原点対称（奇関数）}}
+%[3,-]::\putnotese{70}{25}{{\color{red}$y$軸対称（偶関数）}}
+
+end
+
+\vspace{46mm}
+...
+
+itemize
+item::[課題]\monbannoadd 曲線上の点を動かしてみて答えよ
+end
+
+%%%%%%%%%%%%
+new::加法定理による等式証明($-x$)
+%repeat=8
+\slidepage
+
+%[1]::\addban
+
+itemize
+item::{\normalsize\color{blue} $\sin 0=0,\ \cos 0=1,\ \sin\pi=0,\ \cos\pi=-1$}
+item::$\sin(-x)$\\
+%[2,-]::$=\sin(0-x)=$
+%[3,-]::$\sin 0 \cos x-\cos 0\sin x=$
+%[4,-]::$-\sin x$
+%[5,-]::item::$\cos(-x)$\\
+%[6,-]::$=\cos(0-x)=$
+%[7,-]::$\cos 0 \cos x+\sin 0\sin x=$
+%[8,-]::$\cos x$
 end

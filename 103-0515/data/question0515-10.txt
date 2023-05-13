@@ -1,0 +1,20 @@
+Q
+次を求めよ．
+[1] sin(15(deg))
+[2] cos(75(deg))
+Sheet
+[1]= ::2
+[2]=  ::2
+Ans
+[1] sqrt(3)/2^(3/2)-1/2^(3/2)
+[2] 1/2^(3/2)-sqrt(3)/2^(3/2)
+Mxcalc
+[1] sin(x-y)
+[2] cos(x+y)
+o1:trigexpand(i1)
+o1:ev(o1,[x=%pi/3,y=%pi/4])
+o1=ratsimp(o1)
+o2:trigexpand(i2)
+o2:ev(o2,[x=%pi/3,y=%pi/4])
+o2=ratsimp(o2)
+return o1::o2
