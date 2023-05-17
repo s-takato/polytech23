@@ -1,0 +1,7 @@
+quline="Q08::y=sin(x)のグラフをどのように平行移動したか．	[1]:: y=sin(x-1)	[2]:: y=sin(x-2)	[3]:: y=sin(x+1)	[4]:: y=sin(x+fr(pi,2))";
+shline="Q08---	[1]   	[2]   	[3]   	[4]   ";
+caline="Q08::	[1]::右,1	[2]::右,2	[3]::左,1	[4]::左,fr(pi,2)";
+mrkline="0	2	2	2	2";
+mxscline="0	-1	-1	-1	-1";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2CR11HW	2	2	2	2	2";
+ansline="1	01YU	051515:48:23	Q08---	[1] 右,1  	[2]  右,2	[3]   左,1	[4]   左,fr(pi,2)CR2	02HU	未提出CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	未提出CR6	06TK	未提出CR7	07MS	未提出CR8	08TT	未提出CR9	09TN	未提出CR10	10AY	未提出CR11	11HW	未提出";

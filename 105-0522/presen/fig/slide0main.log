@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  12 MAY 2023 17:59
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  19 MAY 2022 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**presen23104.tex
-(./presen23104.tex
+**slide0main.tex
+(./slide0main.tex
 pLaTeX2e <2021-11-15u04> (based on LaTeX2e <2021-11-15> patch level 1)
 L3 programming layer <2022-02-24>
 (/Applications/KeTTeX.app/texlive/texmf-dist/tex/uplatex/base/ujarticle.cls
@@ -444,32 +444,32 @@ File: l3backend-dvips.def 2022-02-07 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count317
 \g__pdf_backend_link_int=\count318
 \g__pdf_backend_link_sf_int=\count319
-) (./presen23104.aux)
-\openout1 = `presen23104.aux'.
+) (./slide0main.aux)
+\openout1 = `slide0main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-Package hyperref Info: Link coloring ON on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+Package hyperref Info: Link coloring ON on input line 17.
 
 (/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -483,14 +483,14 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
- (./presen23104.out) (./presen23104.out)
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
+ (./slide0main.out) (./slide0main.out)
 \@outlinefile=\write3
-\openout3 = `presen23104.out'.
+\openout3 = `slide0main.out'.
 
- (./fig/slide0.tex
+ (./slide0.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 1.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
@@ -511,175 +511,20 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <24.88> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 23.94002pt on input line 5.
-)
-(./fig/slide0.tex) (./fig/slide0.tex) (./fig/slide0.tex)
-\c@ban=\count321
-\c@edawidth=\count322
-\c@edactr=\count323
- [0
+) [1
 
 ]
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 126.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 126.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 126.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 126.
- [1]
-(./fig/fig22104_1.tex
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 24.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 24.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
-
-
-(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
-
-
-(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-(./fig/fig22104_1.tex) (./fig/fig22104_1.tex) (./fig/fig22104_1.tex) [2]
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) [3] (./fig/fig2210431.tex) (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) [3] (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) (./fig/fig2210431.tex) [3]
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) [3] (./fig/fig2210432.tex) (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) [4] (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) (./fig/fig2210432.tex) [4]
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) [4] (./fig/fig2210432.tex) (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) [4] (./fig/fig2210433.tex)
-(./fig/fig2210433.tex) (./fig/fig2210433.tex) (./fig/fig2210433.tex) [4]
-(./fig/fig2210434.tex) (./fig/fig2210434.tex) (./fig/fig2210434.tex)
-(./fig/fig2210434.tex) [4] (./fig/ippansankaku.tex
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 60.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 60.
-) (./fig/ippansankaku.tex)
-(./fig/ippansankaku.tex) (./fig/ippansankaku.tex) [5] (./fig/ippansankaku.tex)
-(./fig/ippansankaku.tex) (./fig/ippansankaku.tex) (./fig/ippansankaku.tex)
-[5] (./fig/ippansankaku.tex) (./fig/ippansankaku.tex) (./fig/ippansankaku.tex)
-(./fig/ippansankaku.tex) [5] (./fig/ippansankaku.tex) (./fig/ippansankaku.tex)
-(./fig/ippansankaku.tex) (./fig/ippansankaku.tex) [5] (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) (./fig/fig2210431.tex) [6]
-(./fig/fig2210431.tex) (./fig/fig2210431.tex) (./fig/fig2210431.tex)
-(./fig/fig2210431.tex) [6] (./fig/fig2210432.tex) (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) [6] (./fig/fig2210432.tex)
-(./fig/fig2210432.tex) (./fig/fig2210432.tex) (./fig/fig2210432.tex) [6]
-(./fig/fig2210433.tex) (./fig/fig2210433.tex) (./fig/fig2210433.tex)
-(./fig/fig2210433.tex) [6] (./fig/fig2210433.tex) (./fig/fig2210433.tex)
-(./fig/fig2210433.tex) (./fig/fig2210433.tex) [6] (./fig/fig2210434.tex)
-(./fig/fig2210434.tex) (./fig/fig2210434.tex) (./fig/fig2210434.tex) [6]
-(./fig/fig2210434.tex) (./fig/fig2210434.tex) (./fig/fig2210434.tex)
-(./fig/fig2210434.tex) [6] (./fig/presen10310305.tex
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 10.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 10.
-) (./fig/presen10310305.tex) (./fig/presen10310305.tex) (./fig/presen10310305.t
-ex) [7]
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) (./fig/presen10310305.tex
-) (./fig/presen10310305.tex) [7] (./fig/presen10310305.tex)
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) (./fig/presen10310305.tex
-) [7] (./fig/presen10310305.tex) (./fig/presen10310305.tex)
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) [7]
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) (./fig/presen10310305.tex
-) (./fig/presen10310305.tex) [7] (./fig/presen10310305.tex)
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) (./fig/presen10310305.tex
-) [7] (./fig/presen10310305.tex) (./fig/presen10310305.tex)
-(./fig/presen10310305.tex) (./fig/presen10310305.tex) [7]
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 765.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 765.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <7> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 765.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 765.
- (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] (./fig/radian.tex)
-(./fig/radian.tex) (./fig/radian.tex) (./fig/radian.tex) [8] [9] [9] [9]
-[9] [9] [9] [10] [10] [10] [10] [10] [10] (./fig/fig221045.tex)
-(./fig/fig221045.tex) (./fig/fig221045.tex) (./fig/fig221045.tex) [10]
-(./fig/fig221046.tex) (./fig/fig221046.tex) (./fig/fig221046.tex)
-(./fig/fig221046.tex) [11] (./fig/fig221046.tex) (./fig/fig221046.tex)
-(./fig/fig221046.tex) (./fig/fig221046.tex) [11] (./fig/fig221046.tex)
-(./fig/fig221046.tex) (./fig/fig221046.tex) (./fig/fig221046.tex) [11]
-(./fig/fig221046.tex) (./fig/fig221046.tex) (./fig/fig221046.tex)
-(./fig/fig221046.tex) [11] (./fig/fig221046.tex) (./fig/fig221046.tex)
-(./fig/fig221046.tex) (./fig/fig221046.tex) [11] (./fig/fig221046.tex)
-(./fig/fig221046.tex) (./fig/fig221046.tex) (./fig/fig221046.tex) [11]
-(./fig/fig221046.tex) (./fig/fig221046.tex) (./fig/fig221046.tex)
-(./fig/fig221046.tex) [11] (./fig/fig221046b.tex) (./fig/fig221046b.tex)
-(./fig/fig221046b.tex) (./fig/fig221046b.tex) [11] [12] (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex) [13]
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) [13] (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) [13] (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex) [13]
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) [13] (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) [13] [14] [15] [15] [15] [15]
-[15] [15] [16] [16] [16] [16] [16] (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) [17] (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [17]
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) [17] (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) [17] (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphsinadd.tex) (./fig/graphsinadd.tex) (./fig/graphsinadd.tex)
-(./fig/graphsinadd.tex) [17]
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1968.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 1968.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1968.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 1968.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 1968.
- [18] [19] [19] [20] [20] [20] [20] [20] [20]
-[20] [20] [20] [20] [20] (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex) [21]
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) [21] (./fig/graphsin.tex)
-(./fig/graphsin.tex) (./fig/graphsin.tex) (./fig/graphsin.tex)
-(./fig/graphcos.tex) (./fig/graphcos.tex) (./fig/graphcos.tex)
-(./fig/graphcos.tex) [21] [22] [22] [22] [22] [22] [22] [22] [22]
-(./presen23104.aux)
-Package rerunfilecheck Info: File `presen23104.out' has not changed.
+(./slide0main.aux)
+Package rerunfilecheck Info: File `slide0main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12201 strings out of 480222
- 184805 string characters out of 5892594
- 633865 words of memory out of 5000000
- 29779 multiletter control sequences out of 15000+600000
- 486590 words of font info for 106 fonts, out of 8000000 for 9000
+ 11524 strings out of 480222
+ 173293 string characters out of 5892594
+ 541031 words of memory out of 5000000
+ 29685 multiletter control sequences out of 15000+600000
+ 473673 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 91i,12n,93p,333b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,5n,93p,332b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presen23104.dvi (111 pages, 2479572 bytes).
+Output written on slide0main.dvi (1 page, 936 bytes).

@@ -1,5 +1,5 @@
 #!/bin/sh
-cd "/Users/takatoosetsuo/polytech23.git/103-0515/fig"
-rm toolketmathans1.txt
-"/Applications/Maxima.app/Contents/Resources/maxima.sh" -b "toolketmathans1.max"
+cd "/Users/takatoosetsuo/polytech23.git/104-0515/fig"
+rm toolketmath1res.txt
+"/Applications/Maxima.app/Contents/Resources/maxima.sh" -b "toolketmath1res.max"
 exit 0

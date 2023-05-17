@@ -1,3 +1,0 @@
-quline="Q01::図の{\theta}について求めよ	[1]::cos({\theta})	[2]::sin({\theta})	[3]::tan({\theta})";
-shline="Q01---	[1]= 	[2]= 	[3]= ";
-sqline="01YU	2	2	2	2CR02HU	2	2	2	2CR03KU	2	2	2	2CR04AK	2	2	2	2CR05AK	2	2	2	2CR06TK	2	2	2	2CR07MS	2	2	2	2CR08TT	2	2	2	2CR09TN	2	2	2	2CR10AY	2	2	2	2CR11HW	2	2	2	2";

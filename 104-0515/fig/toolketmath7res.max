@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/104-0515/fig/toolketmath7res.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[1,no,(1.366)-(1.366),ns],[2,no,(1.36602540378)-(1.366),ns],[3,no,(((1+1.732)/(2)))-(1.366),ns],[4,no,(1.36)-(1.366),ns],[5,no,(1.366)-(1.366),ns],[6,no,(((1+sqrt(3))/(2)))-(1.366),ns],[7,no,(1.360)-(1.366),ns],[8,no,(1.366)-(1.366),ns],[9,no,(((2+sqrt(3))/(2)))-(1.366),ns],[10,no,(((1+sqrt(4))/(2)))-(1.366),ns],[11,no,(((sqrt(3))/(2)))-(1.366),ns]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/
