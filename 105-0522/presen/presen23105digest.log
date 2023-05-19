@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  19 MAY 2023 14:08
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  19 MAY 2023 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**slide0main.tex
-(./slide0main.tex
+**presen23105digest.tex
+(./presen23105digest.tex
 pLaTeX2e <2021-11-15u04> (based on LaTeX2e <2021-11-15> patch level 1)
 L3 programming layer <2022-02-24>
 (/Applications/KeTTeX.app/texlive/texmf-dist/tex/uplatex/base/ujarticle.cls
@@ -444,32 +444,32 @@ File: l3backend-dvips.def 2022-02-07 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count317
 \g__pdf_backend_link_int=\count318
 \g__pdf_backend_link_sf_int=\count319
-) (./slide0main.aux)
-\openout1 = `slide0main.aux'.
+) (./presen23105digest.aux)
+\openout1 = `presen23105digest.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-Package hyperref Info: Link coloring ON on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+Package hyperref Info: Link coloring ON on input line 55.
 
 (/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -483,14 +483,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
- (./slide0main.out) (./slide0main.out)
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
+LaTeX Info: Redefining \nameref on input line 55.
+ (./presen23105digest.out) (./presen23105digest.out)
 \@outlinefile=\write3
-\openout3 = `slide0main.out'.
+\openout3 = `presen23105digest.out'.
 
- (./slide0.tex
+
+(./fig/slide0.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 1.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
@@ -511,20 +512,91 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <24.88> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 23.94002pt on input line 5.
-) [1
+) (./fig/slide0.tex) (./fig/slide0.tex) (./fig/slide0.tex)
+\c@ban=\count321
+\c@edawidth=\count322
+\c@edactr=\count323
+
+[0
 
 ]
-(./slide0main.aux)
-Package rerunfilecheck Info: File `slide0main.out' has not changed.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 120.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 8.65997pt on input line 120.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 120.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 8.65997pt on input line 120.
+ [1] [2] [3]
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 147.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 147.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 147
+.
+
+(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 147
+.
+
+(/Applications/KeTTeX.app/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <7> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 153.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 153.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <7> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 153.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 153.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 153.
+
+(./fig/sisuuhyo1.tex) [4] [5] [6] [7] (./fig/sisuuhyo1.tex)
+(./fig/sisuuhyo1.tex) (./fig/sisuuhyo1.tex) (./fig/sisuuhyo1.tex)
+(./fig/sisuuhyo2.tex) (./fig/sisuuhyo2.tex) (./fig/sisuuhyo2.tex)
+(./fig/sisuuhyo2.tex) [8] [9] (./fig/sisuugraph2.tex) (./fig/sisuugraph2.tex)
+(./fig/sisuugraph2.tex) (./fig/sisuugraph2.tex) (./fig/sisuugraph3.tex)
+(./fig/sisuugraph3.tex) (./fig/sisuugraph3.tex) (./fig/sisuugraph3.tex)
+[10] [11] [12]
+Overfull \hbox (2.18303pt too wide) in paragraph at lines 522--525
+[]\OT1/cmr/bx/n/14.4 [1] $32[]$ [][2] $[]$ [] 
+ []
+
+
+Overfull \hbox (2.18303pt too wide) in paragraph at lines 522--525
+[]\OT1/cmr/bx/n/14.4 [3] $([])[]$ [][4] $([])[]$ [] 
+ []
+
+[13] [14]
+Overfull \hbox (7.5316pt too wide) in paragraph at lines 579--596
+[][] | []
+ []
+
+[15] [16] [17] [18]
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 692.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 692.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 692.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 692.
+ [19] [20] [21] [22] [23] (./presen23105digest.aux)
+Package rerunfilecheck Info: File `presen23105digest.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11524 strings out of 480222
- 173293 string characters out of 5892594
- 541031 words of memory out of 5000000
- 29685 multiletter control sequences out of 15000+600000
- 473673 words of font info for 55 fonts, out of 8000000 for 9000
+ 11638 strings out of 480222
+ 174891 string characters out of 5892594
+ 634437 words of memory out of 5000000
+ 29729 multiletter control sequences out of 15000+600000
+ 480479 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 91i,5n,93p,332b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,12n,93p,339b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide0main.dvi (1 page, 936 bytes).
+Output written on presen23105digest.dvi (24 pages, 462844 bytes).

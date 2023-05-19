@@ -15,13 +15,13 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>kettask0515-1</title>
+    <title>ketmathv.cdy</title>
     <style type="text/css">
         * {
             margin: 0px;
             padding: 0px;
         }
-        
+
         #CSConsole {
             background-color: #FAFAFA;
             border-top: 1px solid #333333;
@@ -297,114 +297,77 @@ Addpar(str):=(
   );
   out;
 );
-Shade(plist):=Shade(plist,[]); 
-Shade(Arg1,Arg2):=(
-  if(!isstring(Arg1),
-    Shade(text(SHADECTR),Arg1,Arg2); //190222
+Listplot(list):=Listplot(list,[]);
+Listplot(Arg1,Arg2):=(
+  regional(name,list,options,str);
+  if(isstring(Arg1),
+    name=Arg1;
+    list=Arg2;
+    Listplot(name,list,[]);
   ,
-    Shade(Arg1,Arg2,[]);
+    list=Arg1;
+    options=Arg2;
+    name="";
+    forall(list, // 16.10.07from
+       name=name+#.name;
+    );// 16.10.07until
+    Listplot(name,list,options);
   );
 );
-Shade(nm,plistorg,options):=(
-  regional(name,plist,jj,nn,trim,first,tmp,tmp1,tmp2,Noflg,
-     opstr,opcindy,eqL,reL,Str,G2,flg,encflg,startpt,color,color4,ctr,ptshade);
-  if(substring(nm,0,1)=="-", //200513from
+Listplot(nm,list,options):=(
+  regional(name,cutend,tmp,tmp1,tmp2,ptlist,Ltype,opcindy,Noflg,eqL,Msg,color,color4);
+  if(substring(nm,0,1)=="-",  // 16.01.27 from
     name=substring(nm,1,length(nm));
   ,
-    name="shade"+nm;
-  ); //200513to
-  plist=plistorg;
+    name="sg"+nm;
+  ); // upto
   tmp=Divoptions(options);
-  Noflg=tmp_2; //200512
-  eqL=tmp_5; 
-  reL=tmp_6;
+  Ltype=tmp_1;
+  Noflg=tmp_2;
+  eqL=tmp_5;
   color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200618
-  opstr=tmp_(length(tmp)-1);
   opcindy=tmp_(length(tmp));
-  encflg=0; //201029
-  tmp=select(plist,indexof(#,"Invert")>0); //180929from
-  trim="N";
-  first="N"; //191007
-  ptshade="N"; //200513
+  Msg="Y";  //190206
+ Msg="N"; //
+  cutend=[0,0];//180719
   forall(eqL,
     tmp=Strsplit(#,"=");
-    tmp1=Toupper(tmp_1);
-    tmp2=Toupper(tmp_2);
-    if(substring(tmp1,0,1)=="E",
-      if(substring(tmp2,0,1)=="Y",
-        encflg=1;
-      );
+    tmp1=Toupper(substring(tmp_1,0,1));
+    if(tmp1=="M",
+      Msg=Toupper(substring(tmp_2,0,1));
     );
-    if(substring(tmp1,0,1)=="T",
-      trim=substring(tmp2,0,1);
-    );
-    if(substring(tmp1,0,1)=="F",
-      first=substring(tmp2,0,1);
-    );
-    if(substring(tmp1,0,1)=="P", //200513[3lines]
-      ptshade=Toupper(substring(tmp2,0,1));
-    );
+    if(tmp1=="C",//180719from
+      tmp2=replace(tmp_2,"[","");
+      tmp2=replace(tmp2,"]","");
+      cutend=tokenize(tmp2,",");
+      if(length(cutend)==1,cutend=[cutend_1,cutend_1]);     
+    );//180719to
   );
-  startpt=[];
-  forall(reL,
-    if(islist(#),
-      startpt=#;
+  if(Noflg<3,
+    if(Msg=="Y", //190206
+      println("generate Listplot "+name);
     );
-  ); //180929to
-  flg=0; ctr=1;
-  if(encflg==1, //180929from
-    if(length(startpt)==2,
-      Enclosing(nm,plist,[startpt,"nodisp"]);
+    if(isstring(list_1),tmp=apply(list,parse(#)),tmp=list); // 15.03.24
+    ptlist=apply(tmp,Pcrd(#));
+    if(|cutend|>0,//180719from
+      tmp=ptlist_(length(ptlist))-ptlist_1;
+      tmp=tmp/|tmp|;
+      ptlist_1=ptlist_1+tmp*cutend_1;
+      ptlist_(length(ptlist))=ptlist_(length(ptlist))-tmp*cutend_2;
+    );//180719to
+    tmp=name+"="+Textformat(ptlist,5)+";"; //190415
+    parse(tmp);
+  );
+  if(Noflg<3, //190818
+    if(isstring(Ltype),
+      Ltype=Getlinestyle(text(Noflg)+Ltype,name);
     ,
-      Enclosing(nm,plist,["nodisp"]);
+      if(Noflg==1,Ltype=0);
     );
-    plist=["en"+nm];
-  ); //180929to
-  if((length(plist)==1)&(trim=="Y"), //190220from,109224
-    plist=[Shadein(plist)];
-  ); //190220to
-  forall(1..(length(plist)),jj, //180613from
-    if(flg==0,
-      tmp1=plist_jj;
-      if(isstring(tmp1),tmp=parse(tmp1),tmp=tmp1);
-      if(!islist(tmp),
-         flg=1;
-      ,
-        if(!isstring(tmp1),
-          tmp2=[];
-          forall(tmp1,if(ispoint(#),tmp=#.xy,tmp=#);
-            tmp2=append(tmp2,tmp);
-          );
-          Listplot("-"+name+text(ctr),tmp2,["nodisp"]); //190520
-          plist_jj=name+text(ctr);
-          ctr=ctr+1;
-        );
-      ); 
-    );
-  );//180613to
-  if(flg==1,
-    println("    Shade : some data not defined properly");
- ,
-    if(Noflg<2, //200512
-      G2=Joincrvs("1",plist,["nodata"]);
-      G2=apply(G2,Pcrd(#));
-      tmp1="fillpoly("+Textformat(G2,10)+opcindy+");";
-      if(ptshade=="N", //200513from
-        tmp=select(1..(length(GCLIST)),contains(plist,GCLIST_#_1)); //200715from
-        if(length(tmp)>0,
-          nn=min(tmp);
-        ,
-          nn=length(GCLIST)+1;
-        );
-        tmp2=GCLIST_(1..(nn-1));
-        tmp2=append(tmp2,[tmp1,[5,0]]);
-        GCLIST=concat(tmp2,GCLIST_(nn..(length(GCLIST))));
-      ,
-        PTSHADElist=append(PTSHADElist,[name,tmp1]);
-      ); //200513to
-    );
+    GCLIST=append(GCLIST,[name,Ltype,opcindy]);
   );
-  SHADECTR=SHADECTR+1;
+  tmp1=apply(list,Lcrd(#));
+  tmp1;
 );
 Divoptions(options):=(
   regional(Ltype,Noflg,Inflg,Outflg,eqL,realL,strL,
@@ -683,6 +646,197 @@ Colorrgb2cmyk(clr):=(
   );
   clrnew;
 );
+Pcrd(pt):=(
+  regional(tmp);
+  if(ispoint(pt),
+    tmp=pt.xy;
+  ,
+    tmp=[pt_1*SCALEX,pt_2*SCALEY];
+  );
+ re(tmp); //191231
+);
+Getlinestyle(str,name):=(
+  regional(noflg,tmp,tmp1,tmp2,Dop,Ltype,subflg);
+  Ltype=-1;
+  Dop="";
+  tmp1=indexof(str,",");
+  if(tmp1>0,
+    Dop=","+substring(str,tmp1,length(str));
+  );
+  noflg=parse(substring(str,0,1));
+  if(substring(name,0,3)=="sub",subflg=1,subflg=0);  // 16.02.29
+  if(noflg<=1, //1900818from
+    tmp1=Toupper(substring(str,1,3));
+  ,
+    tmp1="NO";
+  ); //1900818to
+  tmp2=""; //190119from
+  tmp=indexof(str,",");
+  if(tmp>0,
+    tmp2=substring(str,tmp,length(str));
+  ); //190119to
+  if(tmp1=="DR",
+    if(length(tmp2)==0,tmp2="1"); //190125
+    Ltype=[0,tmp2];  //190119
+    if(noflg==0 & subflg==0, // 16.02.29
+    );
+  );
+  if(tmp1=="DA",
+    if(length(tmp2)==0,tmp2="1,1"); //190125
+    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
+    Ltype=[1,tmp2];  //190119
+    if(noflg==0 & subflg==0, // 16.02.29
+    );
+  );
+  if(tmp1=="ID",
+    if(length(tmp2)==0,tmp2="1,1"); //190125
+    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
+    Ltype=[2,tmp2];  //190119
+    if(noflg==0 & subflg==0, // 16.02.29
+    );
+  );
+  if(tmp1=="DO",
+    if(length(tmp2)==0,tmp2="1,1"); //190125
+    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
+    Ltype=[3,tmp2];  //190119
+    if(noflg==0 & subflg==0, // 16.02.29
+    );
+  );
+  if(tmp1=="DP",
+    if(length(tmp2)==0,tmp2="1"); //190125
+    Ltype=[0,tmp2];  //190119
+    tmp1=parse(name);
+    tmp2="";
+    forall(tmp1,
+      tmp2=tmp2+Textformat(#_1,5)+",";
+    );
+    tmp2=substring(tmp2,0,length(tmp2)-1);
+    if(noflg==0,
+    );
+  );
+  if(tmp1=="NO", //190818from
+    Ltype=[-1,"0"];
+  );  //190818to
+  Ltype;
+);
+Lcrd(pt):=(
+  regional(tmp);
+  if(ispoint(pt),
+    tmp=[pt.x/SCALEX,pt.y/SCALEY];
+  ,
+    tmp=pt;
+  );
+  re(tmp); //191231
+);
+Shade(plist):=Shade(plist,[]); 
+Shade(Arg1,Arg2):=(
+  if(!isstring(Arg1),
+    Shade(text(SHADECTR),Arg1,Arg2); //190222
+  ,
+    Shade(Arg1,Arg2,[]);
+  );
+);
+Shade(nm,plistorg,options):=(
+  regional(name,plist,jj,nn,trim,first,tmp,tmp1,tmp2,Noflg,
+     opstr,opcindy,eqL,reL,Str,G2,flg,encflg,startpt,color,color4,ctr,ptshade);
+  if(substring(nm,0,1)=="-", //200513from
+    name=substring(nm,1,length(nm));
+  ,
+    name="shade"+nm;
+  ); //200513to
+  plist=plistorg;
+  tmp=Divoptions(options);
+  Noflg=tmp_2; //200512
+  eqL=tmp_5; 
+  reL=tmp_6;
+  color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200618
+  opstr=tmp_(length(tmp)-1);
+  opcindy=tmp_(length(tmp));
+  encflg=0; //201029
+  tmp=select(plist,indexof(#,"Invert")>0); //180929from
+  trim="N";
+  first="N"; //191007
+  ptshade="N"; //200513
+  forall(eqL,
+    tmp=Strsplit(#,"=");
+    tmp1=Toupper(tmp_1);
+    tmp2=Toupper(tmp_2);
+    if(substring(tmp1,0,1)=="E",
+      if(substring(tmp2,0,1)=="Y",
+        encflg=1;
+      );
+    );
+    if(substring(tmp1,0,1)=="T",
+      trim=substring(tmp2,0,1);
+    );
+    if(substring(tmp1,0,1)=="F",
+      first=substring(tmp2,0,1);
+    );
+    if(substring(tmp1,0,1)=="P", //200513[3lines]
+      ptshade=Toupper(substring(tmp2,0,1));
+    );
+  );
+  startpt=[];
+  forall(reL,
+    if(islist(#),
+      startpt=#;
+    );
+  ); //180929to
+  flg=0; ctr=1;
+  if(encflg==1, //180929from
+    if(length(startpt)==2,
+      Enclosing(nm,plist,[startpt,"nodisp"]);
+    ,
+      Enclosing(nm,plist,["nodisp"]);
+    );
+    plist=["en"+nm];
+  ); //180929to
+  if((length(plist)==1)&(trim=="Y"), //190220from,109224
+    plist=[Shadein(plist)];
+  ); //190220to
+  forall(1..(length(plist)),jj, //180613from
+    if(flg==0,
+      tmp1=plist_jj;
+      if(isstring(tmp1),tmp=parse(tmp1),tmp=tmp1);
+      if(!islist(tmp),
+         flg=1;
+      ,
+        if(!isstring(tmp1),
+          tmp2=[];
+          forall(tmp1,if(ispoint(#),tmp=#.xy,tmp=#);
+            tmp2=append(tmp2,tmp);
+          );
+          Listplot("-"+name+text(ctr),tmp2,["nodisp"]); //190520
+          plist_jj=name+text(ctr);
+          ctr=ctr+1;
+        );
+      ); 
+    );
+  );//180613to
+  if(flg==1,
+    println("    Shade : some data not defined properly");
+ ,
+    if(Noflg<2, //200512
+      G2=Joincrvs("1",plist,["nodata"]);
+      G2=apply(G2,Pcrd(#));
+      tmp1="fillpoly("+Textformat(G2,10)+opcindy+");";
+      if(ptshade=="N", //200513from
+        tmp=select(1..(length(GCLIST)),contains(plist,GCLIST_#_1)); //200715from
+        if(length(tmp)>0,
+          nn=min(tmp);
+        ,
+          nn=length(GCLIST)+1;
+        );
+        tmp2=GCLIST_(1..(nn-1));
+        tmp2=append(tmp2,[tmp1,[5,0]]);
+        GCLIST=concat(tmp2,GCLIST_(nn..(length(GCLIST))));
+      ,
+        PTSHADElist=append(PTSHADElist,[name,tmp1]);
+      ); //200513to
+    );
+  );
+  SHADECTR=SHADECTR+1;
+);
 Enclosing(nm,plist):=Enclosing2(nm,plist,[]);//180706[2lines]
 Enclosing(nm,plistorg,options):=Enclosing2(nm,plistorg,options);
 Enclosing2(nm,plist):=Enclosing2(nm,plist,[]);
@@ -850,15 +1004,6 @@ Enclosing2(nm,plistorg,options):=(
     GCLIST=append(GCLIST,[name,Ltype,opcindy]);
   );
   AnsL; //201110
-);
-Lcrd(pt):=(
-  regional(tmp);
-  if(ispoint(pt),
-    tmp=[pt.x/SCALEX,pt.y/SCALEY];
-  ,
-    tmp=pt;
-  );
-  re(tmp); //191231
 );
 Intersectcurvespp(crv1org,crv2org):=Intersectcurvespp(crv1org,crv2org,[]);
 Intersectcurvespp(crv1org,crv2org,options):=(
@@ -1278,79 +1423,6 @@ Bezierpt(t,ptlist,ctrlist):=(
   p8=(1-t)*p5+t*p6;
   p9=(1-t)*p7+t*p8;
   if(flg3==0,p7,p9);
-);
-Pcrd(pt):=(
-  regional(tmp);
-  if(ispoint(pt),
-    tmp=pt.xy;
-  ,
-    tmp=[pt_1*SCALEX,pt_2*SCALEY];
-  );
- re(tmp); //191231
-);
-Getlinestyle(str,name):=(
-  regional(noflg,tmp,tmp1,tmp2,Dop,Ltype,subflg);
-  Ltype=-1;
-  Dop="";
-  tmp1=indexof(str,",");
-  if(tmp1>0,
-    Dop=","+substring(str,tmp1,length(str));
-  );
-  noflg=parse(substring(str,0,1));
-  if(substring(name,0,3)=="sub",subflg=1,subflg=0);  // 16.02.29
-  if(noflg<=1, //1900818from
-    tmp1=Toupper(substring(str,1,3));
-  ,
-    tmp1="NO";
-  ); //1900818to
-  tmp2=""; //190119from
-  tmp=indexof(str,",");
-  if(tmp>0,
-    tmp2=substring(str,tmp,length(str));
-  ); //190119to
-  if(tmp1=="DR",
-    if(length(tmp2)==0,tmp2="1"); //190125
-    Ltype=[0,tmp2];  //190119
-    if(noflg==0 & subflg==0, // 16.02.29
-    );
-  );
-  if(tmp1=="DA",
-    if(length(tmp2)==0,tmp2="1,1"); //190125
-    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
-    Ltype=[1,tmp2];  //190119
-    if(noflg==0 & subflg==0, // 16.02.29
-    );
-  );
-  if(tmp1=="ID",
-    if(length(tmp2)==0,tmp2="1,1"); //190125
-    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
-    Ltype=[2,tmp2];  //190119
-    if(noflg==0 & subflg==0, // 16.02.29
-    );
-  );
-  if(tmp1=="DO",
-    if(length(tmp2)==0,tmp2="1,1"); //190125
-    if(indexof(tmp2,",")==0,tmp2=tmp2+",1"); //200911
-    Ltype=[3,tmp2];  //190119
-    if(noflg==0 & subflg==0, // 16.02.29
-    );
-  );
-  if(tmp1=="DP",
-    if(length(tmp2)==0,tmp2="1"); //190125
-    Ltype=[0,tmp2];  //190119
-    tmp1=parse(name);
-    tmp2="";
-    forall(tmp1,
-      tmp2=tmp2+Textformat(#_1,5)+",";
-    );
-    tmp2=substring(tmp2,0,length(tmp2)-1);
-    if(noflg==0,
-    );
-  );
-  if(tmp1=="NO", //190818from
-    Ltype=[-1,"0"];
-  );  //190818to
-  Ltype;
 );
 Intersectseg(seg1,seg2):=Intersectseg(seg1,seg2,0.01);
 Intersectseg(seg1org,seg2org,Eps1):=(
@@ -1792,78 +1864,6 @@ Unscaling(pdata):=(
   );
   Out;
 );
-Listplot(list):=Listplot(list,[]);
-Listplot(Arg1,Arg2):=(
-  regional(name,list,options,str);
-  if(isstring(Arg1),
-    name=Arg1;
-    list=Arg2;
-    Listplot(name,list,[]);
-  ,
-    list=Arg1;
-    options=Arg2;
-    name="";
-    forall(list, // 16.10.07from
-       name=name+#.name;
-    );// 16.10.07until
-    Listplot(name,list,options);
-  );
-);
-Listplot(nm,list,options):=(
-  regional(name,cutend,tmp,tmp1,tmp2,ptlist,Ltype,opcindy,Noflg,eqL,Msg,color,color4);
-  if(substring(nm,0,1)=="-",  // 16.01.27 from
-    name=substring(nm,1,length(nm));
-  ,
-    name="sg"+nm;
-  ); // upto
-  tmp=Divoptions(options);
-  Ltype=tmp_1;
-  Noflg=tmp_2;
-  eqL=tmp_5;
-  color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200618
-  opcindy=tmp_(length(tmp));
-  Msg="Y";  //190206
- Msg="N"; //
-  cutend=[0,0];//180719
-  forall(eqL,
-    tmp=Strsplit(#,"=");
-    tmp1=Toupper(substring(tmp_1,0,1));
-    if(tmp1=="M",
-      Msg=Toupper(substring(tmp_2,0,1));
-    );
-    if(tmp1=="C",//180719from
-      tmp2=replace(tmp_2,"[","");
-      tmp2=replace(tmp2,"]","");
-      cutend=tokenize(tmp2,",");
-      if(length(cutend)==1,cutend=[cutend_1,cutend_1]);     
-    );//180719to
-  );
-  if(Noflg<3,
-    if(Msg=="Y", //190206
-      println("generate Listplot "+name);
-    );
-    if(isstring(list_1),tmp=apply(list,parse(#)),tmp=list); // 15.03.24
-    ptlist=apply(tmp,Pcrd(#));
-    if(|cutend|>0,//180719from
-      tmp=ptlist_(length(ptlist))-ptlist_1;
-      tmp=tmp/|tmp|;
-      ptlist_1=ptlist_1+tmp*cutend_1;
-      ptlist_(length(ptlist))=ptlist_(length(ptlist))-tmp*cutend_2;
-    );//180719to
-    tmp=name+"="+Textformat(ptlist,5)+";"; //190415
-    parse(tmp);
-  );
-  if(Noflg<3, //190818
-    if(isstring(Ltype),
-      Ltype=Getlinestyle(text(Noflg)+Ltype,name);
-    ,
-      if(Noflg==1,Ltype=0);
-    );
-    GCLIST=append(GCLIST,[name,Ltype,opcindy]);
-  );
-  tmp1=apply(list,Lcrd(#));
-  tmp1;
-);
 Shadein(pstrorg):=( //190220
   regional(pstr,ptL,pL,crv,nn,
       tmp,tmp1,tmp2,pm1,pm2,p1,p2,flg);
@@ -2057,370 +2057,6 @@ Dqq(str):=DqDq(str); //18.02.11
 DqDq(str):=(
   unicode("0022")+str+unicode("0022");
 );
-Putpoint(name,Pt):=Putpoint(name,Pt,Pt);
-Putpoint(name,Ptinit,Pt):=(
-  regional(ptstr); 
-    ptstr=name+".xy="+Textformat(Pcrd(Pt),10)+";";
-    parse(ptstr);
-    Ptpos(name,Pcrd([Pt_1,Pt_2])); //200529
-);
-Ptpos(pt):=Ptpos(pt,[]);
-Ptpos(ptorg,pos):=(
-  regional(pt,out,tmp);
-  if(ispoint(ptorg),pt=ptorg,pt=parse(ptorg));
-  if(length(pos)==0,
-    tmp=pt.name+"position";
-    out=parse(tmp);
-    if(!islist(out),
-      tmp=tmp+"="+Textformat(pt.xy,12)+";";  //200108 6->12
-      parse(tmp);
-    );
-  ,
-    pt.xy=pos;
-    tmp=pt.name+"position="+Textformat(pt.xy,12)+";"; //200108 6->12
-    parse(tmp);
-    out=pt.xy;
-  );
-  out;
-);
-Letter(Pt,Dr,St):=Letter([Pt,Dr,St]);
-Letter(list):=Letter(list,[]);
-Letter(Pt,Dr,St,options):=Letter([Pt,Dr,St],options);//181218
-Letter(list,options):=(
-  regional(Nj,Pos,Dir,Str,Off,Xmv,Ymv,Noflg,opcindy,
-      opL,aln,sz,clr,bld,ita,tmp,tmp1,tmp2,color,color4,eqL);
-  tmp=Divoptions(options);
-  eqL=tmp_5; //190209
-  Noflg=tmp_2;
-  color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200618
-  opL=select(options,indexof(#,"->")>0); //16.10.09from
-  tmp=select(opL,indexof(#,"color"));
-  sz=16; //210516
-  bld=false;
-  ita=false;
-  aln="left";
-  forall(opL,
-    tmp=indexof(#,"->");
-    tmp1=Removespace(substring(#,0,tmp-1));
-    tmp2=substring(#,tmp+1,length(#));
-    if(tmp1=="size",sz=parse(tmp2));
-    if(tmp1=="color",clr=parse(tmp2));
-    if(tmp1=="bold",bld=parse(tmp2));
-    if(tmp1=="ita",ita=parse(tmp2));
-  );//16.10.09to
-  forall(eqL, //190209from
-    tmp=Strsplit(#,"=");
-    tmp1=Toupper(substring(tmp_1,0,1));
-    if(tmp1=="S",
-      sz=round(parse(tmp_2)*16); //210516
-    );
-  ); //190209to
-  Nj=1;
-  if(Ketcindyjsfigure>0,sz=round(sz*Ketcindyjsscale) ); // 
-  while(Nj+2<=length(list),
-    Pos=Lcrd(list_Nj);  //220814
-    Dir=list_(Nj+1);
-    Str=list_(Nj+2);
-    if(!isstring(Str),Str=format(Str,10)); // 16.09.30,10.09
-    tmp=replace(Str,".xy","");
-    tmp=replace(tmp,".x","(1)");
-    Str=replace(tmp,".y","(2)");
-    Str=RSslash(Str); // 17.09.24
-    Str=replace(Str,"`","'");//180303
-    tmp=Dq+","+Dq+Str+Dq+")";
-    if(Noflg<2,
-      Off=[0,0];
-      Xmv=0; Ymv=0;
-      aln="mid"; //200530from
-      if(indexof(Dir,"c")>0, Off_2=-0.3*sz);
-      if(indexof(Dir,"n")>0,Off_2=0;Ymv=Lettermove("n",Dir)); //210601
-      if(indexof(Dir,"s")>0, Off_2=-0.85*sz;Ymv=-Lettermove("s",Dir));
-      if(indexof(Dir,"e")>0,
-        aln="left";
-        if(indexof(Dir,"n")+indexof(Dir,"s")==0,Off=[0,-0.3*sz]);
-        Xmv=Lettermove("e",Dir);
-      );
-      if(indexof(Dir,"w")>0,
-        aln="right";
-        if(indexof(Dir,"n")+indexof(Dir,"s")==0,Off=[0,-0.4*sz]);
-        Xmv=-Lettermove("w",Dir);
-      );
-      Str=list_(Nj+2);  //17.10.17
-      Pos=Pos+[Xmv,Ymv]*MARKLEN;//210530to
-      if(length(color)==4,color=Colorcmyk2rgb(color)); //200523
-      tmp="drawtext("+format(Pcrd(Pos),10)+",offset->"+text(Off)+","+Dqq(Str)+","; 
-      tmp1="size->sz,color->colornow,align->"+Dqq(aln)+",bold->"+bld+",italics->"+ita; //210601
-      tmp1=Assign(tmp1,["sz",text(sz),"colornow",text(color),"aln",Dqq(aln),"bld",text(bld),"ita",text(ita)]);
-      tmp=tmp+tmp1+");";
-      GCLIST=append(GCLIST,[tmp,[6,0]]); //201004to
-    );
-    Nj=Nj+3;
-  );
-);
-Lettermove(dir,str):=(
-  regional(Suu,tmp,tmp1,out,nn);
-  Suu="+-.0123456789";
-  tmp=indexof(str,dir);
-  tmp1=substring(str,tmp,length(str));
-  out="";
-  nn=1;
-  while(nn<=length(tmp1),
-    tmp=substring(tmp1,nn-1,nn);
-    if(indexof(Suu,tmp)>0,
-      out=out+tmp;
-    ,
-      nn=length(str);
-    );
-    nn=nn+1;
-  );
-  if(length(out)==0,out=0,out=parse(out));
-  out;
-);
-Plotdata(name1,func,variable):=Plotdata(name1,func,variable,[]);
-Plotdata(name1,func,variable,options):=(
-  regional(Fn,Va,tmp,tmp1,tmp2,eqL,name,Vname,x1,x2,dx,
-         PdL,Num,Ec,Dc,Fun,Exfun,x,Ke,Eps,Pa,Msg,yflg,
-         Ltype,Noflg,Inflg,Outflg,opstr,opcindy,color,color4);
-  if(substring(name1,0,1)!="-",  //190420from
-    name="gr"+name1;
-  ,
-    name=substring(name1,1,length(name1));
-  ); //190420to
-  tmp=Divoptions(options);
-  Ltype=tmp_1;
-  Noflg=tmp_2;
-  Inflg=tmp_3;
-  Outflg=tmp_4;
-  opstr=tmp_(length(tmp)-1);
-  color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200629
-  opcindy=tmp_(length(tmp));
-  eqL=tmp_5;
-  Num=50;
-  yflg=0; //220910
-  Ec=[];
-  Exfun="";
-  Dc=1000;
-  Msg="Y";
- Msg="N"; //
-  forall(eqL,
-    tmp=Strsplit(#,"=");
-    tmp1=Toupper(substring(#,0,1));
-    if(tmp1=="N",
-      Num=parse(tmp_2);
-      opstr=opstr+","+Dqq(#);
-    );
-    if(tmp1=="E",
-      if(substring(tmp_2,0,1)=="[", //180817from
-        Ec=parse(tmp_2);
-        tmp1=replace(tmp_2,"[","c"+PaO());
-        tmp1=replace(tmp1,",",".0,");
-        tmp1=replace(tmp1,"]",".0)");
-        opstr=opstr+","+Dqq("Exc="+tmp1); //180817to
-      ,
-        Exfun=tmp_2; //200716
-        opstr=opstr+","+Dqq(#);
-      );
-    );
-    if(substring(#,0,1)=="D",
-      Dc=parse(tmp_2);
-      opstr=opstr+","+Dqq(#);
-    );
-    if(tmp1=="M", //190206from
-      Msg=Toupper(substring(tmp_2,0,1));
-    ); //190206to
-  );
-  if(Inflg==0 & Outflg==0,
-    Eps=10^(-3);
-    tmp=replace(func,LFmark,"");
-    tmp=tokenize(variable,"=");
-    Vname=tmp_1;
-    if(Vname=="y",yflg=1); //220910
-    if(length(tmp)>1,
-      tmp=tmp_2;
-      tmp=parse(tmp);
-      x1=tmp_1;
-      x2=tmp_2;
-      ,
-        if(yflg==0, //220910from
-          x1=XMIN;
-          x2=XMAX;
-        ,
-          x1=YMIN;
-          x2=YMAX;
-        ); //220910to
-    );
-    Ec=append(sort(Ec),10000);
-    Fun=Assign(func,Vname, "xx");
-    Exfun=Assign(Exfun,Vname, "xx");
-    PdL=[];
-    Ke=1;
-    forall(0..Num, 
-      xx=x1+#*(x2-x1)/Num; // differs from Scilab [ / Num-1]
-      if(length(Exfun)>0,
-        tmp=parse(Exfun);
-        if(abs(tmp)<Eps,
-          if(length(PdL)>0, //180817from
-            PdL=concat(PdL,["inf"]);
-          );
-        ,
-          tmp=[xx,parse(Fun)];
-          if(length(PdL)>0,
-            tmp1=PdL_(length(PdL));
-            if(Norm(tmp,tmp1)<Dc,
-              PdL=append(PdL,tmp);
-            ,
-              if(tmp1=="inf",
-                PdL=append(PdL,tmp);
-              ,
-                PdL=concat(PdL,[["inf"],tmp]);
-              );
-          );
-          ,
-            PdL=[tmp];
-          );
-        ); //180817to
-      ,
-        Pa=[];
-        if(xx-Ec_Ke<-Eps,
-          Pa=[xx,parse(Fun)];
-        );
-        if(abs(xx-Ec_Ke)<=Eps,
-          if(length(PdL)>0,
-            if(PdL_(length(PdL))_1!="inf",
-              Pa=["inf"];
-            );
-          );
-        );
-        if(xx-Ec_Ke>Eps,
-          Pa=[xx,parse(Fun)];
-          Ke=Ke+1;
-        );
-        if(length(Pa)>0,
-          if(Pa_1=="inf",
-            PdL=concat(PdL,[Pa]);
-          ,
-            if(length(PdL)==0,
-              PdL=[Pa];
-            ,
-              tmp=PdL_(length(PdL));
-              if(tmp_1=="inf",
-                PdL=concat(PdL,[Pa]);
-              ,
-                if(dist(tmp,Pa)<Dc,
-                  PdL=concat(PdL,[Pa]);
-                ,
-                  PdL=concat(PdL,[["inf"],Pa]);
-                );
-              );
-            );
-          );
-        );
-      );
-    );
-    tmp1=[];
-    tmp2=select(1..(length(PdL)),PdL_#==["inf"]);
-    tmp=1;
-    forall(tmp2,
-      if(#>tmp,
-        tmp1=concat(tmp1,[PdL_(tmp..(#-1))])
-      );
-      tmp=#+1;
-    );
-    if(tmp<length(PdL),
-      tmp1=concat(tmp1,[PdL_(tmp..(length(PdL)))]);
-    );
-    PdL=tmp1;
-    if(length(PdL)==1,
-      PdL=PdL_1;
-    );
-    if(Noflg<3,
-      if(Msg=="Y", //190206
-        println("generate Plotdata "+name);
-      );
-      if(Measuredepth(PdL)==1,
-        if(yflg==0, //220910from
-          tmp1=apply(PdL,Pcrd(#));
-        ,
-          tmp1=apply(PdL,Pcrd([#_2,#_1]));
-        ); //220910to
-      ,
-        tmp1=[];
-        forall(PdL,tmp2,
-          if(yflg==0, //220910from
-            tmp1=append(tmp1,apply(tmp2,Pcrd(#)));
-          ,
-            tmp1=append(tmp1,apply(tmp2,Pcrd([#_2,#_1])));
-          ); //220910to
-        );
-      );
-      tmp=name+"="+Textformat(tmp1,5)+";";
-      parse(tmp);
-    );
-    if(Noflg<3, //190818
-      if(isstring(Ltype),
-        Ltype=Getlinestyle(text(Noflg)+Ltype,name);
-     ,
-        if(Noflg==1,Ltype=0);
-      );
-      GCLIST=append(GCLIST,[name,Ltype,opcindy]);
-    );
-    PdL;
-  , 
-    if(Noflg<3, //190818
-      if(isstring(Ltype),
-        Ltype=Getlinestyle(text(Noflg)+Ltype,name);
-      ,
-        if(Noflg==1,Ltype=0);
-      );
-      if(Inflg==1,
-        GCLIST=append(GCLIST,[name,Ltype,opcindy]);
-      );
-    );
-  );
-);
-PaO():=PaO("");
-PaO(Arg):=(
-  regional(out);
-  if(isstring(Arg),
-    out="("+Arg;
-  ,
-    out="";
-    repeat(Arg,
-      out=out+"(";
-    );
-  );
-  out;
-);
-Readlines(file):=Readlines(Dirwork,file); //181126
-Readlines(path,file):=(
-  regional(tmp,out);
-  if(!isexists(path,file), //200706from
-    println(file+" not found in "+path);
-    out=[];//200706to
-  ,
-    out=readfile2str(path,file);
-    out="S"+replace(out,"
-","
-S");//220528from
-    out=tokenize(out,"
-"); //190129
-    out=apply(out,substring(#,1,length(#)));
-    tmp=out_(length(out)); //220528to
-    if(length(tmp)==0,
-      out=out_(1..(length(out)-1));
-    );
-    tmp=out; //200423[2lines]
-    out=apply(tmp,if(!isstring(#),text(#),#));
-    out;
-  );
-);
-Copyright():=(
-  regional(cpr);
-  cpr="<footer><p align="+Dqq("center")+">";
-  cpr=cpr+"<font size="+Dqq("4")+">";
-  cpr=cpr+"&copy; 2021 Setsuo Takato</font></p></footer>";
-  cpr;
-);
 Ketinit():=Ketinit("fig",0.3); //190831from
 Ketinit(Arg):=(//181001from
   if(isstring(Arg),
@@ -2517,6 +2153,32 @@ Setwindow(xrange,yrange,msg):=(
   Ptpos(SW,Pcrd([XMIN,YMIN])); //190927from
   Ptpos(NE,Pcrd([XMAX,YMAX]));
   Strictmove("SW"); Strictmove("NE");
+);
+Putpoint(name,Pt):=Putpoint(name,Pt,Pt);
+Putpoint(name,Ptinit,Pt):=(
+  regional(ptstr); 
+    ptstr=name+".xy="+Textformat(Pcrd(Pt),10)+";";
+    parse(ptstr);
+    Ptpos(name,Pcrd([Pt_1,Pt_2])); //200529
+);
+Ptpos(pt):=Ptpos(pt,[]);
+Ptpos(ptorg,pos):=(
+  regional(pt,out,tmp);
+  if(ispoint(ptorg),pt=ptorg,pt=parse(ptorg));
+  if(length(pos)==0,
+    tmp=pt.name+"position";
+    out=parse(tmp);
+    if(!islist(out),
+      tmp=tmp+"="+Textformat(pt.xy,12)+";";  //200108 6->12
+      parse(tmp);
+    );
+  ,
+    pt.xy=pos;
+    tmp=pt.name+"position="+Textformat(pt.xy,12)+";"; //200108 6->12
+    parse(tmp);
+    out=pt.xy;
+  );
+  out;
 );
 Strictmove(pC):=Strictmove(pC,StrictSep); //190831
 Strictmove(pCorg,sep):=(
@@ -2900,16 +2562,103 @@ Expr(listorg,options):=( //16.10.09
   );
   Letter(list,options);
 );
+Letter(Pt,Dr,St):=Letter([Pt,Dr,St]);
+Letter(list):=Letter(list,[]);
+Letter(Pt,Dr,St,options):=Letter([Pt,Dr,St],options);//181218
+Letter(list,options):=(
+  regional(Nj,Pos,Dir,Str,Off,Xmv,Ymv,Noflg,opcindy,
+      opL,aln,sz,clr,bld,ita,tmp,tmp1,tmp2,color,color4,eqL);
+  tmp=Divoptions(options);
+  eqL=tmp_5; //190209
+  Noflg=tmp_2;
+  color=tmp_(length(tmp)-2); color4=Colorrgb2cmyk(color); //200618
+  opL=select(options,indexof(#,"->")>0); //16.10.09from
+  tmp=select(opL,indexof(#,"color"));
+  sz=16; //210516
+  bld=false;
+  ita=false;
+  aln="left";
+  forall(opL,
+    tmp=indexof(#,"->");
+    tmp1=Removespace(substring(#,0,tmp-1));
+    tmp2=substring(#,tmp+1,length(#));
+    if(tmp1=="size",sz=parse(tmp2));
+    if(tmp1=="color",clr=parse(tmp2));
+    if(tmp1=="bold",bld=parse(tmp2));
+    if(tmp1=="ita",ita=parse(tmp2));
+  );//16.10.09to
+  forall(eqL, //190209from
+    tmp=Strsplit(#,"=");
+    tmp1=Toupper(substring(tmp_1,0,1));
+    if(tmp1=="S",
+      sz=round(parse(tmp_2)*16); //210516
+    );
+  ); //190209to
+  Nj=1;
+  if(Ketcindyjsfigure>0,sz=round(sz*Ketcindyjsscale) ); // 
+  while(Nj+2<=length(list),
+    Pos=Lcrd(list_Nj);  //220814
+    Dir=list_(Nj+1);
+    Str=list_(Nj+2);
+    if(!isstring(Str),Str=format(Str,10)); // 16.09.30,10.09
+    tmp=replace(Str,".xy","");
+    tmp=replace(tmp,".x","(1)");
+    Str=replace(tmp,".y","(2)");
+    Str=RSslash(Str); // 17.09.24
+    Str=replace(Str,"`","'");//180303
+    tmp=Dq+","+Dq+Str+Dq+")";
+    if(Noflg<2,
+      Off=[0,0];
+      Xmv=0; Ymv=0;
+      aln="mid"; //200530from
+      if(indexof(Dir,"c")>0, Off_2=-0.3*sz);
+      if(indexof(Dir,"n")>0,Off_2=0;Ymv=Lettermove("n",Dir)); //210601
+      if(indexof(Dir,"s")>0, Off_2=-0.85*sz;Ymv=-Lettermove("s",Dir));
+      if(indexof(Dir,"e")>0,
+        aln="left";
+        if(indexof(Dir,"n")+indexof(Dir,"s")==0,Off=[0,-0.3*sz]);
+        Xmv=Lettermove("e",Dir);
+      );
+      if(indexof(Dir,"w")>0,
+        aln="right";
+        if(indexof(Dir,"n")+indexof(Dir,"s")==0,Off=[0,-0.4*sz]);
+        Xmv=-Lettermove("w",Dir);
+      );
+      Str=list_(Nj+2);  //17.10.17
+      Pos=Pos+[Xmv,Ymv]*MARKLEN;//210530to
+      if(length(color)==4,color=Colorcmyk2rgb(color)); //200523
+      tmp="drawtext("+format(Pcrd(Pos),10)+",offset->"+text(Off)+","+Dqq(Str)+","; 
+      tmp1="size->sz,color->colornow,align->"+Dqq(aln)+",bold->"+bld+",italics->"+ita; //210601
+      tmp1=Assign(tmp1,["sz",text(sz),"colornow",text(color),"aln",Dqq(aln),"bld",text(bld),"ita",text(ita)]);
+      tmp=tmp+tmp1+");";
+      GCLIST=append(GCLIST,[tmp,[6,0]]); //201004to
+    );
+    Nj=Nj+3;
+  );
+);
+Lettermove(dir,str):=(
+  regional(Suu,tmp,tmp1,out,nn);
+  Suu="+-.0123456789";
+  tmp=indexof(str,dir);
+  tmp1=substring(str,tmp,length(str));
+  out="";
+  nn=1;
+  while(nn<=length(tmp1),
+    tmp=substring(tmp1,nn-1,nn);
+    if(indexof(Suu,tmp)>0,
+      out=out+tmp;
+    ,
+      nn=length(str);
+    );
+    nn=nn+1;
+  );
+  if(length(out)==0,out=0,out=parse(out));
+  out;
+);
 Ketcindyjsfigure=0;
 Ketcindyjsscale=1;
-aalinestart=1;
-quline="Q01::図の{\theta}について求めよ	[1]::cos({\theta})	[2]::sin({\theta})	[3]::tan({\theta})";
-shline="Q01---	[1]= 	[2]= 	[3]= ";
-sqline="01YU	2	2	2	2CR02HU	2	2	2	2CR03KU	2	2	2	2CR04AK	2	2	2	2CR05AK	2	2	2	2CR06TK	2	2	2	2CR07MS	2	2	2	2CR08TT	2	2	2	2CR09TN	2	2	2	2CR10AY	2	2	2	2CR11HW	2	2	2	2";
-quLL=Line2list(quline);
-shL=Line2list(shline);
-sqLL=Line2list(sqline);
-zzlineend=1;
+
+setdirectory(Dircdy);
 
 
 
@@ -3429,7 +3178,7 @@ Addfunstr(name,npos,strnow):=(
 
 Keytable(nx,dx,ny,dy,plb,clr):=Keytable(nx,dx,ny,dy,plb,clr,[],0,22,1); //210629
 Keytable(nx,dx,ny,dy,plb,clr,nameL,nmove,sz):=( //230406
-  regional(xL,yL,plt,prt,prb,row,col,name,tmp,tmp2,pos);
+  regional(xL,yL,plt,prt,prb,row,col,name,tmp1,tmp2,pos);
   if(nx>0,  //211012from
     xL=apply(0..nx,#/10*dx+plb_1);
   ,
@@ -3589,86 +3338,54 @@ Errorcheckstr(str):=(
   flg;
 );
 
-posyL=[23,-3.3,-35];
-poskey=[19.5,-17.67]; 
+Shift=0;
+keytype=1;
+capflg=0;
+greflg=0;
+boldflg=0;
+vecflg=0;
 
-Kettaskinit():=(
-  regional(tmp,tmp1,tmp2);
-  Shift=0;
-  keytype=1;
-  capflg=0;
-  greflg=0;
-  boldflg=0;
-  vecflg=0;
-  nch=2;
-  StrL=apply(1..4,""); 
-  StrpL=apply(1..4,"");
-  nqu=0; //220820
-  stfixed=0;
-  stok=0;
-  initflg=1;
-  choose=0;
-  DrwL=[];
-  dpos=[10,14];
- 
-  ch=3;
-  Str="";
-  Strp="";
-  Strnq="";
-  Strnow="";
-  Strt="";
-  npos=0;
+nch=2;
+ch=2;
+StrL=apply(1..nch,"");
+StrpL=apply(1..nch,"");
+startflg=1;
+initflg=1;
+DrwL=[];
+dpos=[10,14];
 
-  px=15;
-  dtpy=3.2;
-  tposL=apply(1..4,[px+0.5,17.4-(#-1)*dtpy]);
-  dxL=apply(10..19,35.5);
-  dxL_4=42; dxL_5=42;
-  dxL2=apply(1..9,35.5);
-  dxL3=[42,42];
-  forall(1..(length(tposL)),
-    tmp="T"+text(#);
-    Putpoint(tmp,tposL_#);
-  );
-   ch=3;
-  Str="Student=";
-  Strnq=replace(Str,"?","");
-  StrL_ch=Strnq;
-  npos=length(Str);
-  tab=unicode("0009");
-  quL=Line2list(quline);
-  quall=length(quL);
-  shL=Line2list(shline);
-  ansL=shL;
-  sqLL=Line2list(sqline);
-  sqall=length(sqLL);
-  stall=sqall;
-  stquLL=[];
-  forall(1..stall,ns,
-    tmp=sqLL_ns;
-    name=tmp_1;
-    tmp2=tmp_(2..(length(tmp)));
-    tmp2=apply(tmp2,parse(#));
-    qu=[];
-    sh=[];
-    forall(1..(length(quL)),nn,
-      tmp=quL_nn;
-      qu=append(qu,tmp_1+" "+tmp_(tmp2_nn));
-      tmp=shL_nn;
-      sh=append(sh,tmp_1+" "+tmp_2);
-    );
-    stquLL=append(stquLL,[name,qu,sh]);
-  );
-); // end init
+Str="";
+Strp="";
+Strnq="";
+Strnow="";
+Strt="";
+npos=0;
+
+
+px=15;
+dtpy=3.2;
+tposL=apply(1..4,[px+0.5,17.4-(#-1)*dtpy]);
+posyL=[23,-2.5,-34];
+
+
+
+
+poskey=[19.5,-17.67];
+dxL=apply(10..19,42);
+dxL2=apply(1..9,42);
+dxL3=[42,42];
+
+Adddrw(str):=(
+  DrwL=append(DrwL,[dpos,str,18]);
+  dpos=dpos-[0,2];
+);
 
 
 CtrkeyL=[
-  [["PS","PL","AC","CL","BS"]],
+  [["PS","PL","AC","CL","BS","$<\!<$","$<$","$>$","$>\!>$"]],
   [["Cap"],["Gre"],["Bld"],["Vec"]],
-  [["Cal"],["Lin"],[""]],
-  [["Rec"]],
-  [["＜","","＞"]],
-  [["$<\!<$","$<$","$>$","$>\!>$"]]
+  [["Cal"],["Lin"]],
+  [["TeX"]]
 ];
 
 Keyname():=(
@@ -3685,14 +3402,13 @@ Keyname():=(
     ["dot",":",";","$\leq$","$\geq","l","m","n","o","'","cs"],
     ["\","$\pm$","$\mp$","<",">","p","q","u","v","sum","tx"]
   ];
-  
+
   if(Shift==1,
-    nL2_3_11="$d$"; nL2_4_10="$[.]_{}^{}$"; nL2_4_11="$\partial$";
+    nL2_3_11="$d$"; nL2_4_10="$[.]_{}^{}$"; nL2_4_11="$\partial$"; //210923
   );
   if(Shift==2,
-    nL2_1_10="mat"; nL2_2_10="det"; nL2_4_11="$\circ$";
+    nL2_1_10="mat"; nL2_2_10="det"; nL2_4_11="$\circ$"; //210923
   );
-
   if(keytype==2,
     tmp1=["A","B","C"]; forall(1..3,nL_1_(#)=tmp1_#);
     tmp1=["D","E","F","G"]; forall(1..4,nL2_1_(#+5)=tmp1_#);
@@ -3756,72 +3472,55 @@ Keyname():=(
     forall(1..1,nL_4_(#)=tmp1_#);
     tmp1=apply(["p","q","r","s"],"$\vec{"+#+"}$");
     forall(1..4,nL2_4_(#+5)=tmp1_#);
-  );
-  [nL,nL2];
+  );  [nL,nL2];
 );
 
 
-
-Adddrw(str):=(
-  DrwL=append(DrwL,[dpos,str,18]);
-  dpos=dpos-[0,2];
-);
 
 Manifun=["Allclear()","Clearnow()","Delete()","Push()","Pull()",
   "Left()","Right()","LLeft()","RRight()"];
 
-Clearnow():=(
-  regional(preL,pre,tmp,tmp1,tmp2,tmp3);
-  preL=["",shL_nqu,"St="];
-  pre=preL_ch;
-  if(StrpL_ch=="",Str=pre,Str="");
-  StrL_ch=Str;
-  npos=length(Str);
-  Subsedit(ch,Str);
+Allclear():=(
+  Str="";
+  Strnq="";
+  StrL_ch="";
+  StrpL_ch="";
+  npos=0;
+  Subsedit(ch,"");
   funflg=0;
 );
 
-Delete():=(
-  regional(preL,pre,tmp,tmp1,tmp2,tmp3);
-  preL=["",shL_nqu,"St="];
-  pre=preL_ch;
+Clearnow():=(
+  Str="";
+  StrL_ch="";
+  npos=0;
+  Subsedit(ch,"");
+  funflg=0;
+);
+
+Delete():=( //220814dbg
+  regional(tmp,tmp1,tmp2);
   tmp=indexof(Str,"?");
   if(tmp>0,npos=tmp,npos=length(Str));
-  if(length(Str)>length(pre),
-    if(npos==length(Str),
-      Str=substring(Str,0,npos-1);
+  if(ch<=2,
+    if(length(Str)>0,
+      if(npos==length(Str),
+        Str=substring(Str,0,npos-1);
+      ,
+        tmp1=substring(Str,0,npos-2);
+        tmp2=substring(Str,npos-1,length(Str));
+        Str=tmp1+tmp2;
+      );
+      Strnq=replace(Str,"?","");
+      Strnow=Str;
+      StrL_ch=Strnq;
+      npos=npos-1;
     ,
-      tmp1=substring(Str,0,npos-2);
-      tmp2=substring(Str,npos-1,length(Str));
-      Str=tmp1+tmp2;
+      Pull();
+      npos=length(StrL_ch);
+      Delete();
     );
-    Strnq=replace(Str,"?","");
-    Strnow=Str;
-    StrL_ch=Strnq;
-    npos=npos-1;
-  ,
   );
-  funflg=0;
-);
-
-Allclear():=(
-  regional(preL,pre,tmp,tmp1,tmp2,tmp3);
-  preL=["",shL_nqu,"St="];
-  pre=preL_ch;
-  Str=pre;
-  Strnq=Str;
-  StrL_ch=Str;
-  StrpL_ch="";
-  npos=length(Str);
-  funflg=0;
-);
-
-Clear():=( 
-  Str="";
-  Strnq=Str;
-  StrL_ch=Str;
-  npos=0;
-  funflg=0;
 );
 
 Push():=(
@@ -3839,7 +3538,7 @@ Push():=(
   );
   StrL_ch=Str;
   Strnq=Str;
-  funflg=0;
+  Subsedit(ch,Str);
 );
 
 Pull():=(
@@ -3854,16 +3553,14 @@ Pull():=(
   Strnq=Str;
   StrL_ch=Str;
   npos=length(tmp1)+npos;
-  funflg=0;
+  Subsedit(ch,Str);
 );
 
 Left():=(
-  regional(preL,pre,tmp,tmp1,tmp2,tmp3);
-  preL=["",shL_nqu,"St="];
-  pre=preL_ch;
-  if(length(Str)>length(pre),
+  regional(tmp,tmp1,tmp2,tmp3);
+  if(length(Str)>0,
     tmp=indexof(Str,"?");
-    if(tmp>length(pre)+1,
+    if(tmp>1,
       tmp1=substring(Str,0,tmp-2)+"?";
       tmp2=substring(Str,tmp-2,tmp-1);
       tmp3=substring(Str,tmp,length(Str));
@@ -3876,10 +3573,7 @@ Left():=(
       Str=tmp1+tmp3;  
       npos=length(tmp1);
     );
-    Strnq=replace(Str,"?","");
-    StrL_ch=Strnq;
   );
-  funflg=0;
 );
 
 Right():=(
@@ -3901,25 +3595,15 @@ Right():=(
         npos=length(Str);
       );
     );
-    Strnq=replace(Str,"?","");
-    StrL_ch=Strnq;
   );
-  funflg=0;
 );
 
 LLeft():=(
-  regional(preL,pre,tmp,tmp1,tmp2,tmp3);
-  preL=["",shL_nqu,"St="];
-  pre=preL_ch;
-  tmp=replace(Str,"?","");
-  if(length(tmp)>length(pre),
-    tmp=substring(tmp,length(pre),length(tmp));
-    Str=pre+"?"+tmp;
-    npos=length(pre)+1;
-    Strnq=replace(Str,"?","");
-    StrL_ch=Strnq;
+  regional(tmp,tmp1,tmp2,tmp3);
+  if(length(Str)>0,
+    npos=1;
+    Str="?"+Str;
   );
-  funflg=0;
 );
 
 RRight():=(
@@ -3927,474 +3611,124 @@ RRight():=(
   if(length(Str)>0,
     Str=replace(Str,"?","");
     npos=length(Str);
-    Strnq=replace(Str,"?","");
-    StrL_ch=Strnq;
-  );
-  funflg=0;
-);
-
-
-
-Lsetwindow(xrng,yrng):=(
-  XMIN=xrng_1; XMAX=xrng_2;
-  YMIN=yrng_1; YMAX=yrng_2;
-);
-
-Setadjust():=Setadjust([0,0],1);
-Setadjust(mv,sc):=(
-  Scalea=3.6*sc;
-  pSW=[50,3]+mv; 
-  Movea=pSW-[XMIN,YMIN];
-);
-
-Adjustpt(pt):=(
-  regional(x0,y0,x1,y1);
-  x1=pt_1; y1=pt_2;
-  x0=XMIN; y0=YMIN;
-  x1=x0+Scalea*(x1-x0);
-  y1=y0+Scalea*(y1-y0);
-  x1=x1+Movea_1;
-  y1=y1+Movea_2;
-  [x1,y1];
-);
-
-Adjust(gd):=(
-  regional(dL,depth,out,tmp);
-  if(isstring(gd),dL=parse(gd),dL=gd);
-  depth=Measuredepth(dL);
-  if(depth==0,out=Adjustpt(dL));
-  if(depth==1,
-    out=apply(dL,Adjustpt(#));
-  );
-  if(depth==2,
-    out=[];
-    forall(dL,
-      out=append(out,Adjust(#));
-    );
-  );
-  out;
-);
-
-pdrwxy():=pdrwxy(["","x","e1","y","n1","O","s1w1"],[]);
-pdrwxy(arg1):=(
-  regional(tmp);
-  tmp=select(arg1,indexof(#,"=")>0);
-  if(length(tmp)>0,
-    pdrwxy([],arg1);
-  ,
-    pdrwxy(arg1,[]);
   );
 );
-pdrwxy(axLorg,op):=(
-  regional(axL);
-  if(length(axLorg)==0,
-    axL=["","x","e1","y","n1","O","s1w1"];
-  , 
-    axL=axLorg; 
-  ); 
-  plistplot("axx",[[XMIN,0],[XMAX,0]]);
-  plistplot("axy",[[0,YMIN],[0,YMAX]]);
-  plettter([XMAX,0],axL_3,"$"+axL_2+"$",op);
-  plettter([0,YMAX],axL_5,"$"+axL_4+"$",op);
-  pletter([0,0],axL_7,axL_6,op);
-);
-
-pletter(Pt,Dr,St):=pletter([Pt,Dr,St]);
-pletter(list):=pletter(list,[]);
-pletter(Pt,Dr,St,options):=pletter([Pt,Dr,St],options);
-pletter(list,options):=(
-  regional(L,tmp);
-  L=[];
-  forall(1..(length(list)),
-     if(mod(#,3)==1,tmp=Adjust(list_#),tmp=list_#);
-     L=append(L,tmp);
-  );    
-  Letter(L,options);
-);
-
-pexpr(Pt,Dr,St):=pexpr([Pt,Dr,St]); //220820
-pexpr(list):=pexpr(list,[]);
-pexpr(Pt,Dr,St,options):=pexpr([Pt,Dr,St],options);
-pexpr(list,options):=(
-  regional(L,tmp);
-  L=[];
-  forall(1..(length(list)),
-     if(mod(#,3)==1,tmp=Adjust(list_#));
-     if(mod(#,3)==2,tmp=list_#);
-     if(mod(#,3)==0,tmp="$"+list_#+"$");
-     L=append(L,tmp);
-  );
-  Letter(L,options);
-);
-
-plistplot(nm,vptL):=plistplot(nm,vptL,[]); //220605
-plistplot(nm,vptL,op):=( //220529
-  regional(ptL,tmp,tmp1);
-  Listplot("v"+nm,vptL,["nodisp"]);
-  tmp=Adjust("sgv"+nm);
-  Listplot(nm,tmp,op);
-);
-
-pplotdata(name1,func,variable):=pplotdata(name1,func,variable,[]);
-pplotdata(name1,func,variable,options):=( //220529
-  regional(tmp,tmp1);
-  tmp=prepend("nodisp",options);
-  Plotdata("v"+name1,func,variable,["nodisp"]);
-  tmp=Adjust("grv"+name1);
-  Listplot("-gr"+name1,tmp,options);
-);
-
-Quesno():=Quesno(nqu,1); //220816
-Quesno(nq,flg):=( //220816
-  regional(tmp,tmp1,out);
-  out="";
-  tmp=select(1..nq,substring(quL_#_1,0,1)=="Q");
-  if(length(tmp)>0,
-    tmp1=tmp_(-1);
-    out=quL_tmp1;
-    if(islist(out),out=out_1); /////
-    tmp=indexof(out," ");
-    if(tmp>0,
-      out=substring(out,0,tmp-1);
-    ,
-      out=substring(out,0,3); //220903
-    );
-    if(flg>0, //220816from
-      out=out+"-"+text(nq-tmp1+1);
-    );
-  ); //220816to
-  out;
-);
-
-tail=Readlines(Dircdy,"ketmathrulein.html");
-tail=append(tail,Copyright());
 
 
-startflg=1;
-stoknow=0;
 
-Adddrw(str):=(
-  DrwL=append(DrwL,[dpos,str,24]);
-  dpos=dpos-[0,2];
-);
 
-Getcurtime():=Getcurtime(date(),time());
-Getcurtime(ymd,hms):=(
-  regional(out,tmp,tmp1);
-  out=text(ymd_1*10000+ymd_2*100+ymd_3);
-  tmp=text(hms_1*3600+hms_2*60+hms_3);
-  tmp1=substring("0000000",0,5-length(tmp));
-  out=out+tmp1+tmp;
-  out;
-);
 
-Returntime(timedata):=(
-  regional(tmp,tmp1,out);
-  tmp=timedata;
-  if(isstring(tmp),tmp=parse(tmp));
-  out=[floor(tmp/3600)];
-  tmp=mod(tmp,3600);
-  out=append(out,floor(tmp/60));
-  tmp=mod(tmp,60);
-  tmp1=append(out,tmp);
-  out="";
-  forall(tmp1,
-    out=out+text(#)+":";
-  );
-  out=substring(out,0,length(out)-1);
-  out;
-);
-
-if(length(quline)==0,
-quline="Q01::導関数y'=tfr(dy,dx)を求めよ．	[1]::y=x^2-3x	[2]::y=sin(x)";
-shline="Q01---	[1]y'=	[2]y'=";
-sqline="01AA	2	2	2CR02BB	2	2	2";
-);
 ;
 
 </script>
 <script id="csdraw" type="text/x-cindyscript">
 Ketinit(1.6);
-drawimage([74.2,12.13],"0515-1.png",scale->3.37);
 
 if(startflg==1,
-  Kettaskinit();
-  Subsedit(3,"St=");
-  Subsedit(1,"");
-  Subsedit(2,"");
-  Subsedit(9,"");
-  pghead="";
-  pgpos=[41.82,1.1];
-
-  startflg=0;
-);
-
-if(stok<=1,
-  Subsedit(1,"");
-  Subsedit(2,"");
-  if(stok==1,
-    tmp=Textedit(3,"");
-    if(length(tmp)==0,
-      Subsedit(3,"St=");
-      stok=0;
-    );
+  forall(1..(length(tposL)),
+    tmp="T"+text(#);
+    Putpoint(tmp,tposL_#);
   );
+  startflg=0;
+,
+  T2.x=T1.x; T4.x=T3.x;
+  if(T1.y-T2.y<dtpy,T2.y=T1.y-dtpy);
+  if(T3.y-T4.y<dtpy,T4.y=T3.y-dtpy);
 );
-
-T2.x=T1.x; T4.x=T3.x;
-if(T1.y-T2.y<dtpy,T2.y=T1.y-dtpy);
-if(T3.y-T4.y<dtpy,T4.y=T3.y-dtpy);
-
 Addax(0);
 nameL=Keyname();
 Keytable(10,43,4,33,poskey,[1,1,0],nameL_1,[0,-0.5],21);
 tmp=poskey+[0,-14];
 Keytable(11,43,4,33,tmp,[1,1,0],nameL_2,[0,-0.5],21);
-tmp=[poskey_1-4.3,-0.1];
-Keytable(5,43,1,33,tmp,0,CtrkeyL_1,[0,-0.5],21);
-tmp=[poskey_1+9*4.3,-0.1];
-Keytable(4,43,1,33,tmp,0,CtrkeyL_6,[0,-0.5],21);
+tmp=[poskey_1-4.3,-0.5];
+Keytable(9,43,1,33,tmp,0,CtrkeyL_1,[0,-0.5],21);
 tmp=poskey-[4.3,0];
 Keytable(1,43,4,33,tmp,0,CtrkeyL_2,[0,-0.5],21);
-tmp=poskey+[4.3*10,2*3.3];
+tmp=poskey+[4.3*10,3.3*2];
 Keytable(1,43,2,33,tmp,0,CtrkeyL_3,[0,-0.5],21);
-tmp=[poskey_1+4*4.3,-0.1];
-Keytable(0,[46,100,46],1,33,tmp,0,CtrkeyL_5,[0,-0.5],21);
 tmp=poskey+[-4.3,-14];
 Keytable(1,43,1,33,tmp,0,CtrkeyL_4,[0,-0.5],21);
-
-if(stok<=1,
-  tmp="St=";
-  Str=Textedit(3,"","");
-  if(indexof(Str,tmp)==0,Str=tmp+Str);
-  Strnq=replace(Str,"?","");
-  StrL_3=Strnq;
-  npos=length(Str);
-  if((stok==1)&(stoknow!=stok), //230417
-    tmp=replace(StrL_3,"St=","");
-    if(length(tmp)>0,
-      stno=parse(tmp);
-      if((stno>=1)&(stno<=stall),
-        tmp1=sqLL_stno;
-        stname=tmp1_1;
-        Str="St="+stno+" "+stname;
-        Strnq=replace(Str,"?","");
-        StrL_3=Strnq;
-        npos=length(Str);
-      );
-    );
-  );
-  stoknow=stok;
-  quest=[];
-  nqinc=0;
-);
-
-if(stok>=2,
-  if(stoknow==1,
-    if(length(quest)==0,
-      tmp1=sqLL_stno;
-      sel=tmp1_(2..(length(tmp1)));
-      sel=apply(sel,if(isstring(#),parse(#),#));
-      quest=apply(1..(length(sel)),
-              quL_#_1+" "+quL_#_(sel_#));
-      rechead=text(stno)+";;"+text(stno);
-      Str=ansL_1;
-      Strnq=Str;
-      StrL_ch=Str;
-      npos=length(Str);
-      nqu=1;
-    );
-    ch=2;
-    stoknow=2;
-  );
-  if(stoknow==2,
-    Str=Textedit(2,"","");
-    Strnq=replace(Str,"?","");
-    StrL_2=Strnq;
-  );
-);
-
-if(ch<=2,
- tmp=[px-1,posyL_ch+0.5];
- drawcircle(tmp,0.5,color->[1,0,0]);
- fillcircle(tmp,0.5,color->[1,0,0]);
-);
-
-if(stoknow==2,
-  if(abs(nqinc)>0,
-    ansL_nqu=Strnq;
-    if(nqinc>0,nqu=min([nqu+nqinc,quall]));
-    if(nqinc<0,nqu=max([nqu+nqinc,1]));
-    Str=ansL_nqu;
-    Strnq=Str;
-    StrL_2=Str;
-    npos=length(Str);
-    Subsedit(2,Strnq);//220629readded
-    nqinc=0;
-  );
-  tmp=Quesno();
-  if(length(tmp)>0,
-    drawtext(Text1.xy-[7,0],tmp,size->18);
-    StrL_1=quest_nqu;
-    tmp=select(1..nqu,//230411from
-          substring(quest_#,0,1)=="Q");
-    if(length(tmp)>0,
-      tmp1=tmp_(-1);
-      tmp=Gettexform(quest_tmp1);
-      drawtext(Text1.xy+[15,-2.5],tmp,size->14);
-    );//230411to
-  );
-);
-
-if((recflg==1)&(stoknow==2),
-  rec=rechead+Getcurtime()+";;";//210924
-  ansL_nqu=Textedit(ch,"","");
-  str="";
-  forall(1..(length(ansL)),n,
-    str=str+ansL_n+";;";
-  );
-  rec=rec+substring(str,0,length(str)-2);
-  Subsedit(9,rec);
-  StrL_4=rec;
-  recflg=0;
+drawcircle([px,posyL_ch],0.5,color->[1,0,0]);
+fillcircle([px,posyL_ch],0.5,color->[1,0,0]);
+if(initflg==1,
+  Str=StrL_ch;
+  Strp=StrpL_ch;
+  Strnow=Str;
+  npos=length(Strnow);
+  initflg=0;
 );
 if(funflg==1,
   if(contains(Manifun,name),
     parse(name+";");
-    Subsedit(ch,Str);
-    name="";
   ,
-    if(indexof(StrL_ch,"---")==0,
-      tmp=indexof(Str,"?");
-      if(tmp>0,npos=tmp,npos=length(Str));
-      out=Addfunstr(name,npos,Str);
-      tmp=length(out_1)-length(Str);
-      npos=npos+tmp;
-      Str=out_1; //npos=out_2;
-      if(npos<length(Str),
-        tmp=replace(Str,"?","");
-        tmp1=substring(tmp,0,npos-1)+"?";
-        Str=tmp1+substring(tmp,npos-1,length(tmp));
-      );
-      Strnq=replace(Str,"?","");
-      StrL_ch=Str;
-      Subsedit(ch,Str);
+    tmp=indexof(Str,"?");
+    if(tmp>0,npos=tmp,npos=length(Str));
+    out=Addfunstr(name,npos,Str);
+    tmp=length(out_1)-length(Str);
+    npos=npos+tmp;
+    Str=out_1; //npos=out_2;
+    if(npos<length(Str),
+      tmp=replace(Str,"?","");
+      tmp1=substring(tmp,0,npos-1)+"?";
+      Str=tmp1+substring(tmp,npos-1,length(tmp));
     );
   );
+  Subsedit(ch,Str);
   funflg=0;
 );
-if(stoknow==2,
-  flg=0;
-  Str=Textedit(2,"","");
-  if(indexof(shL_nqu,"---")==0,
-    if(length(tmp)>length(shL_nqu),
-      Strnq=replace(Str,"?","");
-      tmp1=StrL_ch;
-      StrL_ch=Strnq;
-      Subsedit(ch,Str);
-      npos=npos+length(Str)-length(tmp1);
-      flg=1;
-    );
+Str=Textedit(ch,"","");
+Str=replace(Str,"///","//");
+Strnq=replace(Str,"?","");
+StrL_ch=Strnq;
+if(Strnq!=Strnow,
+  Strnow=Strnq;
+);
+
+Subsedit(ch,Str);
+tpL=[T1.xy,T3.xy];
+dyL=[T1.y-T2.y,T3.y-T4.y];
+texstr="";
+forall(1..nch,nc,
+  sL=[];
+  tmp=StrpL_nc+StrL_nc;
+  if(length(tmp)>0,
+    tmp1=tokenize(tmp,"//");
+    tmp1=apply(tmp1,if(isstring(#),#,text(#)));
+    sL=concat(sL,tmp1);
   );
-  tmp1=shL_nqu;
-  if(substring(Str,0,length(tmp1))!=tmp1,
-    Str=tmp1;
-    Strnq=replace(Str,"?","");
-    StrL_ch=Strnq;
-    flg=1;
-  );
-  if(flg==0,
-    tmp=shL_nqu;
-    npos=length(tmp);
-  );
-  tpL=[T1.xy,T3.xy];
-  dyL=[T1.y-T2.y,T3.y-T4.y];
-  texstr="";
-  forall(1..nch,nc,
-    sL=[];
-    tmp=StrL_nc;
-    if(length(tmp)>0,
-      tmp1=tokenize(tmp,"//");
-      tmp1=apply(tmp1,if(isstring(#),#,text(#)));
-      sL=concat(sL,tmp1);
-    );
-    tp=tpL_nc;
-    dy=dyL_nc;
-    ns=length(sL);
-    forall(1..ns,nn,
-      flg=0; //220609from
-      tmp1=sL_nn;
-      if(flg==0, // 220718from
-        tmp3=Indexall(tmp1,"^");
-        tmp2=[];
-        forall(tmp3,
-          if(#==1,
-            tmp2=append(tmp2,#);
-          ,
-            if(tmp1_(#-1)=="(",
-              tmp2=append(tmp2,#);
-            ,
-              if(#>=4,
-                tmp=substring(tmp1,#-4,#-1);
-                if(contains(["sin","cos","tan"],tmp),
-                  tmp2=append(tmp2,#);
-                );
-              );    
-            );
-          );
-        );
-        if(length(tmp2)>0,
-          flg=1;
-          tmp=tp+[0,-0.2];
-          forall(1..(length(tmp1)),mm,
-            tmp3=tmp1_mm;
-            clr=[0,0,0];
-            if(contains(tmp2,mm),clr=[1,0,0]);
-            tmp_1=tmp_1+1.25;
-            Drwletter(tmp,tmp3,22,clr);
-          );
-        );
-      ); // 220718to
-      if((flg==0)&(indexof(tmp1,"("))>0,
-        tmp2=Bracket(tmp1);
-        tmp=tmp2_(-1);
-        if(tmp_2!=-1,
-          flg=1;
-          tmp2=select(tmp2,abs(#_2)==1);
-          tmp2=apply(tmp2,#_1);
-          tmp=tp+[0,-0.2];
-          forall(1..(length(tmp1)),mm,
-            tmp3=tmp1_mm;
-            clr=[0,0,0];
-            if(contains(tmp2,mm),clr=[1,0,0]);
-            tmp_1=tmp_1+1.25;
-            Drwletter(tmp,tmp3,22,clr);
-          );
-        );
-      );
-      if(flg==0,
-        strt=Gettexform(sL_nn);
-        tmp=tp+[1.2,-0.2];
-        Drwletter(tmp,strt,22);
-      );
-      tp=tp-[0,dy];
+  tp=tpL_nc;
+  dy=dyL_nc;
+  ns=length(sL);
+  forall(1..ns,nn,
+    tmp1=sL_nn;
+    flg=Errorcheckstr(tmp1);
+    if(flg_1==0,
+      strt=Gettexform(tmp1);
+      tmp=tp+[1.2,-0.2];
+      Drwletter(tmp,strt,22);
       texstr=texstr+strt;
-    ); //220609to
+    );
+    if(flg_1>0,
+      tmp2=flg_2;
+      tmp=tp+[1.2,-0.2];
+      forall(1..(length(tmp1)),mm,
+        tmp3=tmp1_mm;
+        clr=[0,0,0];
+        if(contains(tmp2,mm),clr=[1,0,0]);
+        tmp_1=tmp_1+1.25;
+        Drwletter(tmp,tmp3,22,clr);
+      );
+    );
   );
-  Subsedit(2,Str);
-  drawtext(pgpos,"Pg="+text(nqu),size->16);
 );
 
-if(stoknow==2,
-  Subsedit(2,Str); 
-  Subsedit(1,StrL_1);
-);
-
-if(stok==1,
-  Subsedit(3,StrL_3);
+if(texflg==1,
+  Subsedit(3,texstr);
+  texflg=0;
 );
 
 Windispg();
+
 ;
 
 </script>
@@ -4411,20 +3745,33 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
-    {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, textsize: 24.0},
-    {name: "NE", type: "Free", pos: [4.0, 1.0067746650167269, 0.05318084682256492], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
-    {name: "Text2", type: "EditableText", pos: [4.0, -0.8516129032258064, 0.25806451612903225], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},
-    {name: "T1", type: "Free", pos: [-3.5632183908045985, -4.0, -0.2298850574712644], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: false},
-    {name: "T2", type: "Free", pos: [4.0, 3.6645161290322577, 0.25806451612903225], color: [1.0, 0.784, 0.0], labeled: false, size: 6.0, border: false},
+    {name: "Text1", type: "EditableText", pos: [-2.909090909090909, -4.0, -0.18181818181818182], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 535, textsize: 24.0},
+    {name: "T2", type: "Free", pos: [4.0, 3.664516129032258, 0.25806451612903225], color: [1.0, 0.784, 0.0], labeled: false, size: 6.0, border: false},
     {name: "T3", type: "Free", pos: [4.0, 2.8387096774193545, 0.25806451612903225], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: false},
-    {name: "T4", type: "Free", pos: [4.0, 2.012903225806451, 0.25806451612903225], color: [1.0, 0.784, 0.0], labeled: false, size: 6.0, border: false},
-    {name: "SW", type: "Free", pos: [1.4694412402425423, -4.0, 0.12563238528778808], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
-    {name: "Text3", type: "EditableText", pos: [4.0, -0.8621236133122027, 0.06339144215530904], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 130, text: "St=", textsize: 21.0},
-    {name: "Text9", type: "EditableText", pos: [1.7714285714285714, -4.0, 0.11428571428571428], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},
-    {name: "Text7", type: "Button", pos: [-2.0, -4.0, -0.17391304347826086], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=1;initflg=1;", text: "1", textsize: 18.0},
-    {name: "Text8", type: "Button", pos: [4.0, -1.1478260869565216, 0.34782608695652173], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=2;initflg=1;", text: "2", textsize: 18.0},
-    {name: "Text4", type: "Button", pos: [4.0, 0.0851063829787234, 0.10638297872340424], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "nqinc=-1;", text: "　　", textsize: 14.0},
-    {name: "Text120", type: "Button", pos: [4.0, -0.540084388185654, 0.05625879043600563], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.0, 0.0], fillalpha: 0.27272728085517883, script: "startflg=1;", text: "Rset", textsize: 16.0},
+    {name: "NE", type: "Free", pos: [4.0, 1.1283840564974783, 0.05757365765563785], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "T1", type: "Free", pos: [-3.5632183908045985, -4.0, -0.2298850574712644], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: false, printname: "T1"},
+    {name: "Text2", type: "EditableText", pos: [4.0, -0.875, 0.25], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 535, textsize: 24.0},
+    {name: "Text3", type: "EditableText", pos: [1.8285714285714285, -4.0, 0.11428571428571428], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 535, textsize: 24.0},
+    {name: "T4", type: "Free", pos: [4.0, 2.012903225806451, 0.25806451612903225], color: [1.0, 0.686, 0.686], labeled: false, size: 6.0, border: false},
+    {name: "SW", type: "Free", pos: [1.5801622692426767, -4.0, 0.12214258801822592], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "Text200", type: "Button", pos: [4.0, 0.17888198757763973, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Push()\";", text: "　　", textsize: 14.0},
+    {name: "Text14", type: "Button", pos: [3.8795180722891565, -4.0, 0.24096385542168672], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, script: "if(keytype!=5,keytype=5,keytype=1);", text: "　　", textsize: 14.0},
+    {name: "Text203", type: "Button", pos: [4.0, 0.0993103448275862, 0.13793103448275862], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Clearnow()\";", text: "　　", textsize: 14.0, textbold: true},
+    {name: "Text204", type: "Button", pos: [4.0, 0.08648648648648648, 0.12012012012012012], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Delete()\";", text: "　　", textsize: 14.0},
+    {name: "Text7", type: "Button", pos: [-2.242152466367713, -4.0, -0.17937219730941703], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=1;initflg=1;", text: "1", textsize: 18.0},
+    {name: "Text8", type: "Button", pos: [4.0, -1.152, 0.32], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=2;initflg=1;", text: "2", textsize: 18.0},
+    {name: "Text206", type: "Button", pos: [4.0, 0.06873508353221958, 0.0954653937947494], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Left()\";", text: "　　", textsize: 14.0},
+    {name: "Text13", type: "Button", pos: [4.0, -3.3043478260869565, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, text_fontfamily: "monospace", script: "if(keytype!=4,keytype=4,keytype=1);", text: "　　", textsize: 14.0},
+    {name: "Text11", type: "Button", pos: [4.0, -1.664596273291926, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, text_fontfamily: "monospace", script: "if(keytype!=2,keytype=2,keytype=1);", text: "　　", textsize: 14.0},
+    {name: "Text12", type: "Button", pos: [4.0, -2.4844720496894417, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, text_fontfamily: "monospace", script: "if(keytype!=3,keytype=3,keytype=1);", text: "　　", textsize: 14.0},
+    {name: "Text205", type: "Button", pos: [4.0, 0.07659574468085105, 0.10638297872340424], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"LLeft()\";", text: "　　", textsize: 14.0},
+    {name: "Text207", type: "Button", pos: [4.0, 0.062337662337662345, 0.08658008658008658], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Right()\";", text: "　　", textsize: 14.0},
+    {name: "Text208", type: "Button", pos: [4.0, 0.05702970297029703, 0.07920792079207921], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"RRight()\";", text: "　　", textsize: 14.0},
+    {name: "Text17", type: "Button", pos: [4.0, -0.6309148264984228, 0.06309148264984228], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, script: "if(Shift!=2,Shift=2,Shift=0);", text: "　　", textsize: 16.0},
+    {name: "Text16", type: "Button", pos: [4.0, -0.4227129337539433, 0.06309148264984228], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.5, script: "if(Shift!=1,Shift=1,Shift=0);", text: "　　", textsize: 16.0},
+    {name: "Text202", type: "Button", pos: [4.0, 0.11659919028340082, 0.1619433198380567], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Allclear()\";", text: "　　", textsize: 14.0},
+    {name: "Text18", type: "Button", pos: [2.111475409836065, -4.0, 0.13114754098360656], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "texflg=1;", text: "　　", textsize: 14.0},
+    {name: "Text201", type: "Button", pos: [4.0, 0.1411764705882353, 0.19607843137254902], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, text_fontfamily: "monospace", script: "funflg=1;name=\"Pull()\";", text: "　　", textsize: 14.0},
     {name: "Text30", type: "Button", pos: [4.0, -1.3137254901960786, 0.19607843137254902], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=[\"La\",\"A\",\"{\\alpha}\",\"\\mathbf{a}\",\"{\\vec{a}\\;}\"]_keytype;", text: "　　", textsize: 14.0},
     {name: "Text31", type: "Button", pos: [4.0, -1.08502024291498, 0.1619433198380567], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=[\"Lb\",\"B\",\"{\\beta}\",\"\\mathbf{b}\",\"{\\vec{b}\\;}\"]_keytype;", text: "　　", textsize: 14.0},
     {name: "Text32", type: "Button", pos: [4.0, -0.9241379310344828, 0.13793103448275862], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=[\"Lc\",\"C\",\"{\\gamma}\",\"\\mathbf{c}\",\"{\\vec{c}\\;}\"]_keytype;", text: "　　", textsize: 14.0},
@@ -4508,45 +3855,24 @@ var cdy = CindyJS({
     {name: "Text110", type: "Button", pos: [4.0, -2.4158415841584158, 0.07920792079207921], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=[\"Lu\",\"U\",\"{\\Phi}\",\"\\mathbf{u}\",\"{\\vec{u}\\;}\"]_keytype;", text: "　　", textsize: 14.0},
     {name: "Text111", type: "Button", pos: [4.0, -2.226277372262774, 0.07299270072992702], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=[\"Lv\",\"V\",\"{\\lambda}\",\"\\mathbf{v}\",\"{\\vec{v}\\;}\"]_keytype;", text: "　　", textsize: 14.0},
     {name: "Text112", type: "Button", pos: [4.0, -2.0642978003384096, 0.0676818950930626], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;if(Shift==1,name=\"br(\");if(Shift==2,name=\"sum(\");if(Shift==0,name=\"sum(\");", text: "　　", textsize: 14.0},
-    {name: "Text113", type: "Button", pos: [4.0, -1.9242902208201893, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;if(Shift==0,name=\"tx(\");if(Shift==1,name=\"par(\");if(Shift==2,name=\"(circ)\");", text: "　　", textsize: 14.0},
-    {name: "Text200", type: "Button", pos: [4.0, 0.1987577639751553, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Push()\";", text: "　　", textsize: 14.0},
-    {name: "Text201", type: "Button", pos: [4.0, 0.15686274509803924, 0.19607843137254902], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Pull()\";", text: "　　", textsize: 14.0},
-    {name: "Text202", type: "Button", pos: [4.0, 0.12955465587044537, 0.1619433198380567], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Allclear()\";", text: "　　", textsize: 14.0},
-    {name: "Text203", type: "Button", pos: [4.0, 0.11034482758620691, 0.13793103448275862], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Clearnow()\";", text: "　　", textsize: 14.0},
-    {name: "Text204", type: "Button", pos: [4.0, 0.09609609609609611, 0.12012012012012012], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Delete()\";", text: "　　", textsize: 14.0},
-    {name: "Text205", type: "Button", pos: [4.0, 0.05414551607445009, 0.0676818950930626], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"LLeft()\";", text: "　　", textsize: 14.0},
-    {name: "Text206", type: "Button", pos: [4.0, 0.050473186119873815, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Left()\";", text: "　　", textsize: 14.0},
-    {name: "Text207", type: "Button", pos: [4.0, 0.047267355982274745, 0.05908419497784343], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"Right()\";", text: "　　", textsize: 14.0},
-    {name: "Text208", type: "Button", pos: [4.0, 0.044444444444444446, 0.05555555555555555], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;name=\"RRight()\";", text: "　　", textsize: 14.0},
-    {name: "Text11", type: "Button", pos: [4.0, -1.6645962732919255, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(keytype!=2,keytype=2,keytype=1);", text: "　　", textsize: 14.0},
-    {name: "Text12", type: "Button", pos: [4.0, -2.484472049689441, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(keytype!=3,keytype=3,keytype=1);", text: "　　", textsize: 14.0},
-    {name: "Text13", type: "Button", pos: [4.0, -3.3043478260869565, 0.2484472049689441], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(keytype!=4,keytype=4,keytype=1);", text: "　　", textsize: 14.0},
-    {name: "Text14", type: "Button", pos: [3.8795180722891565, -4.0, 0.24096385542168672], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(keytype!=5,keytype=5,keytype=1);", text: "　　", textsize: 14.0},
-    {name: "Text18", type: "Button", pos: [2.111475409836066, -4.0, 0.13114754098360656], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "recflg=1;", text: "　　", textsize: 14.0},
-    {name: "Text16", type: "Button", pos: [4.0, -0.42271293375394325, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(Shift!=1,Shift=1,Shift=0);", text: "　　", textsize: 14.0},
-    {name: "Text17", type: "Button", pos: [4.0, -0.6309148264984227, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(Shift!=2,Shift=2,Shift=0);", text: "　　", textsize: 14.0},
-    {name: "Text19", type: "Button", pos: [4.0, -0.9676511954992967, 0.05625879043600563], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.27272728085517883, script: "stok=stok+1;", text: "O  K", textsize: 16.0},
-    {name: "Text5", type: "Button", pos: [4.0, 0.06095238095238095, 0.0761904761904762], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "nqinc=1;", text: "　　", textsize: 14.0}
+    {name: "Text113", type: "Button", pos: [4.0, -1.9242902208201893, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "funflg=1;if(Shift==0,name=\"tx(\");if(Shift==1,name=\"par(\");if(Shift==2,name=\"(circ)\");", text: "　　", textsize: 14.0}
   ],
   ports: [{
-    width: 805,
-    height: 656,
     id: "CSCanvas",
-    transform: [{visibleRect: [3.6568135794819683, 28.89397771956879, 86.57892432548152, -38.679816875928985]}],
+    width: 749,
+    height: 624,
+    transform: [{visibleRect: [2.4161082169250014, 26.063124808105865, 79.42313181168355, -38.09225933492396]}],
     grid: 5.0,
     background: "rgb(247,247,247)"
   }],
   csconsole: false,
-  images: {
-    "0515-1.png": "data:image/png;base64,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V155ZYd0mk9DnUEfJk6c6I477ri8f/fvf//bCJoHRPqLh4YnbI55//33HeOAqBkn41h77bVdq1at3A477OCaN29u6g8kZ//KJaXnMx4dIwQKRUCEXChidXK83/ZDvpDTd99959555x0j4BdffNG9/fbbZliDmJAeGzdubFJlixYt3LrrrjsH4aK/rWVbdNFF3VprrWWvbP2AjCF7T9YfffSRe/31101fDWHffffdrn///jbODTfc0Agakt5iiy3sgcP4wQECF0FnQ1iflQsBEXK5kIzBeZAMPQGjHnjvvfcc5IsUjDT8/fffGylBPksttZRJjEiOkFOzZs1MEo7BMOfqIoS95ppr2iv9yx9++MFI2e8CeAhNmTLFvfvuu+766683CX2zzTYz6RkcNt10U7f00kvPxgiCVhMC5URAOuRyohnguZCEIWE8GJAMn332WSPgV1991fS/fmuOWgEp0xMw+lXUDdVsSLH9+vUzlcXAgQPzVlmUo4/gNHPmTAcuPKTQZaPewP0O/FClQMaoNXhAtW7d2gh6scUWM4KW7rkcs6BziJDrdA1AIN4YN2rUKHffffcZyaCeYAsOkaDr3W677Yxgtt56a9P51nJLXktCzlwGGAUxFo4bN84eYC+99JL74IMPHOoPCBrpGOn5wAMPdLvssos9vPAM4QGnJgSKRUCEXCxyAf4OEoFwvTpi8ODB7pFHHjHDFtv2FVZYwQi4ffv2btttt3XrrLOOeUKEMpSQCDkTEx5wX3zxhYOY2WWMHj3a/g8548GB3/T+++9vnhvsNnjoSWrORFH/bwgBEXJDCAX+vTfOecPVyJEj3aBBg0yyo+u4mOHi1aVLF7fHHnuYVBzqkEIm5HTMwBzpecSIEY6H3vjx400lxO5io402cgcccIDbfffdzfDJg1BSczp6ej8vBETI80In4O+QhpHOMEzhHQEJP/744xYVhzoC/W+HDh1c165dXcuWLU1iC3g41rW4EHI6jswBRkBUQuD/6aefmqpomWWWMfx5EG6zzTZmJEWlIak5HT29z0RAhJyJSMD/RzJj64w0zPYZCe3+++83Fy5udIxOm2++uUlou+66a9WNcqVCF0dCTh8zId/PPPOMPRzHjh1rD0vmbL311rMdyp577mmeHl5qrqW+Pr3feh8OAiLkcOZinj2BiGfNmmXkiwfCk08+af/n5sY4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"
-  },
-  cinderella: {build: 2072, version: [3, 0, 2072]}
+  cinderella: {build: 2071, version: [3, 0, 2071]}
 });
     </script>
 </head>
 <body>
 <header><p><font size="6">
-KeTTask0515-1
+KeTMath数式入力
 </font></p></header>
     <div id="CSCanvas"></div>
 <div style="padding: 50px">

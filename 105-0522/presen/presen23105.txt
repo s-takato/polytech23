@@ -1,5 +1,5 @@
 Title::slide0
-::\newcommand{\hiduke}{0523}
+::\newcommand{\hiduke}{0522}
 ::\newcommand{\hako}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,\phantom{#2}\,}}
 ::\newcommand{\hakoa}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,#2\,}}
 ::\newcommand{\hakom}[2][1]{\hako[#1]{$#2$}}
@@ -58,6 +58,19 @@ Title::slide0
 \noindent\Ltab{#1 mm}{[\theedactr]\ #2}%
 \addtocounter{edactr}{1}%
 }
+
+%%%%%%%%%%%%
+main::復習（三角関数）
+\slidepage[m]
+
+%%%%%%%%%%%%
+new::振幅周期位相
+%repeat=1
+\slidepage
+
+itemize
+item::[課題]\monban 問題のアプリを動かして問いに答えよ．
+end
 
 %%%%%%%%%%%%
 main::指数関数

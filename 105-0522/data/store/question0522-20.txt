@@ -1,0 +1,13 @@
+Q
+Move the graph of y=sin(x).
+[1] Amplitude of sin(x),cos(x)
+[2] Period sin(x),cos(x)
+[3] Phase shift cos(x) from sin(x)
+Sheet
+[1] A=  ::2
+[2] P=  ::2
+[3] P.S= ::2:::-1
+Ans
+[1] 1
+[2] 2pi
+[3] fr(pi,2)
