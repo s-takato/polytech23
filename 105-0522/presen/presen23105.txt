@@ -508,10 +508,10 @@ new::対数関数のグラフ
 
 itemize
 item::$y=\log_a x$\hspace*{2zw}KeTMathでは\ \verb|log(a,x)|
-item::アプリ「関数のグラフ」でかいてみよう
-item::$x$の範囲が全実数でない　\verb|x=0.01,10|などとする．
-item::[課題]\monban グラフをかいて，問いに答えよ\seteda{90}\\
-\eda{$y=\log_2 x,\ \log_4 x,\ \log_{\frac{1}{2}}x,\ \log_2(-x)$}\\
+item::アプリ「関数のグラフ」でかいてみよう\\
+　$y=\log_2 x,\ \log_4 x,\ \log_{\frac{1}{2}}x,\ \log_2(-x)$\\
+注意：$x$の範囲が全実数でない　\verb|x=0.1,10|などとする．
+item::[課題]\monban 問いに答えよ \seteda{100}\\
 \eda{$y=\log_a x$の$a$を変えるとどうなるか}\\
 \eda{$y=\log_a x$と$y=\log_a(-x)$はどのような関係か}
 end

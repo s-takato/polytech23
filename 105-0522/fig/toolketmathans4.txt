@@ -1,0 +1,10 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:(2*log(3))/log(4)-{l*o*g}(36)/{l*o*g}(4)
+(%i7) q1i2:log(3/4)/log(3)+log(24)/{l*o*g}(3)+(-{l*o*g}(2))/{l*o*g}(3)
+/Users/takatoosetsuo/polytech23.git/105-0522/fig/toolketmathans4.max:7:39:incorrect syntax: { is not an infix operator
+log(8)/{l*o*g}(3)-4{
+                  ^
+(%o8) "/Users/takatoosetsuo/polytech23.git/105-0522/fig/toolketmathans4.max"
