@@ -1,0 +1,14 @@
+[-0.9999999999999998,2,2,2]
+
+Script
+q1i1:2*log(3)/log(4)-log(36)/log(4)
+q1i2:log(((3)/(4)))/log(3)+log(24)/log(3)-log(2)/log(3)
+q1i3:log(18)/log(3)+log(8)/log(3)-4*log(2)/log(3)
+q1i4:log(4)/log(3)+log(18)/log(3)-3*log(2)/log(3)
+q1o1:float(q1i1)
+q1o2:float(q1i2)
+q1o3:float(q1i3)
+q1o4:float(q1i4)
+q1o1::q1o2::q1o3::q1o4
+end
+

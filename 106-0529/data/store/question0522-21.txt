@@ -1,0 +1,10 @@
+Q
+@Differentiate@
+[1] y=fr(x^2+4x+3,sq(x))
+[2] y=t^3cos(2t)
+Sheet
+[1] 
+[2] 
+Ans
+[1] fr(3x^2+4x-3,2xsq(x))
+[2] 3t^2cos(2t)-2t^3sin(2t)
