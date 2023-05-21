@@ -11,6 +11,6 @@ Ans
 Mxcalc
 [1] 8^{x}=fr(1,32)
 [2] 81^x=3^(3-2x)
-o1:solve(i1,x)
-o2:solve(i2,x)
+o1:find_root(i1,x,-10,10)
+o2:find_root(i2,x,-10,10)
 return o1::o2

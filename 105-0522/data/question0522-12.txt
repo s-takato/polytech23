@@ -17,10 +17,10 @@ Ans
 Mxcalc
 [1] 2log(4,3)-log(4,36)
 [2] log(3,fr(3,4))+log(3,24)-log(3,2)
-[2] log(3,18)+log(3,8)-4log(3,2)
-[3] log(3,4)+log(3,18)-3log(3,2)
-o1:ratsimp(i1)
-o2:ratsimp(i2)
-o3:ratsimp(i3)
-o4:ratsimp(i4)
+[3] log(3,18)+log(3,8)-4log(3,2)
+[4] log(3,4)+log(3,18)-3log(3,2)
+o1:float(i1)
+o2:float(i2)
+o3:float(i3)
+o4:float(i4)
 return o1::o2::o3::o4
