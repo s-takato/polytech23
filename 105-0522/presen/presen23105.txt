@@ -429,7 +429,7 @@ new::対数法則
 layer::{120}{0}
 %[2,-]::\putnotee{80}{10}{\normalsize$\log_4 2+\log_4 8=\log_4 16=2$}
 %[3,-]::\putnotee{80}{21}{\normalsize$\log_3 15-\log_3 5=\log_3\dfrac{15}{5}=1$}
-%[4,-]::\putnotee{80}{32}{\normalsize$\log_2 4^5=5\log_2 2=5$}
+%[4,-]::\putnotee{80}{32}{\normalsize$\log_2 2^5=5\log_2 2=5$}
 end
 }
 
@@ -440,7 +440,7 @@ item::[(3)]$\log_a b^{\,p}=p\log_a b$\vspace{-1mm}
 %[5,-]::item::[課題]\monbannoadd 対数法則の具体例を書け\seteda{33}\\
 %[5,-]::\eda{(1)の例}\eda{(2)の例}\eda{(3)の例}
 %[6,-]::item::[証明](1)
-%[7,-]::$\log_a b=x,\log_a c=x$とおくと \ %
+%[7,-]::$\log_a b=x,\log_a c=y$とおくと \ %
 %[8,-]::$a^x=b,a^y=c$\\
 %[9,-]::\phantom{(1)} $a^{x+y}=a^x a^y=bc$となるから\ %
 %[10,-]::$x+y=\log_a{bc}$
