@@ -1,0 +1,25 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:log(4)/log(10)
+(%i7) q1i2:log(8)/log(10)
+(%i8) q1i3:log(1/2)/log(10)
+(%i9) q1i4:log(5)/log(10)
+(%i10) q1o1:float(q1i1)
+(%i11) q1o2:float(q1i2)
+(%i12) q1o3:float(q1i3)
+(%i13) q1o4:float(q1i4)
+(%i14) disp(q1o1)
+0.6020599913279623
+
+(%i15) disp(q1o2)
+0.9030899869919433
+
+(%i16) disp(q1o3)
+-0.3010299956639811
+
+(%i17) disp(q1o4)
+0.6989700043360186
+
+(%i18) closefile()

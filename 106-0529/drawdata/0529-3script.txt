@@ -1,0 +1,2 @@
+drawimage([59.9,6.95],"0529-3.png",scale->4);
+Center=[59.9,6.95];Scale=4;

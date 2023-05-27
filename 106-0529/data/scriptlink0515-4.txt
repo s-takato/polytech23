@@ -1,3 +1,0 @@
-LinkL=[
-  ["https://s-takato.github.io/polytech23/105-0522/11sisuugraphjsoffL.html","指数関数のグラフ"]
-]
