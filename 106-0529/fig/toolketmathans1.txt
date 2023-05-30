@@ -2,23 +2,4 @@ NIL
 (%i3) powerdisp:false
 (%i4) display2d:false
 (%i5) linel:1000
-(%i6) q1i1:log(2^5)/log(2^2)
-(%i7) q1i2:log(3)/log(3^2)
-(%i8) q1i3:((log(2)/log(3))*log(3^3))/log(2)
-(%i9) q1i4:((log(b)/log(a))*log(a))/log(b)
-(%i10) q1o1:float(q1i1)
-(%i11) q1o2:float(q1i2)
-(%i12) q1o3:float(q1i3)
-(%i13) disp(q1o1)
-2.5
-
-(%i14) disp(q1o2)
-0.5
-
-(%i15) disp(q1o3)
-3.0
-
-(%i16) disp(q1i4)
-1
-
-(%i17) closefile()
+(%i6) closefile()

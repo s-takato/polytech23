@@ -1,0 +1,8 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath5res.max:5:31:incorrect syntax: Missing )
+,no,ns,(\f*r*a*cn+1}
+                  ^
+(%o6) "/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath5res.max"

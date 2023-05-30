@@ -1,0 +1,8 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath4res.max:5:303:incorrect syntax: 桁 is not an infix operator
+14.31)-(14.31),(15桁)
+                  ^
+(%o6) "/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath4res.max"
