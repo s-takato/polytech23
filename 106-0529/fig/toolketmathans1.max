@@ -2,5 +2,10 @@ writefile("/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmathans1.txt"
 powerdisp:false$/*##*/
 display2d:false$/*##*/
 linel:1000$/*##*/
+q1i1:30*log(3)/log(10)$/*##*/
+q1o1:float(q1i1)$/*##*/
+q1o2:round(q1o1+0.5)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
 closefile()$/*##*/
 quit()$/*##*/

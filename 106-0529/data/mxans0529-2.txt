@@ -1,6 +1,15 @@
-___
+[5/2,1/2,3,1]
 
 Script
-
+assume(a>0)
+assume(b>0)
+q1i1:log(a^5)/log(a^2)
+q1i2:log(b)/log(b^2)
+q1i3:log(a)/log(b)*log(b^3)/log(a)
+q1i4:log(b)/log(a)*log(a)/log(b)
+o1:float(i1)
+o2:float(i2)
+o3:float(i3)
+q1i1::q1i2::q1i3::q1i4
 end
 

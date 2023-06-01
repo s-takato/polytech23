@@ -2,4 +2,13 @@ NIL
 (%i3) powerdisp:false
 (%i4) display2d:false
 (%i5) linel:1000
-(%i6) closefile()
+(%i6) q1i1:(30*log(3))/log(10)
+(%i7) q1o1:float(q1i1)
+(%i8) q1o2:'round(q1o1+0.5)
+(%i9) disp(q1o1)
+14.31363764158987
+
+(%i10) disp(q1o2)
+15
+
+(%i11) closefile()

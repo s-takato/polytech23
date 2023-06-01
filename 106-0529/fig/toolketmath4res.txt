@@ -2,7 +2,29 @@ NIL
 (%i3) powerdisp:false
 (%i4) display2d:false
 (%i5) linel:1000
-/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath4res.max:5:303:incorrect syntax: 桁 is not an infix operator
-14.31)-(14.31),(15桁)
-                  ^
-(%o6) "/Users/takatoosetsuo/polytech23.git/106-0529/fig/toolketmath4res.max"
+(%i6) dtLL:[[1],[2,no,14.31-14.31,15-15],[3,no,14.31-14.31,15-15],[4,no,14.31-14.31,6-15],[5,no,14.31-14.31,15-15],[6,no,14.31-14.31,15-15],[7,no,14.31-14.31,15-15],[8,no,16.31-14.31,17-15],[9,no,14.313-14.31,15-15],[10,no,14.31-14.31,15-15],[11,no,15.741-14.31,16-15]]
+(%i7) res:ratsimp(dtLL)
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 1.999999999999998 by 2/1 = 2.0
+
+rat: replaced 0.003000000000000114 by 26375091520/8791697173333 = 0.003000000000000114
+
+rat: replaced 0.0 by 0/1 = 0.0
+
+rat: replaced 1.430999999999999 by 1431/1000 = 1.431
+(%i8) disp(res)
+[[1],[2,no,0,0],[3,no,0,0],[4,no,0,-9],[5,no,0,0],[6,no,0,0],[7,no,0,0],[8,no,2,2],[9,no,26375091520/8791697173333,0],[10,no,0,0],[11,no,1431/1000,1]]
+
+(%i9) closefile()

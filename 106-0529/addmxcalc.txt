@@ -25,42 +25,15 @@ Addmxcalc(nf,fnameL):=(
       finflg=0;
       if(substring(str,0,1)=="[",
         tmp=indexof(str,"]");
-        tmp="i"+substring(str,1,tmp-1);
+        tmp=substring(str,1,tmp-1);
+        if(length(tmp)==0,tmp="0");
+        tmp="i"+tmp;
         tmp1="q"+nm+tmp;
         vL=append(vL,[tmp,tmp1]);
         tmp=indexof(str,"]");
         tmp2=substring(str,tmp,length(str));
         tmp2=Removespace(tmp2);
-        tmp=Getlevel(tmp2);
-        if(length(tmp)==0,
-          if(indexof(tmp2,Dq)==0,
-            flg=Errorcheck(tmp2);
-            if(flg==0,
-              tmp2=Tomaxform2(tmp2);
-            ,
-              tmp2="err="+flg+" "+tmp2;
-            );
-          );
-        ,
-          tmp=select(tmp,#_2==0);
-          if(length(tmp)>0,
-            tmp=apply(tmp,#_1);
-            forall(tmp,tmp2_#="#");
-            tmp2=Strsplit(tmp2,"#");
-          ,
-            tmp2=[tmp2];
-          );
-          forall(1..(length(tmp2)),
-            tmp=tmp2_#;
-            flg=Errorcheck(tmp);
-            if(flg==0,
-              tmp2_#=Tomaxform2(tmp);
-            ,
-              tmp2_#="err="+flg+" "+tmp;
-            );
-          );
-          if(length(tmp2)==1,tmp2=tmp2_1);
-        );
+        tmp2=Tomaxform2(tmp2);
         mcL=append(mcL,tmp1+":"+tmp2);
         finflg=1;
       );
@@ -76,14 +49,14 @@ Addmxcalc(nf,fnameL):=(
      );
      if(finflg==0,
        tmp=indexof(str,":");
-       tmp1=substring(str,0,tmp-1);
-       tmp2=[tmp1,"q"+nm+tmp1];
-       vL=append(vL,tmp2);
-       tmp1=str;
-       forall(vL,tmp,
-         tmp1=replace(tmp1,tmp_1,tmp_2);
+       if(tmp>0,
+         tmp1=substring(str,0,tmp-1);
+         tmp1=Removespace(tmp1);
+         tmp2=[tmp1,"q"+nm+tmp1];
+         vL=append(vL,tmp2);
        );
-       mcL=append(mcL,tmp1);
+       tmp=Removespace(str);
+       mcL=append(mcL,tmp);
     );
   );
   forall(vL,tmp,
@@ -98,9 +71,11 @@ Addmxcalc(nf,fnameL):=(
   ansnm="ans"+nf;
   setdirectory(Dircdy+"/fig");
   tmp=CalcbyM(ansnm,cmdL,[opc]);
+  println([74,tmp]);
   if(tmp!=1,
     ans="error";
   ,
+    ans="success";
     if(makeflg==1,
       setdirectory(Dirdata);
       fid=openfile(fout);
@@ -111,7 +86,8 @@ Addmxcalc(nf,fnameL):=(
       println(fid,"end");
       println(fid,"");
       closefile(fid);
-      dispL=append(dispL,[tmp1+" created",clrb]);
+//      dispL=append(dispL,[tmp1+" created",clrb]);
     );
   );
+  ans;
 );

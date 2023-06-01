@@ -3,12 +3,12 @@ NIL
 (%i4) display2d:false
 (%i5) linel:1000
 (%i6) q1i1:(30*log(3))/log(10)
-(%i7) q1o1:float(q1i1)
-(%i8) q1o2:'round(q1o1+0.5)
+(%i7) o1:float(i1)
+(%i8) o2:'round(o1+0.5)
 (%i9) disp(q1o1)
-14.31363764158987
+q1o1
 
 (%i10) disp(q1o2)
-15
+q1o2
 
 (%i11) closefile()
