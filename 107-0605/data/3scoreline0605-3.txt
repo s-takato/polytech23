@@ -1,0 +1,7 @@
+quline="Q03::計算せよ	[1]:: sq(-6)	[2]:: sq(-fr(9,4))	[3]:: sq(-6)sq(-2)	[4]:: sq(-3)sq(2)";
+shline="Q03---	[1]=  	[2]=  	[3]=  	[4]=  ";
+caline="Q03::	[1]::sq(6)i	[2]::fr(3,2)i	[3]::-2sq(3)	[4]::sq(6)i";
+mrkline="0	2	2	2	2";
+mxscline="0	1	1	1	1";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2CR11HW	2	2	2	2	2";
+ansline="1	01YU	未提出CR2	02HU	未提出CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	未提出CR6	06TK	未提出CR7	07MS	未提出CR8	08TT	未提出CR9	09TN	未提出CR10	10AY	未提出CR11	11HW	未提出";

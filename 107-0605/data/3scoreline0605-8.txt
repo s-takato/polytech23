@@ -1,0 +1,7 @@
+quline="Q08::z=a+bi,w=c+diとする	[1]:: |z|^2をa,bで表せ	[2]:: |w|^2をc,dで表せ	[3]:: zwの実部と虚部をa,b,c,dで表せ	[4]:: |zw|^2を計算せよ	[5]:: |zw|^2=|z|^2|w|^2を証明せよ";
+shline="Q08---	[1] |z|^2=  	[2] |w|^2=  	[3] zw=  	[4] |zw|^2=  	[5]   ";
+caline="Q08::	[1]::a^2+b^2	[2]::c^2+d^2	[3]::(ac-bd)+(ad+bc)i	[4]::(ac-bd)^2+(ad+bc)^2	[5]::展開してまとめると(a^2+b^2)(c^2+d^2)";
+mrkline="0	2	2	2	2	2";
+mxscline="0	1	1	1	1	-1";
+sqline="01YU	2	2	2	2	2	2CR02HU	2	2	2	2	2	2CR03KU	2	2	2	2	2	2CR04AK	2	2	2	2	2	2CR05AK	2	2	2	2	2	2CR06TK	2	2	2	2	2	2CR07MS	2	2	2	2	2	2CR08TT	2	2	2	2	2	2CR09TN	2	2	2	2	2	2CR10AY	2	2	2	2	2	2CR11HW	2	2	2	2	2	2";
+ansline="1	01YU	未提出CR2	02HU	未提出CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	未提出CR6	06TK	未提出CR7	07MS	未提出CR8	08TT	未提出CR9	09TN	未提出CR10	10AY	未提出CR11	11HW	未提出";

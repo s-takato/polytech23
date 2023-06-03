@@ -1,0 +1,7 @@
+quline="Q07::絶対値と偏角を 2, pi のようにコンマで区切って書け	[1]:: z_1=sq(3)+i	[2]:: z_2=i	[3]:: z_3=-2	[4]:: z_4=-3i";
+shline="Q07---	[1] 絶対値,偏角=  	[2] 絶対値,偏角=  	[3] 絶対値,偏角=  	[4] 絶対値,偏角=  ";
+caline="Q07::	[1]::2,fr(pi,6)	[2]::1,fr(pi,2)	[3]::2,pi	[4]::3,fr(3pi,2)";
+mrkline="0	2	2	2	2";
+mxscline="0	1	1	1	1";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2CR11HW	2	2	2	2	2";
+ansline="1	01YU	未提出CR2	02HU	未提出CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	未提出CR6	06TK	未提出CR7	07MS	未提出CR8	08TT	未提出CR9	09TN	未提出CR10	10AY	未提出CR11	11HW	未提出";
