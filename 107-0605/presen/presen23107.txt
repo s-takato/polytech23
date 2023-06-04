@@ -376,7 +376,8 @@ item::$z=a+b\,i$を平面上の点$(a,\ b)$で表す\seteda{50}\\
 %[3,-]::\eda{$3 \leftrightarrow\ \mbox{点}$}\\
 %[3,-]::\eda{$-3 \leftrightarrow\ \mbox{点}$}\\
 %[3,-]::\eda{$4i \leftrightarrow\ \mbox{点}$}
-%[4,-]::item::[課題]\monban\ [2]-[5]の点を求めよ
+%[4,-]::item::[課題]\monban\ [2]-[5]の点を求めよ\\
+%[4,-]::ここでは，$(2,3)$の代わりに$[2,3]$の形で答えよ
 end
 
 %%%%%%%%%%%%%
