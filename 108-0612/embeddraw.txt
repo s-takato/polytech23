@@ -1,10 +1,10 @@
-Embeddraw(nf,fdrL,ftaskL):=(
+Embeddraw(nf,fdrL,ftask):=(
   regional(drwL,taskL,Obkup,Sbkup,LineL,LineL1,LineL2,
      TlineL,TlineL1,TlineL2,AddL,AddL2,AddL3,
      tfile,nt,ctr,fid,tmp,tmp1,tmp2,tmp3,tmp4);
   fdr=fdrL_nf;
   drwL=Readlines(Dirdrw,fdr);
-  LineL=Readlines(Dircdy,ftaskL_nf);
+  LineL=Readlines(Dircdy,ftask);
   tmp=Filelist(Dircdy);
   tmp1=select(tmp,indexof(#,"json")>0);
   tmp2=select(tmp,indexof(#,"jsoffL")>0);
@@ -53,15 +53,33 @@ Embeddraw(nf,fdrL,ftaskL):=(
          indexof(TlineL_#,"ports: ")>0);
   tmp2=tmp2_1-1;
   TlineL=TlineL_(tmp1..tmp2);
-
- 
-  setdirectory(Dircdy);
-  tmp=replace(fdr,".html","dr.html");
-//  fid=openfile(tmp);
-  forall(LineL,
-//    println(fid,#);
+  tmp3=[];
+  forall(LineL2,
+    if(indexof(#,"{name")>0,
+	  tmp1=Indexall(#,Dq);
+	  tmp=substring(#,tmp1_1,tmp1_2-1);
+	  tmp3=append(tmp3,tmp);
+	);
   );
-//  closefile(fid);
+  tmp1=["Text15","O","S"];
+  tmp3=concat(tmp3,tmp1);
+  forall(TlineL,
+    if(indexof(#,"{name")>0,
+	  tmp1=Indexall(#,Dq);
+	  tmp=substring(#,tmp1_1,tmp1_2-1);
+	  if(!contains(tmp3,tmp),
+	    LineL=prepend(#,LineL);
+	  );
+	);
+  );
+  LineL=concat(LineL1,LineL);
+  setdirectory(Dircdy);
+  tmp=replace(ftask,".html","dr.html");
+  fid=openfile(tmp);
+  forall(LineL,
+    println(fid,#);
+  );
+  closefile(fid);
   Putpoint("O",Obkup);
   Putpoint("S",Sbkup);
 );
