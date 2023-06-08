@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/107-0605/fig/toolketmath8res.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[1,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),(a*c-b*d+(b*c+a*d)*i)-((a*c-b*d)+(a*d+b*c)*i),((a*c)^(2)+(a*d)^(2)+(b*d)^(2)+(b*c)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[2,no,(a^2+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*c-b*c)*(a*d+b*c))-((a*c-b*d)+(a*d+b*c)*i),((a*c-b*c)^(2)+(a*d+b*c)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[3,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a+c)^(2)+(b+d)^(2))-((a*c-b*d)+(a*d+b*c)*i),((a*c-b*d)^(2)+(a*d-b*c)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[4,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*d+b*c)+(a*b+c*d))-((a*c-b*d)+(a*d+b*c)*i),((a+b)^(2)+(c+d)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[5,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*c-b*d)+(a*d+c*b)*i)-((a*c-b*d)+(a*d+b*c)*i),(a^(2)*c^(2)+b^(2)*d^(2)+a^(2)*d^(2)+c^(2)*b)-((a*c-b*d)^2+(a*d+b*c)^2),ns],[6,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*c-b*c)*(a*b-b*c)*i)-((a*c-b*d)+(a*d+b*c)*i),((a*c-b*c)^(2)+(a*d+b*c)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[7,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*c-b*d)+(a*d+b*c)*i)-((a*c-b*d)+(a*d+b*c)*i),(a^(2)*c^(2)+b^(2)*d^(2)+a^(2)*d^(2)+b^(2)*c^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[8,no,(a^(2)+b^(2))-(a^2+b^2),(c^(2)+d^(2))-(c^2+d^2),((a*d-b*c)+(a*c*i+b*d*i))-((a*c-b*d)+(a*d+b*c)*i),((((a*d-b*c)+(a*c*i+b*d*i))/(2)))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[9,no,(a^2+b^2)-(a^2+b^2),(c^2+d^2)-(c^2+d^2),(a*c-b*d+(a*b+c*d))-((a*c-b*d)+(a*d+b*c)*i),((a*c-b*d)^2+(a*b+c*d)^2)-((a*c-b*d)^2+(a*d+b*c)^2),ns],[10,no,((a+b*i)^(2))-(a^2+b^2),((c+d*i)^(2))-(c^2+d^2),([a+c,b+d])-((a*c-b*d)+(a*d+b*c)*i),((a+c)^(2)+(b+d)^(2))-((a*c-b*d)^2+(a*d+b*c)^2),ns],[11]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

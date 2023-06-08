@@ -1,0 +1,148 @@
+Embeddraw(nf,fdrL,ftaskL):=(
+  regional(drwL,taskL,Obkup,Sbkup,LineL,LineL1,LineL2,
+     TlineL,TlineL1,TlineL2,AddL,AddL2,AddL3,
+     tfile,nt,ctr,fid,tmp,tmp1,tmp2,tmp3,tmp4);
+  fdr=fdrL_nf;
+  drwL=Readlines(Dirdrw,fdrL_nf);
+  LineL=Readlines(Dircdy,ftaskL_nf);
+  tmp=Filelist(Dircdy);
+  tmp1=select(tmp,indexof(#,"json")>0);
+  tmp2=select(tmp,indexof(#,"jsoffL")>0);
+  if(length(tmp1)>0,tfile=tmp1_1);
+  if(length(tmp2)>0,tfile=tmp2_1);
+  TlineL=Readlines(Dircdy,tfile);
+  Obkup=O.xy;
+  Sbkup=S.xy;
+  Putpoint("O",[50,0]);
+  Putpoint("S",[50,1]);
+//  setdirectory(Dircdy);
+  tmp1=select(1..(length(LineL)),
+        indexof(LineL_#,Dqq("csdraw"))>0);
+  tmp1=tmp1_1;
+  LineL1=LineL_(1..(tmp1-1));
+  tmp1=select(1..(length(TlineL)),
+        indexof(TlineL_#,"inputstart=1")>0);
+  tmp1=tmp1_1;
+  tmp2=select(tmp1..(length(TlineL)),
+       indexof(TlineL_#,"inputend=1")>0);
+  tmp2=tmp2_1;
+  tmp=TlineL_((tmp1+1)..(tmp2-1));
+  LineL1=concat(LineL1,tmp);
+  tmp2=select(tmp1..(length(LineL)),
+         indexof(LineL_#,"Windispg")>0);
+  tmp2=tmp2_1-1;
+  LineL2=apply(tmp1..tmp2,LineL_#);
+println([25,LineL2_1]);
+  tmp1=tmp1_1;
+  tmp2=select(TlineL,indexof(#,"inputend=1")>0);
+  tmp2=tmp2_1-1;
+  TlineL1=apply(tmp1..tmp2,TlineL_#);
+  apply(TlineL1,println(#));
+  tmp1=select(TlineL,indexof(#,"geometry: ")>0);;
+  tmp1=tmp1_1;
+  tmp2=select(TlineL,indexof(#,indexof(#,"  behavior: ")>0));
+  TlineL2=TlineL_(tmp1..(tmp2-1));
+  AddL=[];
+  nt=1; ctr=1;
+  while((nt<=length(TlineL1))&(ctr<10000),
+    tmp=TlineL1_nt;
+    tmp1=indexof(tmp,":=");
+    if(tmp1>0,
+      tmp2=substring(tmp,0,indexof(tmp,"(")-1);
+      tmp=select(LineL1,
+            substring(#,0,length(tmp2))==tmp2);
+      if(length(tmp)==0,
+        tmp=TlineL1_nt;
+        if(indexof(tmp,":=(")==0,
+          AddL=append(AddL,tmp);
+          nt=nt+1;
+        ,        
+println([45,nt,TlineL1_nt]);
+          tmp1=(nt+1)..(length(TlineL1));
+println([48,tmp1]);
+          tmp=select((nt+1)..(length(TlineL1)),
+                substring(TlineL1_#,0,2)==");");
+println([49,tmp]);
+          tmp=tmp_1;
+println([53,nt,tmp]);
+          tmp1=TlineL1_(nt..tmp);
+println(54);
+    
+          AddL=concat(AddL,tmp1);
+          nt=tmp+1;
+        );
+      ,
+        nt=nt+1;
+      );
+    ,
+      nt=nt+1;
+    );
+    ctr=ctr+1;
+  );
+  LineL1=concat(LineL1,AddL);
+//  tmp=select(1..(length(TlineL2)),
+//         indexof(TlineL2_#,"inputline=")>0);
+//  AddL2=TlineL2_((tmp_1+1)..(tmp_2-1));
+  AddL2=drwL;
+  tmp=select(1..(length(AddL2)),
+         indexof(AddL2_#,"nq=="+nq)>0);
+  if(length(tmp)>0,
+    tmp1=tmp_1;
+    tmp=select(tmp1..(length(AddL2)),
+           substring(AddL2_#,0,2)==");");
+    if(length(tmp)>0,
+      AddL2=tmp_1;
+      AddL2=AddL2_((tmp1+1)..(tmp2-1));
+    );
+  );
+  tmp="nf="+nf+";";
+  tmp1="Scale="+format(Scale,5)+";";
+  tmp2="Center="+format(Center,5)+";";
+  AddL2=concat([tmp,tmp1,tmp2],AddL2);
+  
+  tmp3=select(AddL2,indexof(#,"Putpoint")>0);
+  tmp=select(AddL2,indexof(#,"Putoncurve")>0);
+  tmp3=concat(tmp3,tmp);
+  tmp=select(AddL2,indexof(#,"Slider")>0);
+  tmp3=concat(tmp3,tmp);
+  apply(tmp3,println(#));
+  AddL3=[];
+  forall(tmp3,
+    tmp1=indexof(#,"(");
+    tmp2=indexof(#,",");
+    tmp=substring(#,tmp1,tmp2-1);
+    tmp1=select(TlineL2,indexof(#,"name: "+tmp)>0);
+    tmp1=tmp1_1;
+    tmp2=length(tmp1);
+    if(substring(tmp1,tmp2-1,tmp2)!=",",
+      tmp1=tmp1+",";
+    );
+    AddL3=append(AddL3,tmp1);
+  );
+  tmp=select(1..(length(LineL2)),
+         indexof(LineL2_#,"Windispg();")>0);
+  tmp=tmp_1;
+  tmp1=LineL2_(1..(tmp-1));
+  tmp2=LineL2_(tmp..(length(LineL2)));
+
+  LineL2=concat(tmp1,AddL2);
+  LineL2=concat(LineL2,tmp2);
+  tmp=select(1..(length(LineL2)),
+        indexof(LineL2_#,"geometry:")>0);
+  tmp=tmp_1;
+  tmp1=LineL2_(1..tmp);
+  tmp2=LineL2_((tmp+1)..(length(LineL2)));
+  LineL2=concat(tmp1,AddL3);
+  LineL2=concat(LineL2,tmp2);
+  LineL=concat(LineL1,LineL2);
+  setdirectory(Dircdy);
+  tmp=replace(fdr,".html","dr.html");
+//  fid=openfile(tmp);
+  forall(LineL,
+//    println(fid,#);
+  );
+//  closefile(fid);
+  Putpoint("O",Obkup);
+  Putpoint("S",Sbkup);
+);
+//no ketjs off

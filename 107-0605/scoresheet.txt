@@ -1,0 +1,84 @@
+if(scoresheetflg==1,
+  numreal=40;//// for substantial data
+  Resetflg(["scoresheet","all"]);
+  Resetsetting();
+  tmp=Filelist(Dirdata);
+  tmp1=select(tmp,indexof(#,"3scoreline")>0);
+  fileL=apply(tmp1,replace(#,"3scoreline","4scoresheet"));
+  tmp1=indexof(fileL_1,"-");
+  tmp2=indexof(fileL_1,".");
+  tmp=apply(fileL,[substring(#,tmp1,tmp2-1),#]);
+  tmp=sort(tmp,[parse(#_1)]);
+  fileL=apply(tmp,#_2);
+  tmp=apply(fileL,replace(#,".txt",""));
+  forall(1..(length(fileL)),
+    Putcell("",1,#,"l2",tmp_#,["Color=blue"]);
+  );
+  freadL=apply(fileL,
+      replace(#,"4scoresheet","4_scoresheet"));
+  fdL=[];
+  setdirectory(Dirdata);
+  forall(1..(length(freadL)),nf,
+    if(isexists(Dirdata,freadL_nf),
+      tmp1=Readlines(Dirdata,freadL_nf);
+      if(length(tmp1)>1,
+        if(length(tmp1_2)>1,
+          fdL=append(fdL,[fileL_nf,tmp1_2]);
+        );
+      );
+    );
+  );
+  
+  
+  tmp1=select(tmp1,indexof(#,"all")>0);
+  tmp2=select(tmp,indexof(#,"4_scoresheet")>0);
+  score1L=[];
+  forall(tmp2,
+    tmp=Readlines(Dirdata,#);
+    if(length(tmp)>1,
+      score1L=append(score1L,tmp_2);
+    );
+    scoreL=score1L;
+  );
+println([354,scoreL]);
+  if(length(tmp1)>0,
+    fall=tmp1_1;
+    dtL=Readlines(Dirdata,fall);
+    scoreL=apply(1..(numreal),"");
+    numall=0;
+    forall(dtL,dt,
+      tmp1=indexof(dt,"	Q");
+      if(tmp1>0,
+        tmp2=indexof(dt,"---");
+//        num=dt_((tmp1+3)..(tmp2-1));
+        num=substring(dt,tmp1+1,tmp2-1);
+        num=parse(num);
+        if(num>numall,numall=num);
+        scoreL_num=dt;        
+      );
+    );
+    scoreL=apply(1..numall,scoreL_#);
+    scoreL=concat(scoreL,score1L);
+  );
+println([354,scoreL]);
+  fL=apply(1..numall,
+      replace(fall,"all","-"+#));
+  fL=apply(fL,replace(#,".txt",""));
+  fL=apply(fL,replace(#,"sheet",""));
+  Putcol("",1,"l2",fL,clrb);
+  if(allflg==1,
+    forall(1..numall,nn,
+      file=replace(fall,"all","-"+nn);
+      dt=scoreL_nn;
+      if(length(dt)>0,
+        setdirectory(Dirdata);
+        fid=openfile(file);
+        println(fid,dt);
+        closefile(fid);
+      );
+    );
+    dispL=[["Each scoresheet generated",clrb]];
+    allflg=0;
+    scoresheetflg=0;//
+  );
+);

@@ -267,9 +267,6 @@ Embeddraw(nf,fname):=(
         indexof(TlineL_#,Dqq("csdraw"))>0);
   tmp=tmp_1;
   TlineL1=apply(1..(tmp-2),TlineL_#);
-  tmp1=select((tmp+1)..(length(TlineL)),
-        indexof(TlineL_#,Dqq("csdraw"))>0);
-  tmp=tmp_1;
   TlineL2=apply((tmp-1)..(length(TlineL)),TlineL_#);
   AddL=[];
   nt=1; ctr=1;
@@ -366,6 +363,11 @@ Embeddraw(nf,fname):=(
   Putpoint("S",Sbkup);
 );
 //no ketjs off
+
+setdirectory(Dircdy);
+import("embeddraw.txt");
+
+
 
 Mvpt(pt):=(
  Scale*pt+Center;
@@ -521,6 +523,7 @@ if(startflg==1,
       nq=parse(nq);
       nqL=append(nqL,nq);
     );
+println([22,FileL]);
     nf=1;
     okflg=0;
     nq=nqL_nf;
@@ -650,7 +653,7 @@ if(imdrflg==1,
     subsedit(1,text(tmp));
     subsedit(2,fname);
     fhead=replace(fname,".png","");
-    fscr=fhead+"script.txt";
+    fscr=fhead+"image.txt";
     if(nf!=nfnow,
       if(isexists(Dirdrw,fscr),
         setdirectory(Dirdrw);
@@ -688,15 +691,15 @@ if(imdrflg==1,
     fnameL=Sortsel(fL,"");
     fL=Filelist(Dirdrw);
     fL=select(fL,indexof(#,".txt")>0);
-    fL=select(fL,indexof(#,"script")>0);
+    fL=select(fL,indexof(#,"image")>0);
     tmp1=apply(fL,replace(#,Date+"-",""));
-    tmp1=apply(tmp1,replace(#,"script.txt",""));
+    tmp1=apply(tmp1,replace(#,"image.txt",""));
     tmp1=apply(tmp1,parse(#));
     tmp1=sort(tmp1);
-    scrL=apply(tmp1,Date+"-"+#+"script.txt");
+    scrL=apply(tmp1,Date+"-"+#+"image.txt");
     fnameL=[];
     forall(scrL,scr,
-      tmp=replace(scr,"script.txt","");
+      tmp=replace(scr,"image.txt","");
       tmp="kettaskv"+tmp+".html";
       fnameL=append(fnameL,tmp);
     );
@@ -737,7 +740,7 @@ if(imdrflg==1,
         line=line_(-1);
         data1a=data1_(1..line);
         data1b=data1_((line+1)..(length(data1)));
-        tmp=fpng+"script.txt";
+        tmp=fpng+"image.txt";
         if(isexists(Dirdrw,tmp),
           script=Readlines(Dirdrw,tmp);
           script=script_1;
@@ -786,6 +789,7 @@ if(imdrflg==2,
     nfnow=0;
     startdrflg=0;
   );
+  Subsedit(1,nf);
   File=FileL_nf;
   Subsedit(2,File);
   if(typeflg>0,
@@ -811,9 +815,10 @@ if(imdrflg==2,
   );
   inputline=0;
   if(okflg>=1, //no ketjs on
-    tmp=replace(File,".html","dr.html");
+//    tmp=replace(File,".html","dr.html");
+println([313,File,nf]);
     Embeddraw(nf,File);
-    okflg=0;
+//    okflg=0;
   ); //no ketjs off
 
 );
@@ -836,7 +841,7 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
-    {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, text: "0605-1,0605-3,0605-4", textsize: 24.0},
+    {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, text: "1,2,3,4,5,6,7,8", textsize: 24.0},
     {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "Text2", type: "EditableText", pos: [4.0, -0.8516129032258064, 0.25806451612903225], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, text: "kettaskv0605-1.html", textsize: 24.0},
     {name: "T1", type: "Free", pos: [-3.5632183908045985, -4.0, -0.2298850574712644], color: [0.0, 0.0, 0.0], labeled: true, size: 6.0, border: false},
@@ -848,7 +853,7 @@ var cdy = CindyJS({
     {name: "Text9", type: "EditableText", pos: [1.7714285714285714, -4.0, 0.11428571428571428], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},
     {name: "S", type: "Free", pos: [4.0, 0.45714285714285713, 0.11428571428571428], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "O", type: "Free", pos: [4.0, 0.8275862068965517, 0.0689655172413793], color: [1.0, 0.0, 0.0], labeled: true},
-    {name: "A", type: "Free", pos: [4.0, 1.1018309186654975, 0.06235634090853614], color: [1.0, 0.0, 0.0], labeled: true, size: 5.1},
+    {name: "A", type: "Free", pos: [4.0, 1.101830918665497, 0.06235634090853614], color: [1.0, 0.0, 0.0], labeled: true, size: 5.1},
     {name: "W", type: "Free", pos: [4.0, -1.0638297872340423, 0.42553191489361697], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "Text0", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.44, script: "Mkketcindyjs(append(KETJSOP,\"Web=n\"));", text: "Ketjsoff", textsize: 18.0, dock: {corner: "UL", offset: [592.0, -20.0]}},
     {name: "Text7", type: "Button", pos: [-2.0, -4.0, -0.17391304347826086], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=1;initflg=1;", text: "1", textsize: 18.0},
@@ -860,7 +865,7 @@ var cdy = CindyJS({
     {name: "Text206", type: "Button", pos: [4.0, 0.050473186119873815, 0.06309148264984227], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(ch==2,nf=max([1,nf-1]),n1=max([1,n1-1]));", text: "　　", textsize: 14.0},
     {name: "Text207", type: "Button", pos: [4.0, 0.047267355982274745, 0.05908419497784343], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(ch==2,nf=min([nfall,nf+1]),n1=min([n1all,n1+1]));", text: "　　", textsize: 14.0},
     {name: "Text208", type: "Button", pos: [4.0, 0.044444444444444446, 0.05555555555555555], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "if(ch==2,nf=nfall,n1=n1all);", text: "　　", textsize: 14.0},
-    {name: "Text15", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "typeflg=typeflg+1;\nif(typeflg==4,typeflg=0);", text: "png->txt", textsize: 24.0, dock: {corner: "UL", offset: [151.0, -20.0]}},
+    {name: "Text15", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "typeflg=typeflg+1;\nif(typeflg==4,typeflg=0);", text: "ステップ", textsize: 24.0, dock: {corner: "UL", offset: [151.0, -20.0]}},
     {name: "Text14", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "imdrflg=1;\ninspect(Text12,\"text.text\",\"Imag\");\nstartflg=1;", text: "リセット", textsize: 24.0, dock: {corner: "UL", offset: [365.0, -20.0]}},
     {name: "Text12", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "imdrflg=3-imdrflg;\nif(imdrflg==1,tmp=\"Imag\";startimflg=1);\nif(imdrflg==2,tmp=\"Drw\";startdrflg=1);\ninspect(Text12,\"text.text\",tmp);", text: "Imag", textsize: 24.0, dock: {corner: "UL", offset: [89.0, -20.0]}},
     {name: "Text6", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.44, script: "Mkketcindyjs(append(KETJSOP,\"Web=y\"));", text: "Ketjson", textsize: 18.0, dock: {corner: "UL", offset: [503.0, -20.0]}},
@@ -872,9 +877,9 @@ var cdy = CindyJS({
   ],
   ports: [{
     width: 743,
-    height: 603,
+    height: 614,
     id: "CSCanvas",
-    transform: [{visibleRect: [6.314671681284149, 30.549357593239527, 90.85162770279986, -38.05869688990176]}],
+    transform: [{visibleRect: [6.314671681284149, 30.549357593239527, 90.85162770279986, -39.310253439345466]}],
     axes: true,
     grid: 5.0,
     snap: true,
