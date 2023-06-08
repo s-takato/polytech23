@@ -4112,10 +4112,6 @@ sqline="01AA	2	2	2CR02BB	2	2	2";
 );
 ;
 
-Center=[68.093,4.994];
-Scale=3.206;
-Putpoint("O",Center);
-Putpoint("S",Sc2pt(Scale));
 
 Mvpt(pt):=(
  Scale*pt+Center;
@@ -4148,21 +4144,19 @@ Mvdraw(num,opt):=(
   );
   out;
 );
-  </script>
+
+</script>
 <script id="csdraw" type="text/x-cindyscript">
 Ketinit(1.6);
+Center=[68.093,4.994];
+Scale=3.206;
+Putpoint("O",Center);
+Putpoint("S",Sc2pt(Scale));
 Setwindow([-2,3],[-0.1,5]);
 Addax(0);
 Plotdata("1","x^2","x=[XMIN,2.5]",["nodisp"]);
 Mvdraw("gr1",["dr,1.5"]);
-//Slider("C",Mvpt([1,0]),Mvpt([4,0]));
-tmp1=Mvpt([1,0]);
-C.y=tmp1_2;      
-tmp1=tmp1_1;
-tmp2=Mvpt([3,0]);
-tmp2=tmp2_1;
-if(C.x<tmp1,C.x=tmp1);
-if(C.x>tmp2,C.x=tmp2);
+Slider("C",Mvpt([1,0]),Mvpt([3,0]));
 // inspect(C,"ptsize",6);
 pA=[1,1];
 pC=Rmpt(C.xy);
@@ -4192,7 +4186,7 @@ Expr(Mvpt([3,3]),"e","b="+format(pC_1,2));
 Expr(Mvpt([3,2]),"e","r="+format(tmp,4),["Size=1"]);
 Expr(Mvpt([sqrt(5),5]),"e","y=x^2",["Size=1"]);
 Expr(C.xy,"s1","b",["Size=1"]);
-      
+
 if(startflg==1,
   Kettaskinit();
   Subsedit(3,"St=");
@@ -4469,7 +4463,6 @@ if(stoknow==2,
 if(stok==1,
   Subsedit(3,StrL_3);
 );
-
 
 Windispg();
 ;

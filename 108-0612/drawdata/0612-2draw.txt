@@ -2,8 +2,6 @@ Setwindow([-2,3],[-0.1,5]);
 Addax(0);
 Plotdata("1","x^2","x=[XMIN,2.5]",["nodisp"]);
 Mvdraw("gr1",["dr,1.5"]);
-Slider("C",Mvpt([1,0]),Mvpt([4,0]));
-// inspect(C,"ptsize",6);
 pA=[1,1];
 pC=Rmpt(C.xy);
 pB=[pC_1,(pC_1)^2];
