@@ -389,7 +389,7 @@ itemize
 item::[課題]\monban \href{s-takato.github.io/polytech/108-0612/derivativev5jsoffL.html}{導関数の意味}を実行して，次の関数の導関数を求めよ．\seteda{50}\\
 \eda{$y=x^2-x$}\eda{$y=x^2-3$}
 
-item::[課題]\monban 前題の関数[1]について，定義に従って導関数を求めよ．%%\seteda{50}\\
+item::[課題]\monban 前題の関数$y=x^2-3$について，定義に従って導関数を求めよ．%%\seteda{50}\\
 %%\eda{$y=x^3-x$}\eda{$y=x^3+2x^2+x$}
 end
 
