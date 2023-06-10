@@ -373,12 +373,30 @@ Setimginit():=(
 //  tmp=T3.x+40;
 //  Putpoint("O",[tmp,T3.y]);
   typeL=["png->txt","image.txt","img2html"];
-  tmp=Filelist(Dircdy);
-  tmp=select(tmp,indexof(#,".html")>0);
-  tmp=select(tmp,indexof(#,"dr.html")==0);
-  tmp=select(tmp,indexof(#,"kettaskv")>0);
-  FileL=Sortsel(tmp,"kettaskv");
-  nfall=length(FileL);
+  tmp=Filelist(Dirdrw);
+  FimL=select(tmp,indexof(#,".png")>0);
+  nfiall=length(FimL);
+  tmp=apply(FimL,replace(#,".png",""));
+  tmp=text(tmp);
+  tmp=substring(tmp,1,length(tmp)-1);
+  Subsedit(1,tmp);
+  tmp=apply(FimL,replace(#,"kettaskv",""));
+  tmp1=apply(tmp,indexof(#,"."));
+  nameL=apply(1..(length(tmp)),
+           substring(tmp_#,0,tmp1_#-1));
+  if(length(nameL)>0,
+    tmp1=indexof(nameL_1,"-");
+    Date=substring(nameL_1,0,tmp1-1);
+    tmp1=apply(nameL,replace(#,Date+"-",""));
+    tmp1=text(tmp1);
+    tmp=substring(tmp1,1,length(tmp1)-1);
+  );
+);
+
+Setdrwinit():=(
+  regional(tmp,tmp1,tmp2);
+  //global Dirdrw,FileL,nfall,nameL,Date
+  inspect(Text15,"text.text","OS保存");
   tmp=apply(FileL,replace(#,"kettaskv",""));
   tmp1=apply(tmp,indexof(#,"."));
   nameL=apply(1..(length(tmp)),
@@ -413,28 +431,7 @@ Setcenterscale(fname):=(
   import(tmp); //no ketjs
 );
 
-Setdrwinit():=(
-  regional(tmp,tmp1,tmp2);
-  //global Dirdrw,FileL,nfall,nameL,Date
-  inspect(Text15,"text.text","OS保存");
-  Dirdrw=Dircdy+"drawdata";
-  tmp=Filelist(Dircdy);
-  tmp=select(tmp,indexof(#,".html")>0);
-  tmp=select(tmp,indexof(#,"dr.html")==0);
-  tmp=select(tmp,indexof(#,"kettaskv")>0);
-  FileL=Sortsel(tmp,"kettaskv");
-  nfall=length(FileL);
-  tmp=apply(FileL,replace(#,"kettaskv",""));
-  tmp1=apply(tmp,indexof(#,"."));
-  nameL=apply(1..(length(tmp)),
-           substring(tmp_#,0,tmp1_#-1));
-  tmp1=indexof(nameL_1,"-");
-  Date=substring(nameL_1,0,tmp1-1);
-  tmp1=apply(nameL,replace(#,Date+"-",""));
-  tmp1=text(tmp1);
-  tmp=substring(tmp1,1,length(tmp1)-1);
-  Subsedit(1,tmp);
-);
+
 
 linestart=1;
 
@@ -491,6 +488,7 @@ if(startflg==1,
   tmp1=Filelist(Dircdy);//no ketjs
   tmp2=select(tmp1,indexof(#,Cdyname()+".html")>0);
   tmp1=select(tmp1,indexof(#,"kettaskv")>0);
+  tmp1=select(tmp1,indexof(#,"dr.html")==0);
   if((length(tmp1)>0)&(length(tmp2)>0),
     FtaskL=Sortsel(tmp1,"kettaskv");
     nftall=length(FtaskL);
@@ -534,6 +532,7 @@ if(goflg<=0,
 if(goflg==1,
   Putpoint("W",chpL_ch);
 );
+
 //T2.x=T1.x; T4.x=T3.x;
 Setkeytable();
 //Subsedit(2,File);
@@ -541,17 +540,46 @@ Putpoint("O",[58,12],O.xy);
 Slider("S",[15,4],[55,4]);
 Putpoint("T3",[15.5,11.4],T3.xy);
 Putpoint("T4",[15.5,7.8],T4.xy);
+
 if(imdrflg==1,
   inspect(Text12,"text.text","Imag");
   if(startimflg==1,
     inspect(Text15,"text.text","ステップ");
     Setimginit();
+    tmp=Filelist(Dircdy);
+    tmp2=Cdyname()+".html";
+    tmp1=select(tmp,indexof(#,tmp2)>0);
+    if(length(tmp1)==0,
+      drawtext(T1.xy+[3,0],
+         "Export to html",
+           size->20,color->[1,0,0]);
+    );
+    tmp=Filelist(Dirdrw);
+    FimL=select(tmp,indexof(#,".png")>0);
+    nifall=length(FimL);
+    if(nifall==0,
+      drawtext(T3.xy+[3,0],
+         "(Date-No).png not found",
+             size->20,color->[1,0,0]);
+    ,
+      tmp1=apply(FimL,replace(#,".png",""));
+      FimtaL=[];
+      forall(tmp1,fi,
+        tmp=select(FtaskL,indexof(#,fi)>0);
+        if(length(tmp)>0,
+          FimtaL=append(FimtaL,tmp_1);
+        );
+      );
+    );
+    if(length(FimtaL)>0,
+      Fimta=FimtaL_nf;
+      Subsedit(2,Fimta);
+    );
     okflg=0;
     nf=1;
     nfnow=0;
     startimflg=0;
   );
-  Subsedit(2,FileL_nf);
   if(typeflg>=1,
     tmp=typeL_(typeflg);
     inspect(Text15,"text.text",tmp);
@@ -818,9 +846,9 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
-    {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, text: "1,2,3,4", textsize: 24.0},
+    {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, text: "0612-4", textsize: 24.0},
     {name: "NE", type: "Free", pos: [-2.4, -4.0, -0.8], color: [1.0, 0.0, 0.0], labeled: true},
-    {name: "Text2", type: "EditableText", pos: [4.0, -0.8516129032258064, 0.25806451612903225], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, text: "kettaskv0612-1.html", textsize: 24.0},
+    {name: "Text2", type: "EditableText", pos: [4.0, -0.8516129032258064, 0.25806451612903225], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, text: "kettaskv0612-4.html", textsize: 24.0},
     {name: "T1", type: "Free", pos: [-3.5632183908045985, -4.0, -0.2298850574712644], color: [0.0, 0.0, 0.0], labeled: true, size: 6.0, border: false},
     {name: "T2", type: "Free", pos: [4.0, 3.664516129032258, 0.25806451612903225], color: [1.0, 0.784, 0.0], labeled: true, size: 6.0, border: false},
     {name: "T3", type: "Free", pos: [4.0, 2.838709677419355, 0.25806451612903225], color: [0.0, 0.0, 0.0], labeled: true, size: 6.0, border: false},
@@ -828,8 +856,8 @@ var cdy = CindyJS({
     {name: "SW", type: "Free", pos: [4.0, 0.2, -2.0], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "Text3", type: "EditableText", pos: [4.0, -0.8621236133122027, 0.06339144215530904], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 180, text: "St=", textsize: 21.0},
     {name: "Text9", type: "EditableText", pos: [1.7714285714285714, -4.0, 0.11428571428571428], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},
-    {name: "S", type: "Free", pos: [4.0, 0.3686307054129546, 0.09215767635323865], color: [1.0, 0.0, 0.0], labeled: true},
-    {name: "O", type: "Free", pos: [4.0, 0.047417145437667785, 0.05017687347901352], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "S", type: "Free", pos: [4.0, 0.45714285714285713, 0.11428571428571428], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "O", type: "Free", pos: [4.0, 0.8275862068965517, 0.0689655172413793], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "W", type: "Free", pos: [4.0, -1.0638297872340423, 0.42553191489361697], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "A", type: "Free", pos: [4.0, -0.0, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: true, size: 6.0},
     {name: "C", type: "Free", pos: [4.0, 0.04388378514945236, 0.046461192954619576], color: [1.0, 0.0, 0.0], labeled: true, size: 6.0},
@@ -853,10 +881,10 @@ var cdy = CindyJS({
     {type: "Environment", friction: 0.13488372093023257}
   ],
   ports: [{
-    width: 868,
-    height: 642,
+    width: 822,
+    height: 634,
     id: "CSCanvas",
-    transform: [{visibleRect: [7.013102419752165, 28.83164328120335, 97.19640464708372, -37.87075306666169]}],
+    transform: [{visibleRect: [6.909204606126208, 28.72774546757739, 92.3132074066637, -37.14346837127999]}],
     axes: true,
     grid: 5.0,
     snap: true,

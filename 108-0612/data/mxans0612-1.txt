@@ -1,0 +1,10 @@
+[28,3]
+
+Script
+q1i1:((4*(4)^2-2*(2^2))/(4-2))
+q1i2:((3*b-3*a)/(b-a))
+q1o1:ratsimp(q1i1)
+q1o2:ratsimp(q1i2)
+q1o1::q1o2
+end
+

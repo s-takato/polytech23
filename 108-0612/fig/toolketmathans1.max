@@ -1,0 +1,12 @@
+writefile("/Users/takatoosetsuo/polytech23.git/108-0612/fig/toolketmathans1.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:x^2-2*x$/*##*/
+q1i2:((5*x+2)/(x+2))$/*##*/
+q1o1:limit(q1i1,x,4)$/*##*/
+q1o2:limit(q1i2,x,2)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

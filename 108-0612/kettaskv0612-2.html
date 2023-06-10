@@ -2903,7 +2903,7 @@ Expr(listorg,options):=( //16.10.09
 Ketcindyjsfigure=0;
 Ketcindyjsscale=1;
 aalinestart=1;
-quline="Q02::xが1になると平均変化率rはどうなるか	[]:: ";
+quline="Q02::bが1になると平均変化率rはどうなるか	[]:: ";
 shline="Q02---	[]   ";
 sqline="01YU	2	2CR02HU	2	2CR03KU	2	2CR04AK	2	2CR05AK	2	2CR06TK	2	2CR07MS	2	2CR08TT	2	2CR09TN	2	2CR10AY	2	2CR11HW	2	2";
 quLL=Line2list(quline);
@@ -4117,9 +4117,94 @@ dtpyL=dtpy0/22*size;
 ch=2;
 ;
 
+
+Mvpt(pt):=(
+ Scale*pt+Center;
+);
+
+Rmpt(mpt):=(
+ (mpt-Center)/Scale;
+);
+
+Pt2sc(pt):=(
+  regional(sx);
+  if(ispoint(pt),sx=pt.x,sx=pt_1);
+  2^(1/5*(sx-35));
+);
+
+Sc2pt(sc):=(
+  regional(sx);
+  sx=5*log(sc)/log(2)+35;
+  [sx,4];
+);
+
+Mvdraw(num,opt):=(
+  regional(pltL,out,tmp,tmp1);
+  pltL=parse(num);
+  if(length(pltL)==1,
+    Pointdata("-m"+num,ptL,opt);
+  ,
+    out=apply(pltL,Mvpt(#));
+    Listplot("-m"+num,out,append(opt,"Msg=y"));
+  );
+  out;
+);
+
 </script>
 <script id="csdraw" type="text/x-cindyscript">
 Ketinit(1.6);
+Center=[79.718,0.945];
+Scale=3.206;
+Putpoint("O",Center);
+Putpoint("S",Sc2pt(Scale));
+Setwindow([-2,3],[-0.1,5]);
+if(startflg==1,
+  Putpoint("C",Mvpt([2,0]));
+,
+  Putpoint("C",Mvpt([2,0]),C.xy);
+);
+Addax(0);
+Plotdata("1","x^2","x=[XMIN,2.5]",["nodisp"]);
+Mvdraw("gr1",["dr,1.5"]);
+pA=[1,1];
+pC=Rmpt(C.xy);
+pB=[pC_1,(pC_1)^2];
+ps1=Mvpt([1,0]);
+ps2=Mvpt([2,0]);
+ps3=Mvpt([3,0]);
+C.y=ps1_2;
+if(C.x<ps1_1,C.x=ps1_1);
+if(C.x>ps3_1,C.x=ps3_1);
+mA=Mvpt(pA);
+mB=Mvpt(pB);
+Listplot("x",[[XMIN,0],[XMAX,0]],["nodisp"]);
+Listplot("y",[[0,YMIN],[0,YMAX]],["nodisp"]);
+Mvdraw("sgx",[]);
+Mvdraw("sgy",[]);
+Pointdata("1",[mA,mB],["Size=3"]);
+Listplot("1",[pA,pB],["nodisp"]);
+Mvdraw("sg1",["Color=red"]);
+Listplot("2",[[pA_1,0],pA,[0,pA_2]],["nodisp"]);
+Mvdraw("sg2",["do,1,1.5"]);
+Listplot("3",[pC,pB,[0,pB_2]],["nodisp"]);
+Mvdraw("sg3",["do,1,1.5"]);
+Listplot("4",[pA,[pB_1,pA_2],pB],["nodisp"]);
+Mvdraw("sg4",["do,1,1.5"]);
+Expr([Mvpt([1,0])-[0,0.5],"s1","1"]);
+tmp1=Mvpt([0,1]);
+tmp2=Mvpt([0,pB_2]);
+Expr([tmp1,"w1",format(pA_2,2),tmp2,"w1",format(pB_2,2)]);
+tmp=re((pB_2-pA_2)/(pB_1-pA_1));
+b=format(pC_1,2);
+Expr(Mvpt([-5,5.5]),"e","b="+b);
+Expr(Mvpt([-5,4]),"e","r=\dfrac{b^2-1}{b-1}",["Size=1"]);
+tmp1=Assign("\dfrac{b^2-1}{b-1}",["b",b]);
+Expr(Mvpt([-5,2.6]),"e","\ \ \ ="+tmp1,["Size=1"]);
+bv=parse(b);
+if(|bv-1|<10^(-2),tmp2="NA",tmp2=format(tmp,2));
+Expr(Mvpt([-5,1.2]),"e","\ \ \ ="+tmp2,["Size=1"]);
+Expr(Mvpt([0.1,5]),"e","y=x^2",["Size=1"]);
+Expr(C.xy-[0,0.5],"s","b",["Size=1"]);
 
 
 if(startflg==1,
@@ -4426,6 +4511,9 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
+    {name: "C", type: "Free", pos: [4.0, 0.27374157677229705, 0.05485803141729399], color: [1.0, 0.0, 0.0], labeled: true, size: 6.0},
+    {name: "A", type: "Free", pos: [4.0, 0.0, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: true, size: 6.0},
+    {name: "W", type: "Free", pos: [4.0, -1.0638297872340423, 0.42553191489361697], color: [1.0, 0.0, 0.0], labeled: true},
     {name: "Text1", type: "EditableText", pos: [4.0, 3.9148936170212765, 0.1702127659574468], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 500, textsize: 24.0},
     {name: "NE", type: "Free", pos: [4.0, 1.0067746650167269, 0.05318084682256492], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "Text2", type: "EditableText", pos: [4.0, -0.8516129032258064, 0.25806451612903225], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},

@@ -314,9 +314,8 @@ new::微分係数の図形的意味
 \slidepage
 
 itemize
-item::[課題]\monbannoadd \href{https://s-takato.github.io/polytech22/offlineapp/bibunkeisuumainoff.html}%
-{微分係数の意味}を動かせ\\
-・$a$における微分係数の値$f'(a)$を求めよ
+item::[課題]\monbannoadd \href{https://s-takato.github.io/polytech23/108-0612/bibunkeisuujsoffL.html}{微分係数の意味}を動かせ\\
+　$a$における微分係数の値$f'(a)$を求めよ
 %[2,-]::item::微分係数$f'(a)$は\\
 %[3,-]::\hspace*{1zw}Aにおける接線の傾き
 end
@@ -359,7 +358,6 @@ putnote::se{80}{14}::doukansu/p017,0.7
 end
 
 itemize
-item::{\normalsize \url{s-takato.github.io/polytech/n107/doukansuumainoff.html}}
 item::微分係数$f'(a)$
 item::$a$を動かすと，$f'(a)$も変わる\\
 \hspace*{2zw}$\Longrightarrow$\ $f'(a)$は$a$の関数
@@ -386,10 +384,8 @@ new::導関数の意味(課題)
 \slidepage
 
 itemize
-item::[課題]\monban \href{s-takato.github.io/polytech/108-0612/derivativev5jsoffL.html}{導関数の意味}を実行して，次の関数の導関数を求めよ．\seteda{50}\\
+item::[課題]\monban \href{https://s-takato.github.io/polytech23/108-0612/derivativev5jsoffL.html}{導関数の意味}を動かして，次の関数の導関数を求めよ．\seteda{50}\\
 \eda{$y=x^2-x$}\eda{$y=x^2-3$}
+item::[課題]\monban 前題の関数$y=x^2-3$について，定義に従って導関数を求めよ．\seteda{50}\\
 
-item::[課題]\monban 前題の関数$y=x^2-3$について，定義に従って導関数を求めよ．%%\seteda{50}\\
-%%\eda{$y=x^3-x$}\eda{$y=x^3+2x^2+x$}
 end
-

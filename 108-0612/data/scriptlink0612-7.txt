@@ -1,3 +1,3 @@
 LinkL=[
-  ["https://s-takato.github.io/polytech23/108-9612/derivativev5jsoffL.html","導関数ｂ意味"]
+  ["https://s-takato.github.io/polytech23/108-0612/derivativev5jsoffL.html","導関数の意味"]
 ];

@@ -1,0 +1,12 @@
+[4,3]
+
+Script
+q1i1:2*x^2
+q1i2:3*x
+q1o1:diff(q1i1,x)
+q1o2:diff(q1i2,x)
+vq1o1:ev(q1o1,x=1)
+vq1o2:ev(q1o2,x=2)
+vq1o1::vq1o2
+end
+

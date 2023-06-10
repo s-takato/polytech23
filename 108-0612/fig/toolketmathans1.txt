@@ -1,0 +1,15 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:x^2-2*x
+(%i7) q1i2:(5*x+2)/(x+2)
+(%i8) q1o1:limit(q1i1,x,4)
+(%i9) q1o2:limit(q1i2,x,2)
+(%i10) disp(q1o1)
+8
+
+(%i11) disp(q1o2)
+3
+
+(%i12) closefile()
