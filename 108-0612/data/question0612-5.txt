@@ -1,0 +1,18 @@
+Q
+次を求めよ
+[1] f(x)=2x^2のとき，f'(1)
+[2] f(x)=3xのとき，f'(2)
+Sheet
+[1]=  ::2
+[2]=  ::2
+Ans
+[1] 4
+[2] 3
+Mxcalc
+[1] 2x^2
+[2] 3x
+o1:diff(i1,x)
+o2:diff(i2,x)
+vo1:ev(o1,x=1);
+vo2:ev(o2,x=2);
+return vo1::vo2

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  8 JUN 2023 10:16
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2022.3.23)  10 JUN 2023 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,31 +573,82 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (./fig/henka3.tex) (./fig/henka3.tex) (./fig/henka3.tex) [4] (./fig/henka3.tex)
 (./fig/henka3.tex) (./fig/henka3.tex) (./fig/henka3.tex) [4] (./fig/henka3.tex)
 (./fig/henka3.tex) (./fig/henka3.tex) (./fig/henka3.tex) [4] (./fig/henka3.tex)
+(./fig/henka3.tex) (./fig/henka3.tex) (./fig/henka3.tex) [4] (./fig/henka3.tex)
 (./fig/henka3.tex) (./fig/henka3.tex) (./fig/henka3.tex) [4] [5] [5] [5]
 [5] [5] [5]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1064.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 1096.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 1064.
+(Font)              scaled to size 9.6222pt on input line 1096.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1064.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 1096.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 1064.
+(Font)              scaled to size 9.6222pt on input line 1096.
  [6] [6] [6] [6] [6] [6] [6] [6] [7] [7] [7] [8] [9] [9] [9]
-[9] [9] [9] [9] (./presen23108.aux)
+[9] [9] [9] [9] [10] [10] [10] [11] [12] [12] [12] [12] [12] [12] [13] [13]
+[13] (./fig/graphfr.tex) (./fig/graphfr.tex) (./fig/graphfr.tex)
+(./fig/graphfr.tex) [13] (./fig/graphfr2.tex) (./fig/graphfr2.tex)
+(./fig/graphfr2.tex) (./fig/graphfr2.tex) [13] [14] [14] [14] [14] [14]
+[14] (./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex)
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex) [15]
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex)
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex) [15]
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex)
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex) [15]
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex)
+(./fig/shunkanhenkaritsu.tex) (./fig/shunkanhenkaritsu.tex) [15] [16] [16]
+[16] [16] [16] [16] [17] [17] [17] [18] [18] [18] [18] [19]
+(./fig/doukansu/p001.tex
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 5.77332pt on input line 49.
+) (./fig/doukansu/p001.tex) (./fig/doukansu/p001.tex)
+(./fig/doukansu/p001.tex) [20] (./fig/doukansu/p002.tex)
+(./fig/doukansu/p002.tex) (./fig/doukansu/p002.tex) (./fig/doukansu/p002.tex)
+[20] (./fig/doukansu/p003.tex) (./fig/doukansu/p003.tex)
+(./fig/doukansu/p003.tex) (./fig/doukansu/p003.tex) [20]
+(./fig/doukansu/p004.tex) (./fig/doukansu/p004.tex) (./fig/doukansu/p004.tex)
+(./fig/doukansu/p004.tex) [20] (./fig/doukansu/p005.tex)
+(./fig/doukansu/p005.tex) (./fig/doukansu/p005.tex) (./fig/doukansu/p005.tex)
+[20] (./fig/doukansu/p006.tex) (./fig/doukansu/p006.tex)
+(./fig/doukansu/p006.tex) (./fig/doukansu/p006.tex) [20]
+(./fig/doukansu/p007.tex) (./fig/doukansu/p007.tex) (./fig/doukansu/p007.tex)
+(./fig/doukansu/p007.tex) [20] (./fig/doukansu/p008.tex)
+(./fig/doukansu/p008.tex) (./fig/doukansu/p008.tex) (./fig/doukansu/p008.tex)
+[20] (./fig/doukansu/p009.tex) (./fig/doukansu/p009.tex)
+(./fig/doukansu/p009.tex) (./fig/doukansu/p009.tex) [20]
+(./fig/doukansu/p010.tex) (./fig/doukansu/p010.tex) (./fig/doukansu/p010.tex)
+(./fig/doukansu/p010.tex) [20] (./fig/doukansu/p011.tex)
+(./fig/doukansu/p011.tex) (./fig/doukansu/p011.tex) (./fig/doukansu/p011.tex)
+[20] (./fig/doukansu/p012.tex) (./fig/doukansu/p012.tex)
+(./fig/doukansu/p012.tex) (./fig/doukansu/p012.tex) [20]
+(./fig/doukansu/p013.tex) (./fig/doukansu/p013.tex) (./fig/doukansu/p013.tex)
+(./fig/doukansu/p013.tex) [20] (./fig/doukansu/p014.tex)
+(./fig/doukansu/p014.tex) (./fig/doukansu/p014.tex) (./fig/doukansu/p014.tex)
+[20] (./fig/doukansu/p015.tex) (./fig/doukansu/p015.tex)
+(./fig/doukansu/p015.tex) (./fig/doukansu/p015.tex) [20]
+(./fig/doukansu/p016.tex) (./fig/doukansu/p016.tex) (./fig/doukansu/p016.tex)
+(./fig/doukansu/p016.tex) [20] (./fig/doukansu/p017.tex)
+(./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex)
+[20] (./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex)
+(./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 3229.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+ [21]
+(./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex)
+(./fig/doukansu/p017.tex) [21] (./fig/doukansu/p017.tex)
+(./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex) (./fig/doukansu/p017.tex)
+[21] [22] [22] [22] [23] (./presen23108.aux)
 Package rerunfilecheck Info: File `presen23108.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11759 strings out of 480222
- 176392 string characters out of 5892594
- 605687 words of memory out of 5000000
- 29726 multiletter control sequences out of 15000+600000
- 480310 words of font info for 81 fonts, out of 8000000 for 9000
+ 12060 strings out of 480222
+ 182557 string characters out of 5892594
+ 611738 words of memory out of 5000000
+ 29783 multiletter control sequences out of 15000+600000
+ 483473 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 91i,12n,93p,333b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,12n,93p,375b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presen23108.dvi (52 pages, 1074536 bytes).
+Output written on presen23108.dvi (116 pages, 2258600 bytes).

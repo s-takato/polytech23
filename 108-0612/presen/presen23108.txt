@@ -110,7 +110,7 @@ end
 
 %%%%%%%%%%%%%
 new::$b$を$a$に近づけたときの変化率
-%repeat=8,para
+%repeat=9,para
 \slidepage
 
 layer::{120}{0}
@@ -127,8 +127,10 @@ item::関数$y=x^2$の$[a,b]$での平均変化率\\
 %[4,-]::\hspace*{1zw}$r=\bunsuu{b^2-1}{b-1}$
 %[5..7]::item::$b=2$のとき　$r=\hakom{3}$
 %[8,-]::item::$b=2$のとき　$r=\hakoma{3}$
-%[7,-]::item::\href{https://s-takato.github.io/polytech21/netmaterials/offline/henka3mainoff.html}%
-%[7,-]::{「14.1点における変化率」}
+%%[7,-]::item::\href{https://s-takato.github.io/polytech21/netmaterials/offline/henka3mainoff.html}%
+%%[7,-]::{「14.1点における変化率」}
+%[9,-]::item::[課題]\monban $[1,\ b]$での平均変化率\\
+%[9,-]::$b$を1にするとどうなるか
 end
 
 %%%%%%%%%%%%%
@@ -196,3 +198,198 @@ item::$x$が$a$に\underline{限りなく近づく}とする（{\color{red}$x\to
 %[7]::\eda{$\dlim_{x \to 4}(x^2-2x)$}
 %[7]::\eda{$\dlim_{x \to 2}\bunsuu{5x+2}{x+2}$}
 end
+
+%%%%%%%%%%%%%
+new::1点における変化率
+%repeat=3,para
+\slidepage
+
+itemize
+item::区間$[a,b]$の平均変化率$r=\bunsuu{f(b)-f(a)}{b-a}$
+%[2,-]::item::1点$a$における変化率$r=\bunsuu{f(a)-f(a)}{a-a}$\\
+%[2,-]::\hspace*{3zw}{\color{red}分母が0になってしまう}
+%[3,-]::item::1点における変化率はどうやって求めればいいか
+end
+
+%%%%%%%%%%%%%
+main::微分係数
+\slidepage[m]
+
+%%%%%%%%%%%%%
+new::関数の極限
+%repeat=6,para
+\slidepage
+
+itemize
+item::$x$が$a$に\underline{限りなく近づく}とする（{\color{red}$x\to a$}）\\
+%[2,-]::\hspace*{2zw}{\color{blue}$a$に等しくはないが，いくらでも近くなること}\vspace{-1mm}
+%[3,-]::item::$f(x)$が$\alpha$に近づくとき，$\alpha$を{\color{red}極限値}という\\
+%[4,-]::\hspace*{2zw}{\color{blue}$\dlim_{x \to a}f(x)=\alpha$}と書く\vspace{-1mm}
+%[5]::item::[例]$\dlim_{x \to 1}(2x+3)=$
+%[6,-]::item::[例]$\dlim_{x \to 1}(2x+3)=5$
+end
+
+%%%%%%%%%%%%%
+new::$y=\bunsuu{x^2-4}{x-2}$のグラフ
+%repeat=5,para
+\slidepage
+
+layer::{120}{0}
+%[4]::putnote::se{85}{25}::graphfr
+%[5,-]::putnote::se{85}{25}::graphfr2
+end
+
+\vspace{6mm}
+
+itemize
+item::$y=\bunsuu{x^2-4}{x-2}=$
+%[2,-]::$\bunsuu{(x-2)(x+2)}{x-2}$\vspace{2mm}\\
+%[3,-]::$\phantom{y}=x+2$
+%[4,-]::item::[課題]\monbannoadd $y=\bunsuu{x^2-4}{x-2}$のグラフとして\\図は正しくない．理由を述べよ．
+%[5,-]::item::正しくは\ $\Longrightarrow$
+end
+%[5]::\addban
+
+%%%%%%%%%%%%%
+new::分母が0に近づくときの極限
+%repeat=6,para
+\slidepage
+
+itemize
+item::[例]\hspace{-1mm}2)\ $\dlim_{x \to 2}\bunsuu{x^2-4}{x-2}$\ \ 
+%thin[2,-]::item::$x\to 2$とすると，分母も分子も0に近づく
+%thin[3,-]::item::そのままでは極限値がわからない
+%thin[4,-]::item::$x^2-4=(x-2)(x+2)$と因数分解して\\
+%thin[4,-]::\hspace*{2zw}$\dlim_{x \to 2}\bunsuu{(x-2)(x+2)}{x-2}$
+%[5]::$=\dlim_{x \to 2}\bunsuu{x+2}{1}=\hako{4}$
+%[6,-]::$=\dlim_{x \to 2}\bunsuu{x+2}{1}=\hakoa{4}$
+end
+
+%%%%%%%%%%%%%
+new::$a$における変化率
+%repeat=4,para
+\slidepage
+
+layer::{120}{0}
+putnote::se{70}{5}::shunkanhenkaritsu,0.8
+end
+
+itemize
+item::$a$の近くに$z$をとる
+%[2,-]::item::$[a,\ z]$での平均変化率は\\
+%[2,-]::\hspace*{2zw}$\bunsuu{f(z)-f(a)}{z-a}$
+%[3,-]::item::$z \to a$の極限値\\
+%[3,-]::\hspace*{2zw}$\dlim_{z\to a}\bunsuu{f(z)-f(a)}{z-a}$
+%[4,-]::item::これを$a$における{\color{red}微分係数}といい，$f'(a)$と書く
+end
+
+%%%%%%%%%%%%%
+new::微分係数の計算例
+%repeat=6,para
+\slidepage
+
+{\color[cmyk]{1,0,0,0}
+layer::{120}{0}
+%[4,-]::\lineseg{93}{29}{13}{-13}
+%[4,-]::\lineseg{85}{36}{13}{-13}
+end
+}
+
+itemize
+item::[例]$f(x)=x^2$の$1$における微分係数$f'(1)$
+item::[]$f'(1)=\dlim_{z\to 1}\bunsuu{f(z)-f(1)}{z-1}$\\
+%[2,-]::$\phantom{f'(1)}=\dlim_{z\to 1}\bunsuu{z^2-1}{z-1}=$
+%[3,-]::$\dlim_{z\to 1}\bunsuu{(z+1)(z-1)}{z-1}$\vspace{2mm}
+%[4,-]::\hspace*{2zw}\\$\phantom{f'(1)}=\dlim_{z\to 1}(z+1)$
+%[5,-]::$=2$
+%thin[6]::item::[課題]\monbannoadd 次を求めよ\seteda{100}\\
+%thin[6]::\eda{$f(x)=2x^2$のとき，$f'(1)$}\\
+%thin[6]::\eda{$f(x)=3x$のとき，$f'(2)$}
+end
+%[6]::\addban
+
+%%%%%%%%%%%%%
+new::微分係数の図形的意味
+%repeat=3,para
+\slidepage
+
+itemize
+item::[課題]\monbannoadd \href{https://s-takato.github.io/polytech22/offlineapp/bibunkeisuumainoff.html}%
+{微分係数の意味}を動かせ\\
+・$a$における微分係数の値$f'(a)$を求めよ
+%[2,-]::item::微分係数$f'(a)$は\\
+%[3,-]::\hspace*{1zw}Aにおける接線の傾き
+end
+%[3]::\addban
+
+%%%%%%%%%%%%%
+new::微分係数の定義式の別形
+%repeat=4,para
+\slidepage
+
+itemize
+item::$f'(a)=\dlim_{x\to a}\bunsuu{f(z)-f(a)}{z-a}$\hfill(1)
+%[2,-]::item::$z-a=h$とおくと　$z=a+h,\ h \to 0$\vspace{1mm}\\
+%[3,-]::\hspace*{1zw}$f'(a)=\dlim_{h\to 0}\bunsuu{f(a+h)-f(a)}{h}$\hfill(2)
+%[4,-]::item::(2)はよく用いられるが，(1)がおすすめ
+end
+
+%%%%%%%%%%%%%
+main::導関数
+\slidepage[m]
+
+%%%%%%%%%%%%%
+new::導関数
+%repeat=,para=doukansu:{0}:se{80}{14}:input,0.7
+\slidepage
+
+itemize
+item::微分係数$f'(a)$
+item::$a$を動かすと，$f'(a)$も変わる\\
+\hspace*{2zw}$\Longrightarrow$\ $f'(a)$は$a$の関数
+end
+
+%%%%%%%%%%%%%
+new::導関数2
+%repeat=3,para
+\slidepage
+
+layer::{120}{0}
+putnote::se{80}{14}::doukansu/p017,0.7
+end
+
+itemize
+item::{\normalsize \url{s-takato.github.io/polytech/n107/doukansuumainoff.html}}
+item::微分係数$f'(a)$
+item::$a$を動かすと，$f'(a)$も変わる\\
+\hspace*{2zw}$\Longrightarrow$\ $f'(a)$は$a$の関数
+%[2,-]::item::$a$を$x$と置き換えて\\
+%[2,-]::$f'(x)$を$f(x)$の{\color{red}導関数}という
+%[3,-]::item::導関数を求めることを「{\color{red}微分する}」
+end
+
+
+%%%%%%%%%%%%%
+new::導関数の定義式
+%repeat=3,para
+\slidepage
+
+itemize
+item::$f'(a)=\dlim_{z \to a}\bunsuu{f(z)-f(a)}{z-a}$
+%thin[2,-]::item::$a$を$x$で置き換える\\
+%thin[3,-]::\hspace*{1zw}\fbox{$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$}
+end
+
+%%%%%%%%%%%%%
+new::導関数の意味(課題)
+%repeat=1
+\slidepage
+
+itemize
+item::[課題]\monban \href{s-takato.github.io/polytech/108-0612/derivativev5jsoffL.html}{導関数の意味}を実行して，次の関数の導関数を求めよ．\seteda{50}\\
+\eda{$y=x^2-x$}\eda{$y=x^2-3$}
+
+item::[課題]\monban 前題の関数[1]について，定義に従って導関数を求めよ．%%\seteda{50}\\
+%%\eda{$y=x^3-x$}\eda{$y=x^3+2x^2+x$}
+end
+
