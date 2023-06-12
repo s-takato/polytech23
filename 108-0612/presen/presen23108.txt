@@ -327,7 +327,7 @@ new::微分係数の定義式の別形
 \slidepage
 
 itemize
-item::$f'(a)=\dlim_{x\to a}\bunsuu{f(z)-f(a)}{z-a}$\hfill(1)
+item::$f'(a)=\dlim_{z\to a}\bunsuu{f(z)-f(a)}{z-a}$\hfill(1)
 %[2,-]::item::$z-a=h$とおくと　$z=a+h,\ h \to 0$\vspace{1mm}\\
 %[3,-]::\hspace*{1zw}$f'(a)=\dlim_{h\to 0}\bunsuu{f(a+h)-f(a)}{h}$\hfill(2)
 %[4,-]::item::(2)はよく用いられるが，(1)がおすすめ

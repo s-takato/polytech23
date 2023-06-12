@@ -3682,13 +3682,15 @@ Str=Textedit(ch,"","");
 Str=replace(Str,"///","//");
 tmp=length(Str);
 if(substring(Str,tmp-2,tmp)=="//",
-  tmp=Strsplit(Str,"=");
-  tmp=replace(tmp_2,"/","");
-  tmp=parse(tmp);
-  size_ch=tmp;
-  dtpyL_ch=dtpy0*tmp/22;
-  tmp=indexof(Str,"sz=");
-  Str=substring(Str,0,tmp-1);
+  if(substring(Str,tmp-5,tmp-2)=="sz=",
+    tmp=Strsplit(Str,"=");
+    tmp=replace(tmp_2,"/","");
+    tmp=parse(tmp);
+    size_ch=tmp;
+    dtpyL_ch=dtpy0*tmp/22;
+    tmp=indexof(Str,"sz=");
+    Str=substring(Str,0,tmp-1);s
+  );
 );
 Strnq=replace(Str,"?","");
 StrL_ch=Strnq;
@@ -3871,9 +3873,9 @@ var cdy = CindyJS({
   ],
   ports: [{
     width: 779,
-    height: 667,
+    height: 666,
     id: "CSCanvas",
-    transform: [{visibleRect: [9.393380108354453, 25.18921332538831, 82.20375925669394, -37.15292132408851]}],
+    transform: [{visibleRect: [9.393380108354453, 25.18921332538831, 82.20375925669394, -37.05945485534866]}],
     grid: 5.0,
     background: "rgb(247,247,247)"
   }],
