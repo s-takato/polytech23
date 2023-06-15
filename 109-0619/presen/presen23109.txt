@@ -1,0 +1,174 @@
+Title::slide0
+::\newcommand{\hiduke}{0619}
+::\newcommand{\hako}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,\phantom{#2}\,}}
+::\newcommand{\hakoa}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,#2\,}}
+::\newcommand{\hakom}[2][1]{\hako[#1]{$#2$}}
+::\newcommand{\hakoma}[2][1]{\hakoa[#1]{$#2$}}
+::\def\rad{\;\mathrm{rad}}
+::\def\deg#1{#1^{\circ}}
+::\newcommand{\sbunsuu}[2]{\scalebox{0.6}{$\bunsuu{#1}{#2}$}}
+::\def\pow{$\hspace{-1.5mm}＾\hspace{-1mm}$}
+::\def\dlim{\displaystyle\lim}
+::\newcommand{\brd}[2][1]{\scalebox{#1}{\color{red}\fbox{\color{black}$#2$}}}
+::\newcommand\down[1][0.5zw]{\vspace{#1}\\}
+::\newcommand{\sfrac}[3][0.65]{\scalebox{#1}{$\frac{#2}{#3}$}}
+::\newcommand{\phn}[1]{\phantom{#1}}
+::\newcommand{\scb}[2][0.6]{\scalebox{#1}{#2}}
+::\newcommand{\dsum}{\displaystyle\sum}
+
+\def\MARU{}
+\renewcommand{\MARU}[1]{{\ooalign{\hfil$#1$\/\hfil\crcr\raise.167ex\hbox{\mathhexbox20D}}}}
+
+
+\renewcommand{\slidepage}[1][s]{%
+\setcounter{ketpicctra}{18}%
+\if#1m \setcounter{ketpicctra}{1}\fi
+\hypersetup{linkcolor=black}%
+
+\begin{layer}{118}{0}
+%\putnotee{122}{-\theketpicctra.05}{\small\hiduke-\thepage/\pageref{pageend}}
+\putnotee{115}{-\theketpicctra.05}{\small\hiduke-\thepage/\pageref{pageend}}
+\end{layer}\hypersetup{linkcolor=blue}
+
+}
+
+\newcounter{ban}
+\setcounter{ban}{1}
+
+\newcommand{\monban}[1][\hiduke]{%
+#1-\theban\ %
+\addtocounter{ban}{1}%
+}
+
+\newcommand{\monbannoadd}[1][\hiduke]{%
+#1-\theban\ %
+%\addtocounter{ban}{1}%
+}
+
+\newcommand{\addban}{%
+\addtocounter{ban}{1}%%210614
+}
+
+\newcounter{edawidth}
+\newcounter{edactr}
+
+\newcommand{\seteda}[1]{
+\setcounter{edawidth}{#1}
+\setcounter{edactr}{1}
+}
+
+\newcommand{\eda}[2][\theedawidth ]{%
+\noindent\Ltab{#1 mm}{[\theedactr]\ #2}%
+\addtocounter{edactr}{1}%
+}
+
+
+%%%%%%%%%%%%%
+new::導関数の定義式
+%repeat=3
+\slidepage
+
+itemize
+item::$a$における微分係数\\
+\hspace*{2zw}$f'(a)=\dlim_{z \to a}\bunsuu{f(z)-f(x)}{z-a}$
+%thin[2,-]::item::$a$を$x$で置き換える\\
+%thin[3,-]::\hspace*{1zw}\fbox{$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$}
+end
+
+%%%%%%%%%%%%%
+new::導関数の定義式の別形
+%repeat=4,para
+\slidepage
+
+itemize
+item::$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$
+%[3,-]::$=\dlim_{\varDelta x \to 0}\bunsuu{\varDelta y}{\varDelta x}$
+%thin[2,-]::item::$z-x=\varDelta x$とおく（$x$の変化量でデルタ$x$と読む）
+%thin[2,-]::item::$f(z)-f(x)=\varDelta y$とおく（$y$の変化量）
+%thin[2,-]::item::$z \to x$より　$\varDelta x \to 0$
+%thin[4,-]::item::$z=x+\varDelta x$より\\
+%[4,-]::\hspace*{2zw}$f'(x)=\dlim_{\varDelta x \to 0}\bunsuu{f(x+\varDelta x)-f(x)}{\varDelta x}$（教科書）
+end
+
+%%%%%%%%%%%%%
+new::$x^3$の微分
+%repeat=5
+\slidepage
+
+itemize
+item::$f(x)=x^3$\vspace{-2mm}
+item::$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+%[2,-]::item::次の因数分解公式を用いる\\
+%[2,-]::\hspace*{2zw}$z^3-x^3=(z-x)(z^2+zx+x^2)$
+%[3,-]::item::(1)$=\dlim_{z \to x}\bunsuu{(z-x)(z^2+zx+x^2)}{z-x}$\\
+%[4,-]::\phantom{(1)}$=\dlim_{z \to x}(z^2+zx+x^2)=3x^2$\\
+%[5,-]::\hspace*{4zw}\fbox{$(x^3)'=3x^2$}
+end
+
+%%%%%%%%%%%%%
+new::課題($x^4$の微分)
+%repeat=1
+\slidepage
+
+itemize
+item::[課題]\monban 問いに答えよ．\seteda{60}\\
+\eda{$z^4-x^4$の因数分解公式をかけ}\\
+\eda{$(x^4)'=4x^3$を導け}
+
+end
+
+%%%%%%%%%%%%%
+new::微分の公式
+%repeat=6,para
+\slidepage
+
+layer::{120}{0}
+putnote::se{72}{5}::bibun4,0.9
+end
+
+itemize
+item::定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+%[2,-]::item::$f(x)=x$\\
+%[2,-]::\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+%[3,-]::item::$(x^2)'=2x$
+%[4,-]::item::$(x^3)'=3x^2$
+%[5]::item::一般に　$(x^n)'=\hako{$n x^{n-1}$}$
+%[6,-]::item::一般に　$(x^n)'=\hakoa{$n x^{n-1}$}$
+end
+
+%%%%%%%%%%%%%
+new::微分の性質
+%repeat=5
+\slidepage
+
+\vspace{2mm}
+...
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+
+itemize
+%thin[2,-]::item::$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+%thin[2,-]::item::$(c f)'=c f'$
+%thin[3,-]::item::[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+%thin[4,-]::$=2x+3$
+%thin[5,-]::item::[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+%thin[5,-]::\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+%thin[5,-]::\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+end
+%[5]::\addban
+
+%%%%%%%%%%%%%
+new::導関数の書き方
+%repeat=4,para
+\slidepage
+
+itemize
+item::関数$y=f(x)$を変数$x$で微分する\\
+\hspace*{1zw}$y',\ f'(x),\ f',\ \bigl(f(x)\bigr)'$（ラグランジュ）\vspace{2mm}\\
+%thin[2,-]::\hspace*{1zw}$\bunsuu{dy}{dx},\ \bunsuu{df}{dx},\ \bunsuu{d}{dx}\bigl(f(x)\bigr)$（ライプニッツ）
+%thin[3,-]::item::[例]\hspace{-1mm})\ $y=f(x)=x^3$\\
+%thin[4,-]::\hspace*{1zw}$y'=f'(x)=f'=\bigl(x^3\bigr)'=3x^2$\vspace{2mm}\\
+%thin[4,-]::\hspace*{1zw}$\bunsuu{dy}{dx}=\bunsuu{df}{dx}=\bunsuu{d}{dx}f(x)=\bunsuu{d}{dx}(x^3)=3x^2$
+end

@@ -1,0 +1,132 @@
+\documentclass[a4paper,10pt]{ujarticle}
+
+\usepackage{ketpic,ketlayer}
+
+\usepackage{graphicx}
+
+\usepackage{emath}
+\usepackage{emathMw,emathEy}
+
+\setmargin{15}{15}{10}{20}
+
+\pagestyle{empty}
+
+\columnsep=0.5cm
+\columnseprule=0.5pt
+
+\newcommand{\hako}[4][-1]{%
+\setcounter{ketpicctra}{#2}%
+\divide\value{ketpicctra} by 2%
+\setcounter{ketpicctrb}{#3}%
+\divide\value{ketpicctrb} by 2%
+\setcounter{ketpicctrc}{\theketpicctrb}%
+\addtocounter{ketpicctrc}{#1}%
+\def\kettmp{
+\begin{picture}%
+(#2, #3)(0,0)%
+\settowidth{\Width}{#4}\setlength{\Width}{-0.5\Width}%
+\settoheight{\Height}{#4}\settodepth{\Depth}{#4}\setlength{\Height}{-0.5\Height}\setlength{\Depth}{0.5\Depth}\addtolength{\Height}{\Depth}%
+\put(\theketpicctra,\theketpicctrb){\hspace*{\Width}\raisebox{\Height}{#4}}%
+\end{picture}%
+}%
+{\unitlength=1mm%
+\raisebox{-\theketpicctrc mm}{\fbox{\kettmp}}%
+}
+}
+
+\begin{document}
+
+\noindent
+\twocolumn[
+{\tabcolsep=0mm
+\Ctab{180mm}{{\Large 確認テスト}}\vspace{-3mm}%
+
+%\begin{tabular}[b]{|c|c|}\hline
+%\Ctab{2cm}{教室番号}\mbox{}& \Ctab{2cm}{座席番号}\mbox{}\\\hline
+%\raisebox{8mm}{\mbox{}}& \\\hline
+%\end{tabular}%
+%{\large 
+%\hspace{1.64cm}（\sentaku{春}・秋）学期　定期試験
+%}%
+\hspace{0.82cm}%
+\hfill 2018年6月4日\vspace{1mm}%　第3時限（\ 1／2\ 枚）\vspace{1mm}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+\Ctab{4.1cm}{科　目}\mbox{} & \Ctab{2.46cm}{担　当　者}\mbox{}%
+& \Ctab{2cm}{科}\mbox{} & \Ctab{0.984cm}{学年}\mbox{}%
+& \Ctab{2cm}{番　号}\mbox{} & \Ctab{4.4cm}{氏　　　　名}\mbox{}%
+& \Ctab{2.2cm}{評　点}\mbox{}\\\hline
+\raisebox{3 mm}{$\mathstrut$}\raisebox{-3mm}{$\mathstrut$}%
+数　学　１& 高　遠 & 生産技術 & １
+ & & & \\\hline
+\end{tabular}
+}
+\vspace{1mm}
+
+\begin{center}
+\input{fig/sincos.tex}
+\end{center}
+
+\vspace{2mm}
+
+]
+
+\small
+
+\begin{Enumerate}[{\bf \large 1}]
+
+\item 上の図は$y=\sin x$と$y=\cos x$のグラフである．
+\begin{enumerate}[(1)]
+\item いずれも，振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．
+\item $y=\cos x$は，$y=\sin x$と比べて位相が\;\hako{10}{5}{}だけ\\
+\hako{20}{6}{}いる．
+\item $y=2\sin x$の振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．
+\item $y=\sin 2x$の振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．
+\item $y=\cos\bigl(x+\dfrac{\pi}{4}\bigr)$は，$y=\cos x$より位相が\;\hako{10}{5}{}だけ\;
+\hako{20}{6}{}いる．
+
+\item $y=2\sin x$のグラフを描き入れよ．
+\item $y=\sin 2x$のグラフを描き入れよ．
+\item $y=\cos\bigl(x+\dfrac{\pi}{4}\bigr)$のグラフを描き入れよ．
+\end{enumerate}
+
+\vspace{2zw}
+
+
+\item 直線について，次の問いに答えよ．
+\begin{enumerate}[(1)]
+\item 原点を通り，傾きが$2$の直線(1)の方程式を求めよ．\vspace{3zw}
+\item 直線(1)に平行で，$y$切片が$3$の直線(2)の方程式を求めよ．\vspace{3zw}
+\item 直線(1)に垂直で，原点を通る直線(3)の方程式を求めよ．\vspace{3zw}
+\item 直線(2)と直線(3)の交点の座標Pを求めよ．\vspace{3zw}
+\item 原点Oと点Pの距離を求めよ．\vspace{3zw}
+\end{enumerate}
+
+\newpage
+
+\item 円について，次の問いに答えよ．
+\begin{enumerate}[(1)]
+\item 原点Oを中心とし，半径が$2$の円(1)の方程式を求めよ．\vspace{2zw}
+\item 点$(1,2)$を中心とし，半径が$2$の円(2)の方程式を求めよ．\vspace{2zw}
+\item (2)の方程式を展開してまとめると\\
+$\hako{6}{5}{}\;x^2+\hako{6}{5}{}\;y^2+\hako{6}{5}{}\;x+\hako{6}{5}{}\;y+\hako{6}{5}{}=0$\vspace{2zw}
+\item Oと$\mathrm{A}(1,\sqrt{3})$との距離は\;\;\hako{10}{5}{}である．\\
+Aは円(1)の\;\hako{10}{5}{}にある．（内部，周上，外部）\vspace{2zw}
+\item 原点Oと点Aを通る直線の傾きを求めよ．\vspace{2zw}
+\item Aを通り，(5)の直線と垂直な直線の方程式を求めよ．\vspace{5zw}
+\end{enumerate}
+
+\item 2次曲線について，次の問いに答えよ．
+\begin{enumerate}[(1)]
+\item 放物線$y^2=x$の焦点$\mathrm{F}_1$を求めよ．\vspace{2zw}
+\item $\mathrm{F}_1$から出た光線は放物線で反射するとどうなるか．\vspace{2zw}
+\item 楕円$\dfrac{x^2}{6}+\dfrac{y^2}{2}=1$の焦点$\mathrm{F}_2,\mathrm{F}'_2$を求めよ．\vspace{2zw}
+\item $\mathrm{F}_2$から出た光線は楕円で反射するとどうなるか．\vspace{2zw}
+\item 双曲線$\dfrac{x^2}{4}-\dfrac{y^2}{1}=1$の焦点$\mathrm{F}_3,\mathrm{F}'_3$を求めよ．\vspace{2zw}
+\item 上の双曲線の漸近線の方程式を求めよ．
+\end{enumerate}
+
+
+\end{Enumerate}
+
+\end{document}

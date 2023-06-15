@@ -1,0 +1,17 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:4*x^2
+(%i7) q1i2:3*x
+(%i8) f(x):=q1i1
+(%i9) g(x):=q1i2
+(%i10) q1o1:ratsimp((f(4)-f(2))/(4-2))
+(%i11) q1o2:ratsimp((g(b)-g(a))/(b-a))
+(%i12) disp(q1o1)
+0
+
+(%i13) disp(q1o2)
+0
+
+(%i14) closefile()

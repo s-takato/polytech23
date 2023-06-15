@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/108-0612/fig/toolketmath8res.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[1,no,(z^(2)-3)-(z^2-3),no,no,no,no,no],[2,no,(6)-(z^2-3),no,no,no,no,no],[3,no,(z^(2)-3)-(z^2-3),no,no,no,no,no],[4,no,((z^(2)-3)*(x^(2)-3)*z-x*z^(2)-x^(2)*(z+x)*2*x)-(z^2-3),no,no,no,no,no],[5,no,(z^(2)-3)-(z^2-3),no,no,no,no,no],[6,no,(z^(2)-3)-(z^2-3),no,no,no,no,no],[7],[8,no,(2*x)-(z^2-3),no,no,no,no,no],[9,no,(2*x)-(z^2-3),no,no,no,no,no],[10],[11]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

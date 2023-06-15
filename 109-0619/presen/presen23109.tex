@@ -1,0 +1,906 @@
+%%% Title presen23109
+\documentclass[landscape,10pt]{ujarticle}
+\special{papersize=\the\paperwidth,\the\paperheight}
+\usepackage{ketpic,ketlayer}
+\usepackage{ketslide}
+\usepackage{amsmath,amssymb}
+\usepackage{bm,enumerate}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{color}
+\definecolor{slidecolora}{cmyk}{0.98,0.13,0,0.43}
+\definecolor{slidecolorb}{cmyk}{0.2,0,0,0}
+\definecolor{slidecolorc}{cmyk}{0.2,0,0,0}
+\definecolor{slidecolord}{cmyk}{0.2,0,0,0}
+\definecolor{slidecolore}{cmyk}{0,0,0,0.5}
+\definecolor{slidecolorf}{cmyk}{0,0,0,0.5}
+\definecolor{slidecolori}{cmyk}{0.98,0.13,0,0.43}
+\def\setthin#1{\def\thin{#1}}
+\setthin{0}
+\newcommand{\slidepage}[1][s]{%
+\setcounter{ketpicctra}{18}%
+\if#1m \setcounter{ketpicctra}{1}\fi
+\hypersetup{linkcolor=black}%
+
+\begin{layer}{118}{0}
+\putnotee{122}{-\theketpicctra.05}{\small\thepage/\pageref{pageend}}
+\end{layer}\hypersetup{linkcolor=blue}
+
+}
+\usepackage{emath}
+\usepackage{emathEy}
+\usepackage{emathMw}
+\usepackage{pict2e}
+\usepackage{ketlayermorewith2e}
+\usepackage[dvipdfmx,colorlinks=true,linkcolor=blue,filecolor=blue]{hyperref}
+\newcommand{\hiduke}{0619}
+\newcommand{\hako}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,\phantom{#2}\,}}
+\newcommand{\hakoa}[2][1]{\fbox{\raisebox{#1mm}{\mbox{}}\raisebox{-#1mm}{\mbox{}}\,#2\,}}
+\newcommand{\hakom}[2][1]{\hako[#1]{$#2$}}
+\newcommand{\hakoma}[2][1]{\hakoa[#1]{$#2$}}
+\def\rad{\;\mathrm{rad}}
+\def\deg#1{#1^{\circ}}
+\newcommand{\sbunsuu}[2]{\scalebox{0.6}{$\bunsuu{#1}{#2}$}}
+\def\pow{$\hspace{-1.5mm}＾\hspace{-1mm}$}
+\def\dlim{\displaystyle\lim}
+\newcommand{\brd}[2][1]{\scalebox{#1}{\color{red}\fbox{\color{black}$#2$}}}
+\newcommand\down[1][0.5zw]{\vspace{#1}\\}
+\newcommand{\sfrac}[3][0.65]{\scalebox{#1}{$\frac{#2}{#3}$}}
+\newcommand{\phn}[1]{\phantom{#1}}
+\newcommand{\scb}[2][0.6]{\scalebox{#1}{#2}}
+\newcommand{\dsum}{\displaystyle\sum}
+
+\setmargin{25}{145}{15}{100}
+
+\ketslideinit
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{layer}{120}{0}
+\putnotese{0}{0}{\input{fig/slide0.tex}}
+\end{layer}
+
+\def\mainslidetitley{22}
+\def\ketcletter{slidecolora}
+\def\ketcbox{slidecolorb}
+\def\ketdbox{slidecolorc}
+\def\ketcframe{slidecolord}
+\def\ketcshadow{slidecolore}
+\def\ketdshadow{slidecolorf}
+\def\slidetitlex{6}
+\def\slidetitlesize{1.3}
+\def\mketcletter{slidecolori}
+\def\mketcbox{yellow}
+\def\mketdbox{yellow}
+\def\mketcframe{yellow}
+\def\mslidetitlex{62}
+\def\mslidetitlesize{2}
+
+\color{black}
+\Large\bf\boldmath
+\addtocounter{page}{-1}
+
+\def\MARU{}
+\renewcommand{\MARU}[1]{{\ooalign{\hfil$#1$\/\hfil\crcr\raise.167ex\hbox{\mathhexbox20D}}}}
+\renewcommand{\slidepage}[1][s]{%
+\setcounter{ketpicctra}{18}%
+\if#1m \setcounter{ketpicctra}{1}\fi
+\hypersetup{linkcolor=black}%
+\begin{layer}{118}{0}
+\putnotee{115}{-\theketpicctra.05}{\small\hiduke-\thepage/\pageref{pageend}}
+\end{layer}\hypersetup{linkcolor=blue}
+}
+\newcounter{ban}
+\setcounter{ban}{1}
+\newcommand{\monban}[1][\hiduke]{%
+#1-\theban\ %
+\addtocounter{ban}{1}%
+}
+\newcommand{\monbannoadd}[1][\hiduke]{%
+#1-\theban\ %
+}
+\newcommand{\addban}{%
+\addtocounter{ban}{1}%%210614
+}
+\newcounter{edawidth}
+\newcounter{edactr}
+\newcommand{\seteda}[1]{
+\setcounter{edawidth}{#1}
+\setcounter{edactr}{1}
+}
+\newcommand{\eda}[2][\theedawidth ]{%
+\noindent\Ltab{#1 mm}{[\theedactr]\ #2}%
+\addtocounter{edactr}{1}%
+}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+\newslide{導関数の定義式}
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$a$における微分係数\\
+\hspace*{2zw}$f'(a)=\dlim_{z \to a}\bunsuu{f(z)-f(x)}{z-a}$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$a$を$x$で置き換える\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}\fbox{$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$}
+}%
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$a$における微分係数\\
+\hspace*{2zw}$f'(a)=\dlim_{z \to a}\bunsuu{f(z)-f(x)}{z-a}$
+\item
+$a$を$x$で置き換える\\
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}\fbox{$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$}
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$a$における微分係数\\
+\hspace*{2zw}$f'(a)=\dlim_{z \to a}\bunsuu{f(z)-f(x)}{z-a}$
+\item
+$a$を$x$で置き換える\\
+\hspace*{1zw}\fbox{$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$}
+\end{itemize}
+
+\newslide{導関数の定義式の別形}
+
+\vspace*{18mm}
+
+\hypertarget{para1pg1}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para0pg3}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para0pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para1pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 1/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$z-x=\varDelta x$とおく（$x$の変化量でデルタ$x$と読む）
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$f(z)-f(x)=\varDelta y$とおく（$y$の変化量）
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$z \to x$より　$\varDelta x \to 0$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$z=x+\varDelta x$より\\
+}%
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para1pg2}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para0pg3}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para1pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 2/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$
+\item
+$z-x=\varDelta x$とおく（$x$の変化量でデルタ$x$と読む）
+\item
+$f(z)-f(x)=\varDelta y$とおく（$y$の変化量）
+\item
+$z \to x$より　$\varDelta x \to 0$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$z=x+\varDelta x$より\\
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para1pg3}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para0pg3}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para1pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 3/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$
+$=\dlim_{\varDelta x \to 0}\bunsuu{\varDelta y}{\varDelta x}$
+\item
+$z-x=\varDelta x$とおく（$x$の変化量でデルタ$x$と読む）
+\item
+$f(z)-f(x)=\varDelta y$とおく（$y$の変化量）
+\item
+$z \to x$より　$\varDelta x \to 0$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$z=x+\varDelta x$より\\
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para1pg4}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para0pg3}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para1pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para1pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 4/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{f(z)-f(x)}{z-x}$
+$=\dlim_{\varDelta x \to 0}\bunsuu{\varDelta y}{\varDelta x}$
+\item
+$z-x=\varDelta x$とおく（$x$の変化量でデルタ$x$と読む）
+\item
+$f(z)-f(x)=\varDelta y$とおく（$y$の変化量）
+\item
+$z \to x$より　$\varDelta x \to 0$
+\item
+$z=x+\varDelta x$より\\
+\hspace*{2zw}$f'(x)=\dlim_{\varDelta x \to 0}\bunsuu{f(x+\varDelta x)-f(x)}{\varDelta x}$（教科書）
+\end{itemize}
+
+\newslide{$x^3$の微分}
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$f(x)=x^3$\vspace{-2mm}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$f(x)=x^3$\vspace{-2mm}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+\item
+次の因数分解公式を用いる\\
+\hspace*{2zw}$z^3-x^3=(z-x)(z^2+zx+x^2)$
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$f(x)=x^3$\vspace{-2mm}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+\item
+次の因数分解公式を用いる\\
+\hspace*{2zw}$z^3-x^3=(z-x)(z^2+zx+x^2)$
+\item
+(1)$=\dlim_{z \to x}\bunsuu{(z-x)(z^2+zx+x^2)}{z-x}$\\
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$f(x)=x^3$\vspace{-2mm}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+\item
+次の因数分解公式を用いる\\
+\hspace*{2zw}$z^3-x^3=(z-x)(z^2+zx+x^2)$
+\item
+(1)$=\dlim_{z \to x}\bunsuu{(z-x)(z^2+zx+x^2)}{z-x}$\\
+\phantom{(1)}$=\dlim_{z \to x}(z^2+zx+x^2)=3x^2$\\
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+$f(x)=x^3$\vspace{-2mm}
+\item
+$f'(x)=\dlim_{z \to x}\bunsuu{z^3-x^3}{z-x}$\hfill(1)　　\vspace{-2mm}%%
+\item
+次の因数分解公式を用いる\\
+\hspace*{2zw}$z^3-x^3=(z-x)(z^2+zx+x^2)$
+\item
+(1)$=\dlim_{z \to x}\bunsuu{(z-x)(z^2+zx+x^2)}{z-x}$\\
+\phantom{(1)}$=\dlim_{z \to x}(z^2+zx+x^2)=3x^2$\\
+\hspace*{4zw}\fbox{$(x^3)'=3x^2$}
+\end{itemize}
+
+\newslide{課題($x^4$の微分)}
+
+\vspace*{18mm}
+
+\slidepage
+\begin{itemize}
+\item
+[課題]\monban 問いに答えよ．\seteda{60}\\
+\eda{$z^4-x^4$の因数分解公式をかけ}\\
+\eda{$(x^4)'=4x^3$を導け}
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\newslide{微分の公式}
+
+\vspace*{18mm}
+
+\hypertarget{para2pg1}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 1/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para2pg2}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 2/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\item
+$f(x)=x$\\
+\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para2pg3}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 3/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\item
+$f(x)=x$\\
+\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+\item
+$(x^2)'=2x$
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para2pg4}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 4/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\item
+$f(x)=x$\\
+\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+\item
+$(x^2)'=2x$
+\item
+$(x^3)'=3x^2$
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para2pg5}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 5/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\item
+$f(x)=x$\\
+\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+\item
+$(x^2)'=2x$
+\item
+$(x^3)'=3x^2$
+\item
+一般に　$(x^n)'=\hako{$n x^{n-1}$}$
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para2pg6}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para1pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para2pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para2pg6}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 6/6}
+\end{layer}
+
+\slidepage
+
+\begin{layer}{120}{0}
+\putnotese{72}{5}{\scalebox{0.9}{\input{fig/bibun4.tex}}}
+\end{layer}
+
+\begin{itemize}
+\item
+定数関数$f(x)=c$（$c$は定数）\\
+\hspace*{1zw}$(c)'=0$
+\item
+$f(x)=x$\\
+\hspace*{1zw}$(x)'=\dlim_{z \to x}\bunsuu{z-x}{z-x}=1$
+\item
+$(x^2)'=2x$
+\item
+$(x^3)'=3x^2$
+\item
+一般に　$(x^n)'=\hakoa{$n x^{n-1}$}$
+\end{itemize}
+
+\newslide{微分の性質}
+
+\vspace*{18mm}
+
+\slidepage
+\vspace{2mm}
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+\begin{itemize}
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+$(c f)'=c f'$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+$=2x+3$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+}%
+\end{itemize}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\vspace{2mm}
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+\begin{itemize}
+\item
+$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+\item
+$(c f)'=c f'$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+$=2x+3$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\vspace{2mm}
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+\begin{itemize}
+\item
+$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+\item
+$(c f)'=c f'$
+\item
+[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+$=2x+3$
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\vspace{2mm}
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+\begin{itemize}
+\item
+$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+\item
+$(c f)'=c f'$
+\item
+[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+$=2x+3$
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\slidepage
+\vspace{2mm}
+
+\noindent
+$f(x),\ g(x)$と定数$c$について
+\begin{itemize}
+\item
+$(f+g)'=f'+g',\ (f-g)'=f'-g'$
+\item
+$(c f)'=c f'$
+\item
+[例]\hspace{-1mm})\ $(x^2+3x+4)'=(x^2)'+(3x)'+(4)'$
+$=2x+3$
+\item
+[課題]\monbannoadd 次を微分せよ\hfill TextP7\seteda{58}\\
+\eda{$y=3x^2+3x-3$}\eda{$y=2x^2-5x+4$}\\
+\eda{$y=-4x^2+3x-2$}\eda{$y=\frac{5}{3}x^3+\frac{3}{4}x^2-\frac{1}{3}x$}\\
+\end{itemize}
+\addban
+
+\newslide{導関数の書き方}
+
+\vspace*{18mm}
+
+\hypertarget{para3pg1}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para3pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para4pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 1/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+関数$y=f(x)$を変数$x$で微分する\\
+\hspace*{1zw}$y',\ f'(x),\ f',\ \bigl(f(x)\bigr)'$（ラグランジュ）\vspace{2mm}\\
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$\bunsuu{dy}{dx},\ \bunsuu{df}{dx},\ \bunsuu{d}{dx}\bigl(f(x)\bigr)$（ライプニッツ）
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[例]\hspace{-1mm})\ $y=f(x)=x^3$\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$y'=f'(x)=f'=\bigl(x^3\bigr)'=3x^2$\vspace{2mm}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$\bunsuu{dy}{dx}=\bunsuu{df}{dx}=\bunsuu{d}{dx}f(x)=\bunsuu{d}{dx}(x^3)=3x^2$
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para3pg2}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para3pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para4pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 2/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+関数$y=f(x)$を変数$x$で微分する\\
+\hspace*{1zw}$y',\ f'(x),\ f',\ \bigl(f(x)\bigr)'$（ラグランジュ）\vspace{2mm}\\
+\hspace*{1zw}$\bunsuu{dy}{dx},\ \bunsuu{df}{dx},\ \bunsuu{d}{dx}\bigl(f(x)\bigr)$（ライプニッツ）
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\item
+[例]\hspace{-1mm})\ $y=f(x)=x^3$\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$y'=f'(x)=f'=\bigl(x^3\bigr)'=3x^2$\vspace{2mm}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$\bunsuu{dy}{dx}=\bunsuu{df}{dx}=\bunsuu{d}{dx}f(x)=\bunsuu{d}{dx}(x^3)=3x^2$
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para3pg3}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para3pg2}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para4pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 3/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+関数$y=f(x)$を変数$x$で微分する\\
+\hspace*{1zw}$y',\ f'(x),\ f',\ \bigl(f(x)\bigr)'$（ラグランジュ）\vspace{2mm}\\
+\hspace*{1zw}$\bunsuu{dy}{dx},\ \bunsuu{df}{dx},\ \bunsuu{d}{dx}\bigl(f(x)\bigr)$（ライプニッツ）
+\item
+[例]\hspace{-1mm})\ $y=f(x)=x^3$\\
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$y'=f'(x)=f'=\bigl(x^3\bigr)'=3x^2$\vspace{2mm}\\
+}%
+{\color[cmyk]{\thin,\thin,\thin,\thin}%
+\hspace*{1zw}$\bunsuu{dy}{dx}=\bunsuu{df}{dx}=\bunsuu{d}{dx}f(x)=\bunsuu{d}{dx}(x^3)=3x^2$
+}%
+\end{itemize}
+
+\sameslide
+
+\vspace*{18mm}
+
+\hypertarget{para3pg4}{}
+
+\begin{layer}{120}{0}
+\putnotew{96}{73}{\hyperlink{para2pg5}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut||\!\lhd$}}}}}
+\putnotew{101}{73}{\hyperlink{para3pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut|\!\lhd$}}}}}
+\putnotew{108}{73}{\hyperlink{para3pg3}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\!\lhd\!\!$}}}}}
+\putnotew{115}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{4.5mm}{\scalebox{1}{\scriptsize $\mathstrut\!\rhd\!$}}}}}
+\putnotew{120}{73}{\hyperlink{para3pg4}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!|$}}}}}
+\putnotew{125}{73}{\hyperlink{para4pg1}{\fbox{\Ctab{2.5mm}{\scalebox{1}{\scriptsize $\mathstrut \!\rhd\!\!||$}}}}}
+\putnotee{126}{73}{\scriptsize\color{blue} 4/4}
+\end{layer}
+
+\slidepage
+\begin{itemize}
+\item
+関数$y=f(x)$を変数$x$で微分する\\
+\hspace*{1zw}$y',\ f'(x),\ f',\ \bigl(f(x)\bigr)'$（ラグランジュ）\vspace{2mm}\\
+\hspace*{1zw}$\bunsuu{dy}{dx},\ \bunsuu{df}{dx},\ \bunsuu{d}{dx}\bigl(f(x)\bigr)$（ライプニッツ）
+\item
+[例]\hspace{-1mm})\ $y=f(x)=x^3$\\
+\hspace*{1zw}$y'=f'(x)=f'=\bigl(x^3\bigr)'=3x^2$\vspace{2mm}\\
+\hspace*{1zw}$\bunsuu{dy}{dx}=\bunsuu{df}{dx}=\bunsuu{d}{dx}f(x)=\bunsuu{d}{dx}(x^3)=3x^2$
+\end{itemize}
+\label{pageend}\mbox{}
+
+\end{document}

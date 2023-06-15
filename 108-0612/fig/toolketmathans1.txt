@@ -2,14 +2,16 @@ NIL
 (%i3) powerdisp:false
 (%i4) display2d:false
 (%i5) linel:1000
-(%i6) q1i1:x^2-2*x
-(%i7) q1i2:(5*x+2)/(x+2)
-(%i8) q1o1:limit(q1i1,x,4)
-(%i9) q1o2:limit(q1i2,x,2)
-(%i10) disp(q1o1)
-8
+(%i6) f(x):=4*x^2
+(%i7) g(x):=3*x
+(%i8) q1i1:(f(4)-f(2))/(4-2)
+(%i9) q1i2:(g(b)-g(a))/(b-a)
+(%i10) q1o1:ratsimp(q1i1)
+(%i11) q1o2:ratsimp(q1i2)
+(%i12) disp(q1o1)
+24
 
-(%i11) disp(q1o2)
+(%i13) disp(q1o2)
 3
 
-(%i12) closefile()
+(%i14) closefile()

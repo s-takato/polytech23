@@ -1,0 +1,3 @@
+quline="Q01::問いに答えよ.	[1]:: z^(4)-x^(4)の因数分解公式をかけ	[2]:: (x^(4))′ = 4x^3 を導け";
+shline="Q01---	[1] z^(4)-x^(4)=  	[2] (x^(4))′=lim(z,x,fr(z^4-x^4,z-x))=  ";
+sqline="01YU	2	2	2CR02HU	2	2	2CR03KU	2	2	2CR04AK	2	2	2CR05AK	2	2	2CR06TK	2	2	2CR07MS	2	2	2CR08TT	2	2	2CR09TN	2	2	2CR10AY	2	2	2CR11HW	2	2	2";

@@ -1,0 +1,14 @@
+writefile("/Users/takatoosetsuo/polytech23.git/108-0612/fig/toolketmath8ans1.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:4*x^2$/*##*/
+q1i2:3*x$/*##*/
+f(x):=q1i1$/*##*/
+g(x):=q1i2$/*##*/
+q1o1:ratsimp((f(4)-f(2))/(4-2))$/*##*/
+q1o2:ratsimp((g(b)-g(a))/(b-a))$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

@@ -1,0 +1,129 @@
+\documentclass[dvipdfmx,a4paper,10pt]{ujarticle}
+
+\usepackage{pict2e}
+\usepackage{ketpic2e,ketlayer2e}
+\usepackage{graphicx,color}
+
+
+\usepackage{emath}
+\usepackage{emathMw,emathEy}
+
+\setmargin{15}{15}{10}{20}
+
+\pagestyle{empty}
+
+\columnsep=0.5cm
+\columnseprule=0.5pt
+
+\newcommand{\hako}[4][-1]{%
+\setcounter{ketpicctra}{#2}%
+\divide\value{ketpicctra} by 2%
+\setcounter{ketpicctrb}{#3}%
+\divide\value{ketpicctrb} by 2%
+\setcounter{ketpicctrc}{\theketpicctrb}%
+\addtocounter{ketpicctrc}{#1}%
+\def\kettmp{
+\begin{picture}%
+(#2, #3)(0,0)%
+\settowidth{\Width}{#4}\setlength{\Width}{-0.5\Width}%
+\settoheight{\Height}{#4}\settodepth{\Depth}{#4}\setlength{\Height}{-0.5\Height}\setlength{\Depth}{0.5\Depth}\addtolength{\Height}{\Depth}%
+\put(\theketpicctra,\theketpicctrb){\hspace*{\Width}\raisebox{\Height}{#4}}%
+\end{picture}%
+}%
+{\unitlength=1mm%
+\raisebox{-\theketpicctrc mm}{\fbox{\kettmp}}%
+}
+}
+
+\begin{document}
+
+\noindent
+\twocolumn[
+{\tabcolsep=0mm
+\Ctab{180mm}{{\Large 定期試験}}\vspace{-3mm}%
+
+%\begin{tabular}[b]{|c|c|}\hline
+%\Ctab{2cm}{教室番号}\mbox{}& \Ctab{2cm}{座席番号}\mbox{}\\\hline
+%\raisebox{8mm}{\mbox{}}& \\\hline
+%\end{tabular}%
+%{\large 
+%\hspace{1.64cm}（\sentaku{春}・秋）学期　定期試験
+%}%
+\hspace{0.82cm}%
+\hfill 2023年6月19日\vspace{1mm}%　第3時限（\ 1／1\ 枚）\vspace{1mm}e
+
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+\Ctab{4.1cm}{科　目}\mbox{} & \Ctab{2.46cm}{担　当　者}\mbox{}%
+& \Ctab{2cm}{科}\mbox{} & \Ctab{0.984cm}{学年}\mbox{}%
+& \Ctab{2cm}{番　号}\mbox{} & \Ctab{4.4cm}{氏　　　　名}\mbox{}%
+& \Ctab{2.2cm}{評　点}\mbox{}\\\hline
+\raisebox{3 mm}{$\mathstrut$}\raisebox{-3mm}{$\mathstrut$}%
+基礎数学& 高　遠 & 生産技術 & １
+ & & & \\\hline
+\end{tabular}
+}
+\vspace{1mm}
+
+\begin{center}
+\input{fig/sincos.tex}
+\end{center}
+
+%\vspace{2mm}
+
+]
+
+%\small
+
+\begin{Enumerate}[{\bf \large 1}]
+%各2 36
+\item 上の図は$y=\cos x$と$y=\cos\dfrac{1}{2}x$のグラフである．
+\begin{enumerate}[(1)]
+\item $y=\cos x$の振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．
+\item $y=\cos\dfrac{1}{2}x$の振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．
+\item $y=2\cos x$の振幅は\hako{10}{5}{}，周期は\hako{10}{5}{}である．\item $y=2\cos x$のグラフをかき入れよ．
+\item $\dfrac{\pi}{5}\;(\mathrm{rad})=\hako{10}{6}{\,}\;\degree$\ ，$120\degree=\hako{10}{6}{}\;(\mathrm{rad})$
+\end{enumerate}
+
+\item $a>0,\ a\neqq1$とする．
+
+\begin{layer}{100}{0}
+\putnotese{43}{0}{\input{fig/explog}}
+\end{layer}
+
+\begin{enumerate}[(1)]
+\item 右のグラフのうち\\
+　$y=2^x$は\;\hako{6}{5}{}\\
+　$y=\log_2 x$は\;\hako{6}{6}{}
+\item $a^0=\;\hako{6}{5}{}$\;，$a^{-1}=\;\hako{6}{5}{}$
+\item $\log_a 1=\;\hako{6}{5}{}$\;，$\log_a a^2=\;\hako{6}{5}{}$
+\item $5^{1.4}\times 5^{0.6}=5^{\,\hako{2}{2}{}}=\;\hako{6}{5}{}$
+\item $\log_2 3-\log_2 6=\log_2\hako{5}{5}{}=\;\hako{6}{5}{}$
+\end{enumerate}
+
+\newpage
+%各4 36
+\item 
+\begin{enumerate}[(1)]
+\item 数列$-1,\ 1,\ -1,\ 1,\ \cdots$の一般項（第$n$項）は\\
+\hfill\hako{20}{6}{}　%
+\item 等差数列$1,\ 3,\ 5,\cdots$の一般項（第$n$項）は\\
+\hfill\hako{20}{6}{}　%
+\item 等比数列$1,\ ３,\ ９,\ \cdots$の一般項（第$n$項）は\\　%
+\hfill\hako{20}{6}{}　%
+\item 数列$\dfrac{3}{2},\ \dfrac{9}{3},\ \dfrac{27}{4},\ \cdots$の第$n$項までの和を%
+$\displaystyle\sum$で表せ．\vspace{6zw}
+\end{enumerate}
+
+\item 
+\begin{enumerate}[(1)]
+\item $x^2+4x+1=0$の解は　\hfill$x=$\;\hako{20}{6}{}　\vspace{1zw}%
+\item $x^2+4x+5=0$の解は　\hfill$x=$\;\hako{20}{6}{}　\vspace{1zw}%
+\item $\sqrt{-8}$を$i$で表すと　\hfill$x=$\hako{20}{6}{}\vspace{1zw}　
+\item $(1+2i)(2+3i)$を計算せよ．\vspace{4zw}
+\item $\dfrac{2+3i}{1+2i}$を計算せよ．
+\end{enumerate}
+
+
+\end{Enumerate}
+
+\end{document}
