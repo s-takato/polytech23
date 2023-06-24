@@ -1,0 +1,3 @@
+quline="Q04::y=x^(fr(3,2))=xsq(x)とする．	[]:: y'を求めよ";
+shline="Q04---	[] y'=  ";
+sqline="01YU	2	2CR02HU	2	2CR03KU	2	2CR04AK	2	2CR05AK	2	2CR06TK	2	2CR07MS	2	2CR08TT	2	2CR09TN	2	2CR10AY	2	2CR11HW	2	2";

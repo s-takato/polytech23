@@ -1,0 +1,16 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:sin(x)
+(%i7) q1i2:2*sin(x)-3*cos(x)
+(%i8) q1o1:diff(q1i1,x)
+(%i9) q1p1:ev(q1o1,x = 0)
+(%i10) q1o2:diff(q1i2,x)
+(%i11) disp(q1p1)
+1
+
+(%i12) disp(q1o2)
+3*sin(x)+2*cos(x)
+
+(%i13) closefile()

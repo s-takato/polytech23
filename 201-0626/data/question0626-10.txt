@@ -1,0 +1,26 @@
+Q
+次の関数を微分せよ．
+[1] y=sin(3x)
+[2] y=(5x+1)^3
+[3] y=sq(2x+3)
+[4] y=tan(-x+1)
+Sheet
+[1] y'=  ::2
+[2] y'=  ::2
+[3] y'=  ::2
+[4] y'=  ::2
+Ans
+[1] y'=3cos(3x)
+[2] y'=15(5x+1)^2
+[3] y'= fr(1,sq(2x+3))
+[4] y'= -fr(1,cos(2,x-1))
+Mxcalc
+[1] sin(3x)
+[2] (5x+1)^3
+[3] sq(2x+3)
+[4] tan(-x+1)
+o1:diff(i1,x)
+o2:diff(i2,x)
+o3:diff(i3,x)
+o4:diff(i4,x)
+return o1::o2::o3::o4

@@ -1,0 +1,10 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:x*sqrt(x)
+(%i7) q1o1:diff(q1i1,x)
+(%i8) disp(q1o1)
+(3*sqrt(x))/2
+
+(%i9) closefile()

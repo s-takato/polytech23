@@ -1,0 +1,16 @@
+Q
+図はy=sin(x), y=cos(x), y=-sin(x), y=-cos(x)のグラフである．
+[1] y=
+[2] y=
+[3] y=
+[4] y=
+Sheet
+[1] y=  ::2
+[2] y=  ::2
+[3] y=  ::2
+[4] y=  ::2
+Ans
+[1] -cos(x)
+[2] -sin(x)
+[3] cos(x)
+[4] sin(x)

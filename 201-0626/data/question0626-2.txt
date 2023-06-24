@@ -1,0 +1,12 @@
+Q
+積の微分公式で微分せよ
+[1] y=(x+1)(x+3)
+[2] y = x^2(x+2)
+Sheet
+[] y'=  ::4
+Ans
+[] fr(3,2)sq(x)
+Mxcalc
+[1] xsq(x)
+o1:diff(i1,x)
+return o1

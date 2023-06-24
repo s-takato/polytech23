@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/201-0626/fig/toolketmathans2.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:x*sqrt(x)$/*##*/
+q1o1:diff(q1i1,x)$/*##*/
+disp(q1o1)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

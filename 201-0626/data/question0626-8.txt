@@ -1,0 +1,17 @@
+Q
+次の問いに答えよ
+[1] y=sin(x)の(0,0)における接線の傾きを求めよ
+[2] y=2sin(x)-3cos(x)を微分せよ
+Sheet
+[1] =  ::4
+[2] y'=  ::4
+Ans
+[1] 1
+[2] 2cos(x)+3sin(x)
+Mxcalc
+[1] sin(x)
+[2] 2sin(x)-3cos(x)
+o1:diff(i1,x)
+p1:ev(o1,x=0)
+o2:diff(i2,x)
+return p1::o2

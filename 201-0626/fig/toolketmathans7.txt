@@ -1,0 +1,25 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:sin(x)*cos(x)
+(%i7) q1i2:sin(x)^2
+(%i8) q1i3:x*tan(x)
+(%i9) q1i4:tan(x)-x
+(%i10) q1o1:diff(q1i1,x)
+(%i11) q1o2:diff(q1i2,x)
+(%i12) q1o3:diff(q1i3,x)
+(%i13) q1o4:diff(q1i4,x)
+(%i14) disp(q1o1)
+cos(x)^2-sin(x)^2
+
+(%i15) disp(q1o2)
+2*cos(x)*sin(x)
+
+(%i16) disp(q1o3)
+tan(x)+x*sec(x)^2
+
+(%i17) disp(q1o4)
+sec(x)^2-1
+
+(%i18) closefile()
