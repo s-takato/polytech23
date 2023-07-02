@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/201-0626/fig/toolketmath5res.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[1,no,(-cos(x))-(-cos(x)),(-sin(x))-(-sin(x)),(cos(x))-(cos(x)),(sin(x))-(sin(x))],[2,no,(2-(2))-(-cos(x)),(2)-(-sin(x)),(4)-(cos(x)),(6)-(sin(x))],[3],[4],[5,no,(-cos(x))-(-cos(x)),(-sin(x))-(-sin(x)),(cos(x))-(cos(x)),(sin(x))-(sin(x))],[6],[7,no,(-cos(x))-(-cos(x)),(-sin(x))-(-sin(x)),(cos(x))-(cos(x)),(sin(x))-(sin(x))],[8,no,(-cos(x))-(-cos(x)),(-sin(x))-(-sin(x)),(cos(x))-(cos(x)),(sin(x))-(sin(x))],[9,no,(inf)-(-cos(x)),(inf)-(-sin(x)),(inf)-(cos(x)),(inf)-(sin(x))],[10,no,(-sin(x))-(-cos(x)),(-tan(x))-(-sin(x)),(sin(x))-(cos(x)),(cos(x))-(sin(x))],[11]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

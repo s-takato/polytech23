@@ -1,0 +1,12 @@
+[x^2*(16*x+3),(x^2*(8*x+3))/(4*x+1)^2]
+
+Script
+q1i1:x^(3)*(4*x+1)
+q1i2:((x^(3))/(4*x+1))
+q1o1:ratsimp(diff(q1i1,x))
+q1o2:ratsimp(diff(q1i2,x))
+q1q1o1b:factor(q1o1)
+q1q1o2b:factor(q1o2)
+q1q1o1b::q1q1o2b
+end
+

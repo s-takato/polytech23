@@ -1,0 +1,7 @@
+quline="Q06::図はy=sin(x), y=cos(x), y=-sin(x), y=-cos(x)のグラフである．	[1]:: y=	[2]:: y=	[3]:: y=	[4]:: y=";
+shline="Q06---	[1] y=  	[2] y=  	[3] y=  	[4] y=  ";
+caline="Q06::	[1]::-cos(x)	[2]::-sin(x)	[3]::cos(x)	[4]::sin(x)";
+mrkline="0	2	2	2	2";
+mxscline="0	1	1	1	1";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2CR11HW	2	2	2	2	2";
+ansline="1	01YU	062615:17:28	Q06---	[1] y=  -cos(x)	[2] y=  -sin(x)	[3] y=  cos(x)	[4] y=  sin(x)CR2	02HU	062615:39:2	Q06---	[1] y=  2-(2)	[2] y=2  	[3] y=4  	[4] y= 6CR3	03KU	未提出CR4	04AK	未提出CR5	05AK	062615:25:23	Q06---	[1] y=  -cos(x)	[2] y=  -sin(x)	[3] y=  cos(x)	[4] y=  sin(x)CR6	06TK	未提出CR7	07MS	062616:15:57	Q06---	[1] y=  -cos(x)	[2] y=  -sin(x)	[3] y=  cos(x)	[4] y=  sin(x)CR8	08TT	062615:25:16	Q06---	[1] y=  -cos(x)	[2] y=  -sin(x)	[3] y=  cos(x)	[4] y=  sin(x)CR9	09TN	062615:34:46	Q06---	[1] y=  -cosx	[2] y=  -sinx	[3] y=  cosx	[4] y=  sinxCR10	10AY	062615:34:28	Q06---	[1] y=  -sin(x)	[2] y=  -tan(x)	[3] y=  sin(x)	[4] y=  cos(x)CR11	11HW	未提出";

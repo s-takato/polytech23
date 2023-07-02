@@ -1,0 +1,18 @@
+Q
+積と商の微分を用いて微分せよ
+[1] y=x^(3)(4x+1)
+[2] y=fr(x^(3),4x+1)
+Sheet
+[1] y'=  ::4
+[2] y'=  ::4
+Ans
+[1] x^2(16x+3)
+[2] fr(x^2(8x+3),(4x+1)^2)
+Mxcalc
+[1] x^(3)(4x+1)
+[2] fr(x^(3),4x+1)
+o1:ratsimp(diff(i1,x))
+o2:ratsimp(diff(i2,x))
+o1b:factor(o1)
+o2b:factor(o2)
+return o1b::o2b

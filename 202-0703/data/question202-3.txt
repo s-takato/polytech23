@@ -1,0 +1,26 @@
+Q
+次の関数を微分せよ．
+[1] y=2sin(x)
+[2] y=-cos(x)
+[3] y=3sin(x)+4cos(x)
+[4] y=x-cos(x)
+Sheet
+[1] y'=  ::2
+[2] y'=  ::2
+[3] y'=  ::2
+[4] y'=  ::2
+Ans
+[1] 2cos(x)
+[2] sin(x)
+[3] 3cos(x)-4sin(x)
+[4] 1+sin(x)
+Mxcalc
+[1] 2sin(x)
+[2] -cos(x)
+[3] 3sin(x)+4cos(x)
+[4] x-cos(x)
+o1:diff(i1,x)
+o2:diff(i2,x)
+o3:diff(i3,x)
+o4:diff(i4,x)
+return o1::o2::o3::o4

@@ -1,32 +1,18 @@
 Q01
-微分せよ
-[1] y=2x^2-3x+2
-[2] y=fr(1,3)x^3-fr(1,2)x^2+2x+1
-Sheet
-[1] y'=  ::4
-[2] y'=  ::4
-Ans
-[1] 4x-3
-[2] x^2-x+2
-Mxcalc
-[1] 2x^2-3x+2
-[2] fr(1,3)x^3-fr(1,2)x^2+2x+1
-o1:diff(i1,x)
-o2:diff(i2,x)
-return o1::o2
-Q02
 積の微分公式で微分せよ
 [1] y=(x+1)(x+3)
 [2] y = x^2(x+2)
 Sheet
-[] y'=  ::4
+[1] y'=  ::4
+[2] y'=  ::4
 Ans
-[] fr(3,2)sq(x)
+[1] 2x+4
+[2] 3x^2+4x
 Mxcalc
 [1] xsq(x)
 o1:diff(i1,x)
-return o1
-Q03
+return o
+Q02
 次を微分せよ
 [1] y=fr(x,x+1)
 [2] y=fr(1,x^2)
@@ -42,7 +28,7 @@ Mxcalc
 o1:diff(i1,x)
 o2:diff(i2,x)
 return o1::o2
-Q04
+Q03
 y=x^(fr(3,2))=xsq(x)とする．
 [] y'を求めよ
 Sheet
@@ -53,7 +39,7 @@ Mxcalc
 [1] xsq(x)
 o1:diff(i1,x)
 return o1
-Q05
+Q04
 次の関数を微分せよ
 [1] y=x^(fr(1,4))
 [2] y=x^(-2)
@@ -74,7 +60,7 @@ o1:diff(i1,x)
 o2:diff(i2,x)
 o3:diff(i3,x)
 return o1::o2::o3
-Q06
+Q05
 図はy=sin(x), y=cos(x), y=-sin(x), y=-cos(x)のグラフである．
 [1] y=
 [2] y=
@@ -90,7 +76,7 @@ Ans
 [2] -sin(x)
 [3] cos(x)
 [4] sin(x)
-Q07
+Q06
 「導関数の意味」を動かして，次の関数の導関数を求めよ
 [1] y=sin(x)
 [2] y=cos(x)
@@ -100,7 +86,7 @@ Sheet
 Ans
 [1] cos(x)
 [2] -sin(x)
-Q08
+Q07
 次の問いに答えよ
 [1] y=sin(x)の(0,0)における接線の傾きを求めよ
 [2] y=2sin(x)-3cos(x)を微分せよ
@@ -117,55 +103,3 @@ o1:diff(i1,x)
 p1:ev(o1,x=0)
 o2:diff(i2,x)
 return p1::o2
-Q09
-次の関数を微分せよ．
-[1] y=sin(x)cos(x)
-[2] y=sin(2,x)(=sin(x)sin(x))
-[3] y=xtan(x)
-[4] y=tan(x)-x
-Sheet
-[1] y'=  ::2
-[2] y'=  ::2
-[3] y'=  ::2
-[4] y'=  ::2
-Ans
-[1] y'=cos(2,x)-sin(2,x)
-[2] y'= 2cos(s)sin(x)
-[3] y'= fr(1,cos(2,x))-1
-[4] y'= 
-Mxcalc
-[1] sin(x)cos(x)
-[2] sin(2,x)
-[3] xtan(x)
-[4] tan(x)-x
-o1:diff(i1,x)
-o2:diff(i2,x)
-o3:diff(i3,x)
-o4:diff(i4,x)
-return o1::o2::o3::o4
-Q10
-次の関数を微分せよ．
-[1] y=sin(3x)
-[2] y=(5x+1)^3
-[3] y=sq(2x+3)
-[4] y=tan(-x+1)
-Sheet
-[1] y'=  ::2
-[2] y'=  ::2
-[3] y'=  ::2
-[4] y'=  ::2
-Ans
-[1] y'=3cos(3x)
-[2] y'=15(5x+1)^2
-[3] y'= fr(1,sq(2x+3))
-[4] y'= -fr(1,cos(2,x-1))
-Mxcalc
-[1] sin(3x)
-[2] (5x+1)^3
-[3] sq(2x+3)
-[4] tan(-x+1)
-o1:diff(i1,x)
-o2:diff(i2,x)
-o3:diff(i3,x)
-o4:diff(i4,x)
-return o1::o2::o3::o4

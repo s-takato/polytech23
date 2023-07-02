@@ -1,0 +1,21 @@
+Q
+次を微分せよ．
+[1] y=log(-x)
+[2] y=log(2x)
+[3] y=log(x+5)
+Sheet
+[1] y'=  ::2
+[2] y'=  ::2
+[3] y'=  ::2
+Ans
+[1] fr(1,x)
+[2] fr(1,x)
+[3] fr(1,x+5)
+Mxcalc
+[1] log(-x)
+[2] log(2x)
+[3] log(x+5)
+o1:diff(i1,x)
+o2:diff(i2,x)
+o3:diff(i3,x)
+return o1::o2::o3

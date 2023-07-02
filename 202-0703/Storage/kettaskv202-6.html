@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>kettask0626-9</title>
+    <title>kettask202-6</title>
     <style type="text/css">
         * {
             margin: 0px;
@@ -2032,32 +2032,6 @@ Dqq(str):=DqDq(str); //18.02.11
 DqDq(str):=(
   unicode("0022")+str+unicode("0022");
 );
-Putpoint(name,Pt):=Putpoint(name,Pt,Pt);
-Putpoint(name,Ptinit,Pt):=(
-  regional(ptstr); 
-    ptstr=name+".xy="+Textformat(Pcrd(Pt),10)+";";
-    parse(ptstr);
-    Ptpos(name,Pcrd([Pt_1,Pt_2])); //200529
-);
-Ptpos(pt):=Ptpos(pt,[]);
-Ptpos(ptorg,pos):=(
-  regional(pt,out,tmp);
-  if(ispoint(ptorg),pt=ptorg,pt=parse(ptorg));
-  if(length(pos)==0,
-    tmp=pt.name+"position";
-    out=parse(tmp);
-    if(!islist(out),
-      tmp=tmp+"="+Textformat(pt.xy,12)+";";  //200108 6->12
-      parse(tmp);
-    );
-  ,
-    pt.xy=pos;
-    tmp=pt.name+"position="+Textformat(pt.xy,12)+";"; //200108 6->12
-    parse(tmp);
-    out=pt.xy;
-  );
-  out;
-);
 Letter(Pt,Dr,St):=Letter([Pt,Dr,St]);
 Letter(list):=Letter(list,[]);
 Letter(Pt,Dr,St,options):=Letter([Pt,Dr,St],options);//181218
@@ -2518,6 +2492,32 @@ Setwindow(xrange,yrange,msg):=(
   Ptpos(NE,Pcrd([XMAX,YMAX]));
   Strictmove("SW"); Strictmove("NE");
 );
+Putpoint(name,Pt):=Putpoint(name,Pt,Pt);
+Putpoint(name,Ptinit,Pt):=(
+  regional(ptstr); 
+    ptstr=name+".xy="+Textformat(Pcrd(Pt),10)+";";
+    parse(ptstr);
+    Ptpos(name,Pcrd([Pt_1,Pt_2])); //200529
+);
+Ptpos(pt):=Ptpos(pt,[]);
+Ptpos(ptorg,pos):=(
+  regional(pt,out,tmp);
+  if(ispoint(ptorg),pt=ptorg,pt=parse(ptorg));
+  if(length(pos)==0,
+    tmp=pt.name+"position";
+    out=parse(tmp);
+    if(!islist(out),
+      tmp=tmp+"="+Textformat(pt.xy,12)+";";  //200108 6->12
+      parse(tmp);
+    );
+  ,
+    pt.xy=pos;
+    tmp=pt.name+"position="+Textformat(pt.xy,12)+";"; //200108 6->12
+    parse(tmp);
+    out=pt.xy;
+  );
+  out;
+);
 Strictmove(pC):=Strictmove(pC,StrictSep); //190831
 Strictmove(pCorg,sep):=(
   regional(pC,tmp,tmp1,tmp2);
@@ -2903,9 +2903,9 @@ Expr(listorg,options):=( //16.10.09
 Ketcindyjsfigure=0;
 Ketcindyjsscale=1;
 aalinestart=1;
-quline="Q09::次の関数を微分せよ．	[1]:: y=sin(x)cos(x)	[2]:: y=sin(2,x)(=sin(x)sin(x))	[3]:: y=xtan(x)	[4]:: y=tan(x)-x";
-shline="Q09---	[1] y'=  	[2] y'=  	[3] y'=  	[4] y'=  ";
-sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2CR11HW	2	2	2	2	2";
+quline="Q06::y=a^xの(0,1)での接線の傾きが1とする．．	[]:: 接線の傾きが1のときのaの値は？";
+shline="Q06---	[] a=  ";
+sqline="01YU	2	2CR02HU	2	2CR03KU	2	2CR04AK	2	2CR05AK	2	2CR06TK	2	2CR07MS	2	2CR08TT	2	2CR09TN	2	2CR10AY	2	2";
 quLL=Line2list(quline);
 shL=Line2list(shline);
 sqLL=Line2list(sqline);
@@ -4124,6 +4124,7 @@ Ketinit(1.6);
 
 if(startflg==1,
   Kettaskinit();
+  Putpoint("Q2",[33.5,20.5]);
   Subsedit(3,"St=");
   Subsedit(1,"");
   Subsedit(2,"");
@@ -4246,7 +4247,7 @@ if(stoknow==2,
     if(length(tmp)>0,
       tmp1=tmp_(-1);
       tmp=Gettexform(quest_tmp1);
-      drawtext(Text1.xy+[10,-2.5],tmp,size->14);
+      drawtext(Q2.xy+[0.4,-0.2],tmp,size->16);
     );//230411to
   );
 );
@@ -4443,6 +4444,7 @@ var cdy = CindyJS({
     {name: "SW", type: "Free", pos: [1.4694412402425423, -4.0, 0.12563238528778808], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "Text3", type: "EditableText", pos: [4.0, -0.8621236133122027, 0.06339144215530904], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 200, text: "St=", textsize: 21.0},
     {name: "Text9", type: "EditableText", pos: [1.7714285714285714, -4.0, 0.11428571428571428], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 1.0, minwidth: 580, textsize: 24.0},
+    {name: "Q2", type: "Free", pos: [4.0, 2.4477611940298507, 0.11940298507462686], color: [1.0, 0.784, 0.0], size: 6.0, border: false},
     {name: "Text7", type: "Button", pos: [-2.0, -4.0, -0.17391304347826086], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=1;initflg=1;", text: "1", textsize: 18.0},
     {name: "Text8", type: "Button", pos: [4.0, -1.1478260869565216, 0.34782608695652173], color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 0.0], fillalpha: 0.45, script: "ch=2;initflg=1;", text: "2", textsize: 18.0},
     {name: "Text4", type: "Button", pos: [4.0, 0.0851063829787234, 0.10638297872340424], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "nqinc=-1;", text: "　　", textsize: 14.0},
@@ -4551,21 +4553,21 @@ var cdy = CindyJS({
     {name: "Text5", type: "Button", pos: [4.0, 0.06095238095238095, 0.0761904761904762], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "nqinc=1;", text: "　　", textsize: 14.0}
   ],
   ports: [{
-    width: 836,
-    height: 638,
+    width: 983,
+    height: 634,
     id: "CSCanvas",
-    transform: [{visibleRect: [9.11628174039871, 27.039818721521595, 95.23166631636845, -38.679816875928985]}],
+    transform: [{visibleRect: [9.11628174039871, 27.039818721521595, 110.37396480042054, -38.26778154302961]}],
     grid: 5.0,
     background: "rgb(247,247,247)"
   }],
   csconsole: false,
-  cinderella: {build: 2072, version: [3, 0, 2072]}
+  cinderella: {build: 2074, version: [3, 0, 2074]}
 });
     </script>
 </head>
 <body>
 <header><p><font size="6">
-KeTTask0626-9
+KeTTask202-6
 </font></p></header>
     <div id="CSCanvas"></div>
 <div style="padding: 50px">

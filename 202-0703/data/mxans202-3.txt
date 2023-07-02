@@ -1,0 +1,14 @@
+[2*cos(x),sin(x),3*cos(x)-4*sin(x),sin(x)+1]
+
+Script
+q1i1:2*sin(x)
+q1i2:-cos(x)
+q1i3:3*sin(x)+4*cos(x)
+q1i4:x-cos(x)
+q1o1:diff(q1i1,x)
+q1o2:diff(q1i2,x)
+q1o3:diff(q1i3,x)
+q1o4:diff(q1i4,x)
+q1o1::q1o2::q1o3::q1o4
+end
+

@@ -1,0 +1,25 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:y = sin(3*x)
+(%i7) q1i2:y = (5*x+1)^3
+(%i8) q1i3:y = cos(2*x+3)
+(%i9) q1i4:y = tan((-x)+1)
+(%i10) q1o1:diff(q1i1,x)
+(%i11) q1o2:diff(q1i2,x)
+(%i12) q1o3:diff(q1i3,x)
+(%i13) q1o4:diff(q1i4,x)
+(%i14) disp(q1o1)
+0 = 3*cos(3*x)
+
+(%i15) disp(q1o2)
+0 = 15*(5*x+1)^2
+
+(%i16) disp(q1o3)
+0 = -2*sin(2*x+3)
+
+(%i17) disp(q1o4)
+0 = -sec(x-1)^2
+
+(%i18) closefile()

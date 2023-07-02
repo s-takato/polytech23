@@ -1,0 +1,14 @@
+[cos(x)^2-sin(x)^2,-2*cos(x)*sin(x),tan(x)+x*sec(x)^2,sec(x)^2-1]
+
+Script
+q1i1:sin(x)*cos(x)
+q1i2:-sin(x)^(2)
+q1i3:x*tan(x)
+q1i4:tan(x)-x
+q1o1:diff(q1i1,x)
+q1o2:diff(q1i2,x)
+q1o3:diff(q1i3,x)
+q1o4:diff(q1i4,x)
+q1o1::q1o2::q1o3::q1o4
+end
+

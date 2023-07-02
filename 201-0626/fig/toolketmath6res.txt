@@ -1,0 +1,10 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) dtLL:[[1,no,cos(x)-cos(x),(-sin(x))-(-sin(x))],[2],[3],[4],[5,no,cos(x)-cos(x),(-sin(x))-(-sin(x))],[6],[7],[8,no,cos(x)-cos(x),(-sin(x))-(-sin(x))],[9,no,cos(x)-cos(x),inf-(-sin(x))],[10],[11]]
+(%i7) res:ratsimp(dtLL)
+(%i8) disp(res)
+[[1,no,0,0],[2],[3],[4],[5,no,0,0],[6],[7],[8,no,0,0],[9,no,0,sin(x)+inf],[10],[11]]
+
+(%i9) closefile()

@@ -1,0 +1,12 @@
+[1/x,1/x,1/(x+5)]
+
+Script
+q1i1:log(-x)
+q1i2:log(2*x)
+q1i3:log(x+5)
+q1o1:diff(q1i1,x)
+q1o2:diff(q1i2,x)
+q1o3:diff(q1i3,x)
+q1o1::q1o2::q1o3
+end
+

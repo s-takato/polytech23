@@ -1,0 +1,9 @@
+writefile("/Users/takatoosetsuo/polytech23.git/201-0626/fig/toolketmath6res.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[1,no,(cos(x))-(cos(x)),(-sin(x))-(-sin(x))],[2],[3],[4],[5,no,(cos(x))-(cos(x)),(-sin(x))-(-sin(x))],[6],[7],[8,no,(cos(x))-(cos(x)),(-sin(x))-(-sin(x))],[9,no,(cos(x))-(cos(x)),(inf)-(-sin(x))],[10],[11]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

@@ -1,0 +1,3 @@
+quline="Q08::次を微分せよ．	[1]:: y=log(-x)	[2]:: y=log(2x)	[3]:: y=log(x+5)";
+shline="Q08---	[1] y'=  	[2] y'=  	[3] y'=  ";
+sqline="01YU	2	2	2	2CR02HU	2	2	2	2CR03KU	2	2	2	2CR04AK	2	2	2	2CR05AK	2	2	2	2CR06TK	2	2	2	2CR07MS	2	2	2	2CR08TT	2	2	2	2CR09TN	2	2	2	2CR10AY	2	2	2	2";
