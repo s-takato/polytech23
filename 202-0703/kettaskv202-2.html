@@ -2903,7 +2903,7 @@ Expr(listorg,options):=( //16.10.09
 Ketcindyjsfigure=0;
 Ketcindyjsscale=1;
 aalinestart=1;
-quline="Q02::グラフの点を動かして，導関数がどうなるかを考えよ．	[1]:: y=sin(x)	[2]:: y=cos(x)";
+quline="Q02::グラフの点を動かして導関数を求めよ．	[1]:: y=sin(x)	[2]:: y=cos(x)";
 shline="Q02---	[1] y'=  	[2] y'=  ";
 sqline="01YU	2	2	2CR02HU	2	2	2CR03KU	2	2	2CR04AK	2	2	2CR05AK	2	2	2CR06TK	2	2	2CR07MS	2	2	2CR08TT	2	2	2CR09TN	2	2	2CR10AY	2	2	2";
 quLL=Line2list(quline);
@@ -6001,6 +6001,8 @@ Letter(Mvpt(1,3),"e","黒実線$y=\sin x$",["Size=1"]);
 Letter(Mvpt(1,2.5),"e","赤実線$y=\cos x$",["Size=1"]);
 Letter(Mvpt(1,2),"e","黒点線$y=-\sin x$",["Size=1"]);
 Letter(Mvpt(1,1.5),"e","赤点線$y=-\cos x$",["Size=1"]);
+Letter(Mvpt(-2,1.8),"e","傾き "+format(cos(pA_1),2));
+Letter(Mvpt(-2,1.3),"e","傾き "+format(-sin(pB_1),2),["Color=red"]);
 Listplot("ax",[[XMIN,0],[XMAX,0]],["nodisp"]);
 Mvdraw("sgax",["dr"]);
 Listplot("ay",[[0,YMIN],[0,YMAX]],["nodisp"]);

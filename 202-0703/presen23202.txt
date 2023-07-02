@@ -223,18 +223,20 @@ main::指数関数の微分
 \slidepage[m]
 
 %%%%%%%%%%%%
-new::ネイピア数
-%repeat=5,para
+new::$y=a^x$の接線
+%repeat=6,para
 \slidepage
 
 itemize
-item::$y=a^x$の$(0,1)$での接線の傾きがちょうど1になる$a$
-%[2,-]::item::[課題]\monbannoadd \href{https://s-takato.github.io/polytech22/offlineapp/napierv3jsoffL.html}{ネイピア数}で$a$の値を求めよ
-%[3,-]::item::この$a$を{\color{blue}ネイピア数}といい，$e$で表す\\
-%[4,-]::\hspace*{2zw}$e=2.7182818284\cdots$
-%[5,-]::item::$e$は微分で重要な定数
+item::指数関数$y=a^x\ (a>0)$上の$(0,1)$で接線を引く
+%[2,-]::item::[課題]\monbannoadd 接線の傾きがちょうど1になる$a$の値を求めよ
+%[3,-]::item::この$a$を{\color{blue}ネイピア数(ナピア数)}といい，$e$で表す\\
+%[4,-]::\hspace*{2zw}$e=2.71828182846\cdots$
+%[5,-]::item::$e$は微分で重要な定数\vspace{2mm}\\
+%[6,-]::\hspace*{4zw}\fbox{$\displaystyle\lim_{z \to 0}\bunsuu{e^z-1}{z}=1$}
 end
-%[5]::\addban
+
+%[6]::\addban
 
 %%%%%%%%%%%%
 new::自然対数
