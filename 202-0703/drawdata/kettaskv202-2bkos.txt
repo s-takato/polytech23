@@ -1,0 +1,4 @@
+Center=[70.32,8.33];
+Scale=3.41;
+Putpoint("O",Center);
+Putpoint("S",Sc2pt(Scale));
