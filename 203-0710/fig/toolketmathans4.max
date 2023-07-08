@@ -1,0 +1,12 @@
+writefile("/Users/takatoosetsuo/polytech23.git/203-0710/fig/toolketmathans4.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:2*(exp(1))^x+((3)/(x))$/*##*/
+q1i2:(exp(1))^x+1)^2$/*##*/
+q1o1:integrate(q1i1,x)$/*##*/
+q1o2:integrate(q1i2,x)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

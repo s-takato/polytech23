@@ -1,0 +1,3 @@
+quline="Q08::次の不定積分を求めよ(積分定数C)	[1]:: int((x^3-5x^2+1),x)=[1]+C	[2]:: int((1-x-x^2),x)=[2]+C	[3]:: int(3x^2,x)=[3]+C";
+shline="Q08---	[1] =  	[2] =  	[3] =  ";
+sqline="01YU	2	2	2	2CR02HU	2	2	2	2CR03KU	2	2	2	2CR04AK	2	2	2	2CR05AK	2	2	2	2CR06TK	2	2	2	2CR07MS	2	2	2	2CR08TT	2	2	2	2CR09TN	2	2	2	2CR10AY	2	2	2	2";

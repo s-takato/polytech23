@@ -1,0 +1,12 @@
+[x^4/4-(5*x^3)/3+x,(-x^3/3)-x^2/2+x,x^3]
+
+Script
+q1i1:x^3-5*x^2+1
+q1i2:1-x-x^2
+q1i3:3*x^2
+q1o1:integrate(q1i1,x)
+q1o2:integrate(q1i2,x)
+q1o3:integrate(q1i3,x)
+q1o1::q1o2::q1o3
+end
+

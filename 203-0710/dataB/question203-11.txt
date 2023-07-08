@@ -1,0 +1,16 @@
+Q
+次の不定積分を求めよ(積分定数C)
+[1] int((2e^x+fr(3,x)),x)=[1]+C
+[2] int((e^x+1)^2,x)=[2]+C
+Sheet
+[1] = ::2
+[2] = ::2
+Ans
+[1] =2e^x+3log(x)
+[2] =fr(1,2)e^x+2e^x+x
+Mxcalc
+[1] 2e^x+fr(3,x)
+[2] (e^x+1)^2
+o1:integrate(i1,x)
+o2:integrate(i2,x)
+return o1::o2

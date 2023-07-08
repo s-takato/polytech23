@@ -1,0 +1,20 @@
+202-0703-4の結果
+10 10AY 0703 14:23:14
+Q04 次の関数を微分せよ．
+[1]  y=sin(x)cos(x)
+　正解 cos(2,x)-sin(2,x)
+　答え cos(x)-sin(x)
+　得点 0
+[2]  y=-sin(2,x)=sin(x)sin(x)
+　正解 -2sin(x)cos(x)
+　答え sin(x)^(2)
+　得点 0
+[3]  y=xtan(x)
+　正解 tan(x)+fr(x,cos(2,x))
+　答え fr(sin(2,X),cos(2,X))
+　得点 0
+[4]  y=tan(x)-x
+　正解 fr(sin(2,x),cos(2,x))
+　答え (sin(2,X),cos(2,X))-1
+　コメント　frと小文字x
+　得点 1

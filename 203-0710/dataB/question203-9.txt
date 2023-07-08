@@ -1,0 +1,21 @@
+Q
+次の不定積分を求めよ(積分定数C)
+[1] int((-3x^2+2x+3),x)=[1]+C
+[2] int((4x^3-8x+3),x)=[2]+C
+[3] int((2x^3+4x-3),x)=[3]+C
+Sheet
+[1] =  ::2
+[2] =  ::2
+[3] =  ::2
+Ans
+[1] =-x^3+x^2+3x
+[2] =x^4-4x^2+3x
+[3] =fr(1,2)x^4+2x^2-3x
+Mxcalc
+[1] -3x^2+2x+3
+[2] 4x^3-8x+3
+[3] 2x^3+4x-3
+o1:integrate(i1,x)
+o2:integrate(i2,x)
+o3:integrate(i3,x)
+return o1::o2::o3

@@ -1,0 +1,15 @@
+writefile("/Users/takatoosetsuo/polytech23.git/203-0710/fig/toolketmathans2.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+q1i1:-3*x^2+2*x+3$/*##*/
+q1i2:4*x^3-8*x+3$/*##*/
+q1i3:2*x^3+4*x-3$/*##*/
+q1o1:integrate(q1i1,x)$/*##*/
+q1o2:integrate(q1i2,x)$/*##*/
+q1o3:integrate(q1i3,x)$/*##*/
+disp(q1o1)$/*##*/
+disp(q1o2)$/*##*/
+disp(q1o3)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/

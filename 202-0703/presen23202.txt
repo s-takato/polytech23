@@ -112,7 +112,7 @@ new::$\sin x,\cos x$の微分
 \slidepage
 
 itemize
-item::[課題]\monban「導関数の意味」を用いて導関数を求めよ．\seteda{50}\\
+item::[課題]\monban グラフ上の点を動かして導関数を求めよ．\seteda{50}\\
 \eda{$y=\sin x$}\eda{$y=\cos x$}
 end
 
@@ -144,7 +144,7 @@ itemize
 item::\fbox{$(\tan x)'=\bunsuu{1}{\cos^2 x}$}
 %[2,-]::item::[]$(\tan x)'=\bigl(\bunsuu{\sin x}{\cos x}\bigr)'$\\
 %[3,-]::$\phn{(\tan x)'}=\bunsuu{(\sin x)'(\cos x)-(\sin x)(\cos x)'}{\cos^2 x}$\\
-%[4,-]::$\phn{(\tan x)'}=\bunsuu{(\cos x \cos x)-\sin x(-\sin x)'}{\cos^2 x}$\\
+%[4,-]::$\phn{(\tan x)'}=\bunsuu{(\cos x \cos x)-\sin x(-\sin x)}{\cos^2 x}$\\
 %[5,-]::$\phn{(\tan x)'}=\bunsuu{\cos^2 x+\sin^2 x}{\cos^2 x}=\bunsuu{1}{\cos^2 x}$\\
 end
 
@@ -229,11 +229,12 @@ new::$y=a^x$の接線
 
 itemize
 item::指数関数$y=a^x\ (a>0)$上の$(0,1)$で接線を引く
-%[2,-]::item::[課題]\monbannoadd 接線の傾きがちょうど1になる$a$の値を求めよ
-%[3,-]::item::この$a$を{\color{blue}ネイピア数(ナピア数)}といい，$e$で表す\\
-%[4,-]::\hspace*{2zw}$e=2.71828182846\cdots$
-%[5,-]::item::$e$は微分で重要な定数\vspace{2mm}\\
-%[6,-]::\hspace*{4zw}\fbox{$\displaystyle\lim_{z \to 0}\bunsuu{e^z-1}{z}=1$}
+item::[課題]\monbannoadd 接線の傾きがちょうど1になる$a$の値を求めよ
+%[2,-]::item::この$a$を{\color{blue}ネイピア数(ナピア数)}といい，$e$で表す\\
+%[3,-]::\hspace*{2zw}$e=2.71828182846\cdots$
+%[4,-]::item::$e$は微分で重要な定数\vspace{2mm}
+%[5,-]::item::$f'(0)=\displaystyle\lim_{z \to 0}\bunsuu{f(z)-f(0)}{z-0}$
+%[6,-]::$=$\fbox{$\displaystyle\lim_{z \to 0}\bunsuu{e^z-1}{z}=1$}
 end
 
 %[6]::\addban

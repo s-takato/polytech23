@@ -1,0 +1,7 @@
+quline="Q02::グラフの点を動かして導関数を求めよ．	[1]:: y=sin(x)	[2]:: y=cos(x)";
+shline="Q02---	[1] y'=  	[2] y'=  ";
+caline="Q02::	[1]::cos(x)	[2]::-sin(x)";
+mrkline="0	4	4";
+mxscline="0	1	1";
+sqline="01YU	2	2	2CR02HU	2	2	2CR03KU	2	2	2CR04AK	2	2	2CR05AK	2	2	2CR06TK	2	2	2CR07MS	2	2	2CR08TT	2	2	2CR09TN	2	2	2CR10AY	2	2	2";
+ansline="1	01YU	070314:4:16	Q02---	[1] y'=  cos(x)	[2] y'=  -sin(x)CR2	02HU	070313:54:16	Q02---	[1] y'=  sin(1)	[2] y'=  cos(pi/2)=0CR3	03KU	070313:58:6	Q02---	[1] y'=  cos(x)	[2] y'=  -sin(x)CR4	04AK	070313:55:39	Q02---	[1] y'=  x-1	[2] y'=  2x+1CR5	05AK	070313:54:33	Q02---	[1] y'=  cos(x)	[2] y'=  -sin(x)CR6	06TK	070313:58:18	Q02---	[1] y'=  cos(x)	[2] y'=  -sin(x)CR7	07MS	070316:24:6	Q02---	[1] y'=  cos(x)	[2] y'=  -sin(x)CR8	08TT	070314:0:57	Q02---	[1] y'=  0	[2] y'=  180CR9	09TN	070313:55:56	Q02---	[1] y'=  cos(x)	[2] y'= - sin(x)CR10	10AY	未提出";

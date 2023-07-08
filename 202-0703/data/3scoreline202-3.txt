@@ -1,0 +1,7 @@
+quline="Q03::次の関数を微分せよ．	[1]:: y=2sin(x)	[2]:: y=-cos(x)	[3]:: y=3sin(x)+4cos(x)	[4]:: y=x-cos(x)";
+shline="Q03---	[1] y'=  	[2] y'=  	[3] y'=  	[4] y'=  ";
+caline="Q03::	[1]::2cos(x)	[2]::sin(x)	[3]::3cos(x)-4sin(x)	[4]::1+sin(x)";
+mrkline="0	2	2	2	2";
+mxscline="0	1	1	1	1";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2";
+ansline="1	01YU	070314:5:25	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=CR2	02HU	070314:8:35	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)+1sin(x)	[4] y'=  1+sin(x)CR3	03KU	070314:5:2	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  x+sin(x)CR4	04AK	070314:16:34	Q03---	[1] y'=  0.0349	[2] y'=  -0.999	[3] y'=  4.051	[4] y'=  1.5230CR5	05AK	070314:7:10	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  sin(x)+1CR6	06TK	070314:9:17	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  1-sin(x)CR7	07MS	070315:59:47	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  1+sin(x)CR8	08TT	070314:6:54	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  1+sin(x)CR9	09TN	070314:6:23	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  1+sin(x)CR10	10AY	070314:5:24	Q03---	[1] y'=  2cos(x)	[2] y'=  sin(x)	[3] y'=  3cos(x)-4sin(x)	[4] y'=  1+sin(x)";

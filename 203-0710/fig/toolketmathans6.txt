@@ -1,0 +1,20 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:log(-x)
+(%i7) q1i2:log(2*x)
+(%i8) q1i3:log(x+5)
+(%i9) q1o1:diff(q1i1,x)
+(%i10) q1o2:diff(q1i2,x)
+(%i11) q1o3:diff(q1i3,x)
+(%i12) disp(q1o1)
+1/x
+
+(%i13) disp(q1o2)
+1/x
+
+(%i14) disp(q1o3)
+1/(x+5)
+
+(%i15) closefile()

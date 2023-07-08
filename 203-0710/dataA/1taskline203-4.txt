@@ -1,0 +1,3 @@
+quline="Q04::e=2.7abcd cdot(s)	[1]:: 小数第2位の数a	[2]:: 小数第3位の数b	[3]:: 小数第4位の数c	[4]:: 小数第5位の数d";
+shline="Q04---	[1] a=  	[2] b=  	[3] c=  	[4] d=  ";
+sqline="01YU	2	2	2	2	2CR02HU	2	2	2	2	2CR03KU	2	2	2	2	2CR04AK	2	2	2	2	2CR05AK	2	2	2	2	2CR06TK	2	2	2	2	2CR07MS	2	2	2	2	2CR08TT	2	2	2	2	2CR09TN	2	2	2	2	2CR10AY	2	2	2	2	2";

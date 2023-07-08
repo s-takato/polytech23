@@ -1,0 +1,3 @@
+quline="Q11::次の不定積分を求めよ(積分定数C)	[1]:: int((2e^x+fr(3,x)),x)=[1]+C	[2]:: int((e^x+1)^2,x)=[2]+C";
+shline="Q11---	[1] = 	[2] = ";
+sqline="01YU	2	2	2CR02HU	2	2	2CR03KU	2	2	2CR04AK	2	2	2CR05AK	2	2	2CR06TK	2	2	2CR07MS	2	2	2CR08TT	2	2	2CR09TN	2	2	2CR10AY	2	2	2";

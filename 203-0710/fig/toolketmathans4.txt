@@ -1,0 +1,9 @@
+NIL
+(%i3) powerdisp:false
+(%i4) display2d:false
+(%i5) linel:1000
+(%i6) q1i1:2*exp(1)^x+3/x
+/Users/takatoosetsuo/polytech23.git/203-0710/fig/toolketmathans4.max:6:17:incorrect syntax: Too many )'s
+q1i2:(exp(1))^x+1)
+                ^
+(%o7) "/Users/takatoosetsuo/polytech23.git/203-0710/fig/toolketmathans4.max"

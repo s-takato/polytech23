@@ -1,0 +1,10 @@
+[3*log(x)+2*%e^x,%e^(2*x)/2+2*%e^x+x]
+
+Script
+q1i1:2*(exp(1))^x+((3)/(x))
+q1i2:((exp(1))^x+1)^2
+q1o1:integrate(q1i1,x)
+q1o2:integrate(q1i2,x)
+q1o1::q1o2
+end
+

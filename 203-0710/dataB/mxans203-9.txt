@@ -1,0 +1,12 @@
+[(-x^3)+x^2+3*x,x^4-4*x^2+3*x,x^4/2+2*x^2-3*x]
+
+Script
+q1i1:-3*x^2+2*x+3
+q1i2:4*x^3-8*x+3
+q1i3:2*x^3+4*x-3
+q1o1:integrate(q1i1,x)
+q1o2:integrate(q1i2,x)
+q1o3:integrate(q1i3,x)
+q1o1::q1o2::q1o3
+end
+

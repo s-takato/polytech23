@@ -177,7 +177,7 @@ $(f+g)'=f'+g',\ (f-g)'=f'-g'$
 \slidepage
 \begin{itemize}
 \item
-[課題]\monban「導関数の意味」を用いて導関数を求めよ．\seteda{50}\\
+[課題]\monban グラフ上の点を動かして導関数を求めよ．\seteda{50}\\
 \eda{$y=\sin x$}\eda{$y=\cos x$}
 \end{itemize}
 %%%%%%%%%%%%%
@@ -229,7 +229,7 @@ $(f+g)'=f'+g',\ (f-g)'=f'-g'$
 \item
 []$(\tan x)'=\bigl(\bunsuu{\sin x}{\cos x}\bigr)'$\\
 $\phn{(\tan x)'}=\bunsuu{(\sin x)'(\cos x)-(\sin x)(\cos x)'}{\cos^2 x}$\\
-$\phn{(\tan x)'}=\bunsuu{(\cos x \cos x)-\sin x(-\sin x)'}{\cos^2 x}$\\
+$\phn{(\tan x)'}=\bunsuu{(\cos x \cos x)-\sin x(-\sin x)}{\cos^2 x}$\\
 $\phn{(\tan x)'}=\bunsuu{\cos^2 x+\sin^2 x}{\cos^2 x}=\bunsuu{1}{\cos^2 x}$\\
 \end{itemize}
 
@@ -351,8 +351,10 @@ $=10(2x+3)^4$
 この$a$を{\color{blue}ネイピア数(ナピア数)}といい，$e$で表す\\
 \hspace*{2zw}$e=2.71828182846\cdots$
 \item
-$e$は微分で重要な定数\vspace{2mm}\\
-\hspace*{4zw}\fbox{$\displaystyle\lim_{z \to 0}\bunsuu{e^z-1}{z}=1$}
+$e$は微分で重要な定数\vspace{2mm}
+\item
+$f'(0)=\displaystyle\lim_{z \to 0}\bunsuu{f(z)-f(0)}{z-0}$
+$=$\fbox{$\displaystyle\lim_{z \to 0}\bunsuu{e^z-1}{z}=1$}
 \end{itemize}
 \addban
 
