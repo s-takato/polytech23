@@ -7,7 +7,7 @@ Sheet
 [1] y'=  ::4
 [2] y'=  ::4
 [3]    ::0::-1
-AnsAns
+Ans
 [1] cos(x)
 [2] -sin(x)
 [3] 
