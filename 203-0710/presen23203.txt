@@ -273,7 +273,7 @@ end
 \seteda{57}
 itemize
 item::[課題]\monban 次の不定積分を求めよ(積分定数C)．\hfill TextP19\vspace{2mm}\\
-\eda{$\dint (-3x^2+2x+3)\,dx$}
+\eda[63]{$\dint (-3x^2+2x+3)\,dx$}
 \eda{$\dint (4x^3-8x+3)\,dx$}\\
 \eda{$\dint (2x^3+4x-3)\,dx$}
 end

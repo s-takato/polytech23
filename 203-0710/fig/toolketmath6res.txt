@@ -2,7 +2,9 @@ NIL
 (%i3) powerdisp:false
 (%i4) display2d:false
 (%i5) linel:1000
-/Users/takatoosetsuo/polytech23.git/202-0703/fig/toolketmath6res.max:5:360:incorrect syntax: Illegal use of delimiter )
-,no,(2.71828182846.)
-                  ^
-(%o6) "/Users/takatoosetsuo/polytech23.git/202-0703/fig/toolketmath6res.max"
+(%i6) dtLL:[[1,no,x^-1-1/x,no],[2,no,1/x-1/x,no],[3,no,(log(e)*x)/(log(e)*10)-1/x,no],[4,no,0-1/x,no],[5,no,1/x-1/x,no],[6,no,1/x-1/x,no],[7],[8,no,1/x-1/x,no],[9,no,1/x-1/x,no],[10,no,(-x^(x-1))-1/x,no]]
+(%i7) res:ratsimp(dtLL)
+(%i8) disp(res)
+[[1,no,0,no],[2,no,0,no],[3,no,(x^2-10)/(10*x),no],[4,no,-1/x,no],[5,no,0,no],[6,no,0,no],[7],[8,no,0,no],[9,no,0,no],[10,no,-(x^x+1)/x,no]]
+
+(%i9) closefile()
